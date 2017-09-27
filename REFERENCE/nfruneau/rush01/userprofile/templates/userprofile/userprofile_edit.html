@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - Edit{% endblock %}
+
+{% block content %}
+<h1>Profile - Edit</h1>
+
+{% if request.user.is_superuser or is_admin %}
+
+  {% if p_user.is_superuser or profile_is_admin %}
+    <a href="{% url 'userprofile-removegroup' pk=pk %}">retirer les droits au compte '{{ p_user.username }}'</a>
+  {% else %}
+    <a href="{% url 'userprofile-addgroup' pk=pk %}">ajouter les droits au compte '{{ p_user.username }}'</a>
+  {% endif %}
+
+{% endif %}
+
+
+
+{% if request.user.is_authenticated and userprofile %}
+<h2>{{ p_user.username }}</h2>
+
+<form method='POST' action='' enctype="multipart/form-data">
+  <div class="form-group">
+    {% csrf_token %}
+    <label for="firstname">First name : 
+      <input type="text" id="firstname" name="firstname" value="{{ p_user.first_name }}">
+    </label><br>
+    <label for="lastname">Last name : 
+      <input type="text" id="lastname" name="lastname" value="{{ p_user.last_name }}">
+    </label><br>
+    <label for="email">Email : 
+      <input type="email" id="email" name="email" value="{{ p_user.email }}">
+    </label><br>
+    <label for="description">Description :<br>
+      <textarea id="description" name="description">{{ userprofile.description }}</textarea>
+    </label><br>
+    <label for="picture">Picture : 
+      <input id="picture" type="file" name="picture">
+    </label><br>
+    <input type="submit" value="Edit" class="btn btn-success" role="button">
+  </div>
+
+
+  <a class="nav-link" href="{% url 'userprofile-home' pk=pk %}">return to {{ p_user.username }}'s profile</a>
+</form>
+
+{% else %}
+	<p>You need to register to access this page.</p>
+{% endif %}
+
+{% endblock %}
+
+

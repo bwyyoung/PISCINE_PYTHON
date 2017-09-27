@@ -1,0 +1,13 @@
+{% extends 'ex/base.html' %}
+{% block content %}
+<h1>Favourites</h1>
+<ul>
+{% for article in object_list %}
+
+  <li>{{ article.article.title }}<a href="{% url 'detail' title=article.article.title  %}">Detail</a></li>
+
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}

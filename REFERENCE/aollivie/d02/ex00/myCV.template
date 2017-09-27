@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CV</title>
+	</head>
+	<body>
+		<h1>CV</h1>
+		<br>
+		<p>{name}</p>
+		<br>
+		<p>{firstname}</p>
+		<br>
+		<p>{age}</p>
+		<br>
+		<p>{profession}</p>
+	</body>
+</html>

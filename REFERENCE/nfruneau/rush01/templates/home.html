@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>HOMEPAGE</h1>
+
+{% if request.user.is_authenticated %}
+	<p><a href="{% url 'forum-home' %}">Forum</a></p>
+	<p><a href="{% url 'userprofile-home' pk=user.pk %}">Voir Profil</a></p>
+	<p><a href="{% url 'userprofile-edit' pk=user.pk %}">Editer Profil</a></p>
+{% endif %}
+
+{% endblock %}

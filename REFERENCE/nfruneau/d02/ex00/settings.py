@@ -1,0 +1,5 @@
+title = "MY FIRST CV"
+firstname="Bob"
+lastname="L'Eponge"
+age="21"
+job = "Unemployed"

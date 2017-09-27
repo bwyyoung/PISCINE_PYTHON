@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="/static/myapp/css/style.css">
+	</head>
+	<body>
+		<p>Submit your files here</p>
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Submit" />
+		</form>
+		<ul>
+			{% for file in files %}
+			<li>
+				{{ file.name }}
+				<img src="{{ file.file.url }}">
+			</li>
+			{% empty %}
+			No file yet...
+			{% endfor %}
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'ex/base.html' %}
+{% block form%}
+  {{error}}
+<form  method="POST">
+	  {% csrf_token %}
+    {% autoescape off %}
+    {{form}}
+    {% endautoescape %}
+  <input type='submit' value='Submit' />
+</form>
+{% endblock%}

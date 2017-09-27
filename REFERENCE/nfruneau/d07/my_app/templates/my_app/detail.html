@@ -1,0 +1,11 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+<h1>Detail/h1>
+
+{{ article.author }}
+{{ article.created|date }}
+{{ article.title }}
+{{ article.synopsis }}
+{{ article.content }}
+{% endblock %}

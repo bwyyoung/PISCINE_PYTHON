@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+	<table style="width:800px; border-collapse: collapse;">
+	{% for item in data %}
+		<tr>
+			{% for var in item %}
+			<td style="border: 1px solid #000; padding: 10px;">{{ var }}</td>
+			{% endfor %}
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>

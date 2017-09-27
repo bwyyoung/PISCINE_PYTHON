@@ -1,0 +1,32 @@
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr {
+  border-collapse: collapse;
+
+}
+
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  vertical-align: bottom;
+  padding: 1.5em;
+}
+
+#controls {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+#controls li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.moviedex {
+  border: 3px solid blue;
+}

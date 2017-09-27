@@ -1,0 +1,8 @@
+
+<h1>{{ object.title }}</h1>
+<p>{{ object.content }}</p>
+<p>author: {{ object.author }}</p>
+<p>Published: {{ object.created|date }}</p>
+<p>Date: {{ now|date }}</p>
+
+<a href="{% url 'add' title=object.id  %}">Add to the Favorite list</a>

@@ -1,0 +1,78 @@
+{% extends "ex00/base.html" %}
+
+{% block style %}
+<style>
+table,
+table tr,
+table tr th,
+table tr td {
+border: 1px solid #000;
+border-collapse: collapse;
+}
+table {
+width: 100%;
+}
+nav a {
+margin: 0px auto;
+display: block;
+text-align: center;
+}
+
+a {
+color: #fff;
+}
+
+html {
+text-align: center;
+color: #ddd;
+height: 100%;
+background-color: #000;
+background-image:url(/media/spacex.jpg);
+background-position: fixed;
+background-size: 100% 100%;
+}
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+{% include "ex00/nav.html" %}
+
+{% if uploaded == True %}
+<p style="color: green;">Your image has been uploaded !</p>
+{% endif %}
+
+
+
+<!-- Upload form. Note enctype attribute! -->
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>{{ form.non_field_errors }}</p>
+  <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+  <p>
+	{{ form.docfile.errors }}
+    {{ form.docfile }}
+  </p>
+  <input type="submit" value="UPLOAD !"/>
+</form>
+
+
+{% if images %}
+<!-- display images -->
+<ul>
+  {% for img in images %}
+  <li><a href="{{ img }}">
+	  <img src="{{ img }}" alt="" style="border: 1px solid #fff; height: 200px; width: 200px;"/>
+  </a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No documents.</p>
+{% endif %}
+
+
+
+
+{% endblock %}

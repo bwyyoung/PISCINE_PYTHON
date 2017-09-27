@@ -1,0 +1,18 @@
+{% extends "game/base.html" %}
+{% block content %}
+<table>
+{% for y in board_size.height %}
+<tr>
+{% for x in board_size.width %}
+<td>
+{% if position.y == y and position.x == x %}
+X
+{% else %}
+.
+{% endif %}
+</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

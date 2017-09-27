@@ -1,0 +1,60 @@
+<div>
+    <ul id="controls">
+        <li>
+            <form action="{{ controls.left.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.left.value|default:"" }}" name="val">
+                <input type="submit" value="LEFT" {% if not controls.left.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+        <li>
+            <form action="{{ controls.up.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.up.value|default:"" }}" name="val">
+                <input type="submit" value="UP" {% if not controls.up.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+        <li>
+            <form action="{{ controls.right.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.right.value|default:"" }}" name="val">
+                <input type="submit" value="RIGHT" {% if not controls.right.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+        <li>
+            <form action="{{ controls.down.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.down.value|default:"" }}" name="val">
+                <input type="submit" value="DOWN" {% if not controls.down.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+        <li>
+            <form action="{{ controls.select.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.select.value|default:"" }}" name="val">
+                <input type="submit" value="SELECT" {% if not controls.select.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+        <li>
+            <form action="{{ controls.start.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.start.value|default:"" }}" name="val">
+                <input type="submit" value="START" {% if not controls.start.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+        <li>
+            <form action="{{ controls.a.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.a.value|default:"" }}" name="val">
+                <input type="submit" value="A" {% if not controls.a.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+        <li>
+            <form action="{{ controls.b.action|default:"" }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{ controls.b.value|default:"" }}" name="val">
+                <input type="submit" value="B" {% if not controls.b.value %}disabled{% endif %} name="clicked">
+            </form>
+        </li>
+    </ul>
+</div>

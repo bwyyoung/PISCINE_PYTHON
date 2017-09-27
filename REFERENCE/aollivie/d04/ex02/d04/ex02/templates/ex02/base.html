@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+      Form
+      {% endblock %}
+    </title>
+      {% block style %}
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href={% static 'ex02/style1.css'   %} />
+      {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+    {% include "ex02/logs.html" with logs=list_logs %}
+  </body>
+</html>

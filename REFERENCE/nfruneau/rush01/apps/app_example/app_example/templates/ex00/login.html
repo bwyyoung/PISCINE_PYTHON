@@ -1,0 +1,21 @@
+{% extends "ex00/base.html" %}
+
+{% block content %}
+{% include "ex00/nav.html" %}
+
+{% if name %}
+<p style="color: red;">You are already logged as '<b>{{ name }}</b>'</p>
+<a href="/logout">LOGOUT</a>
+{% else %}
+<form method="POST">
+
+  {% if error %}
+  <p style="color: red;">{{ error }}</p>
+  {% endif %}
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Connexion" />
+</form>
+{% endif %}
+
+{% endblock %}

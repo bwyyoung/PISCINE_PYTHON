@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Forum{% endblock %}
+
+
+{% block content %}
+<h1>Forum</h1>
+{% if object_list %}
+<table class="table">
+<thead class="thead-inverse">
+	<tr>
+		<th>Created</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Content</th>
+		<th></th>
+	</tr>
+</thead>
+	{% for post in object_list %}
+	<tr>
+		<td>{{ post.created|date:"N d, Y, h:i a" }}</td>
+		<td>{{ post.title }}</td>
+		<td>{{ post.author }}</td>
+		<td>{{ post.content|truncatechars:100 }}</td>
+		<td><a href="{% url 'forum-detail' pk=post.pk %}"  class="btn btn-info" role="button">Read</a></td>
+	</tr>
+	{% endfor %}
+</table>
+	{% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% else %}
+<p>There are no posts yet.</p>
+{% endif %}
+
+<a href="{% url 'forum-publish' %}"  class="btn btn-info" role="button">Publish new post</a></td>
+
+{% endblock %}

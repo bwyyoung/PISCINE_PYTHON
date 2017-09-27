@@ -1,0 +1,92 @@
+[
+  {
+    "model": "auth.User",
+    "pk": 1,
+    "fields": {
+      "username": "root",
+      "password": "pbkdf2_sha256$30000$QUQ9zIHJs9y8$qq+p8IgYhrLED+/ibFdiPfkJ0rPbMVmGjUpR42/S7Ks="
+    }
+  },
+  {
+    "model": "auth.User",
+    "pk": 2,
+    "fields": {
+      "username": "django",
+      "password": "pbkdf2_sha256$30000$QUQ9zIHJs9y8$qq+p8IgYhrLED+/ibFdiPfkJ0rPbMVmGjUpR42/S7Ks="
+    }
+  },
+  {
+    "model": "auth.User",
+    "pk": 3,
+    "fields": {
+      "username": "admin",
+      "password": "pbkdf2_sha256$30000$QUQ9zIHJs9y8$qq+p8IgYhrLED+/ibFdiPfkJ0rPbMVmGjUpR42/S7Ks="
+    }
+  },
+  {
+    "model": "my_app.Article",
+    "pk": 1,
+    "fields": {
+      "title": "Lorem Ipsum",
+      "author": 1,
+      "synopsis": "A long time ago in a galaxy far far away",
+      "content": "Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER has risen from the ashes of the Empire and will not rest until Skywalker, the last Jedi, has been destroyed. With the support of the REPUBLIC, General Leia Organa leads a brave RESISTANCE. She is desperate to find her brother Luke and gain his help in restoring peace and justice to the galaxy. Leia has sent her most daring pilot on a secret mission to Jakku, where an old ally has discovered a clue to Luke's whereabouts...."
+    }
+  },
+  {
+    "model": "my_app.Article",
+    "pk": 2,
+    "fields": {
+      "title": "Lorem Ipsum",
+      "author": 1,
+      "synopsis": "A long time ago, in a galaxy far, far away",
+      "content": "Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER has risen from the ashes of the Empire and will not rest until Skywalker, the last Jedi, has been destroyed. With the support of the REPUBLIC, General Leia Organa leads a brave RESISTANCE. She is desperate to find her brother Luke and gain his help in restoring peace and justice to the galaxy. Leia has sent her most daring pilot on a secret mission to Jakku, where an old ally has discovered a clue to Luke's whereabouts...."
+    }
+  },
+  {
+    "model": "my_app.Article",
+    "pk": 3,
+    "fields": {
+      "title": "Lorem Ipsum",
+      "author": 2,
+      "synopsis": "A long time ago, in a galaxy far, far away",
+      "content": "Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER has risen from the ashes of the Empire and will not rest until Skywalker, the last Jedi, has been destroyed. With the support of the REPUBLIC, General Leia Organa leads a brave RESISTANCE. She is desperate to find her brother Luke and gain his help in restoring peace and justice to the galaxy. Leia has sent her most daring pilot on a secret mission to Jakku, where an old ally has discovered a clue to Luke's whereabouts...."
+    }
+  },
+  {
+    "model": "my_app.Article",
+    "pk": 4,
+    "fields": {
+      "title": "Lorem Ipsum",
+      "author": 2,
+      "synopsis": "A long time ago, in a galaxy far, far away",
+      "content": "Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER has risen from the ashes of the Empire and will not rest until Skywalker, the last Jedi, has been destroyed. With the support of the REPUBLIC, General Leia Organa leads a brave RESISTANCE. She is desperate to find her brother Luke and gain his help in restoring peace and justice to the galaxy. Leia has sent her most daring pilot on a secret mission to Jakku, where an old ally has discovered a clue to Luke's whereabouts...."
+    }
+  },
+  {
+    "model": "my_app.Article",
+    "pk": 5,
+    "fields": {
+      "title": "Lorem Ipsum",
+      "author": 1,
+      "synopsis": "A long time ago, in a galaxy far, far away",
+      "content": "Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER has risen from the ashes of the Empire and will not rest until Skywalker, the last Jedi, has been destroyed. With the support of the REPUBLIC, General Leia Organa leads a brave RESISTANCE. She is desperate to find her brother Luke and gain his help in restoring peace and justice to the galaxy. Leia has sent her most daring pilot on a secret mission to Jakku, where an old ally has discovered a clue to Luke's whereabouts...."
+    }
+  },
+  {
+    "model": "my_app.UserFavouriteArticle",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "article": 2
+    }
+  },
+  {
+    "model": "my_app.UserFavouriteArticle",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "article": 3
+    }
+  }
+]

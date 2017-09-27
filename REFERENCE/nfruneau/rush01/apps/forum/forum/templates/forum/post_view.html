@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load filters %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+
+
+<h1>{{ post.title }}</h1>
+<p style="font-weight:bold">by {{ post.author }}, on {{ post.created|date:"D d F Y, H:i" }}</p>
+<p>{{ post.content }}</p>
+<br />
+
+
+
+{% for com, lev in comments %}
+<div class="panel panel-default   com-lev-{{ lev }}" style="margin-left:{{ lev|mul:40 }}px;">
+	<div class="panel heading" style="margin-bottom:0px">
+		<span class="text-muted">from </span><strong>{{ com.author }}</strong><span class="text-muted">, on {{ com.created|date:"D d N Y, H:i" }}</span>
+		<button class="add-com-form btn btn-default btn-xs pull-right" data-cpk="{{ com.pk }}">Reply</button>
+	</div>
+	<div class="panel-body">{{ com.content }}</div>
+</div>
+{% endfor %}
+
+
+<div>
+	<div class="com-form form-group" id="com-reply-form">
+		<form method="POST" action="{% url 'forum-comment' p_pk=pk %}">
+			{% csrf_token %}
+			<textarea class="form-control" rows="3" id="comment_content" name="content"></textarea>
+			<input id="comment_id" type="hidden" name="comment_id" value="0">
+			<input type="submit" class="btn btn-primary btn-sm" role="button" value="Send">
+		</form>
+	</div>
+	<button class="add-com-form btn btn-default btn-sm" data-cpk="0" style="display:none">Reply to post</button>
+</div>
+<script src="{% static 'forum/js/toggle_com_form.js' %}"></script>
+{% endblock %}

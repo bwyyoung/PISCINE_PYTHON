@@ -1,0 +1,22 @@
+{% extends 'ex/base.html' %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+            <form id="register-form" method="post"
+                  action="{% url 'register' %}">
+                {% csrf_token %}
+                {{form}}
+                {% if form.errors %}
+                    <p class=" label label-danger">
+                        Your username and password didn't match.
+                        Please try again.
+                    </p>
+                {% endif %}
+
+                <input type="submit" value="Register"
+                       class="btn btn-primary pull-right" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </div>
+    </div>
+{% endblock content %}

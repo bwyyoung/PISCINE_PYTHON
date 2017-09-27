@@ -1,0 +1,14 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		username: {{ form.username }}<br>
+		password: {{ form.password1 }}<br>
+		validate: {{ form.password2 }}<br>
+		<input type="submit" value="Submit">
+	</form>
+	{% if error %}
+		{{ error }}
+	{% endif %}
+{% endblock %}

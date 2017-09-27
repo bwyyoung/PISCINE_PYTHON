@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Create new post{% endblock %}
+
+{% block content %}
+
+<form method='POST'>
+	<div class="form-group">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Publish" class="btn btn-success" role="button">
+	</div>
+</form>
+
+{% endblock %}

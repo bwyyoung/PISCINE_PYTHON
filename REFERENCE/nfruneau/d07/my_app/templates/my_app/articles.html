@@ -1,0 +1,25 @@
+{% extends "my_app/base.html" %}
+
+{% block content %}
+<h1>Articles</h1>
+<table style="border-collapse: collapse;">
+ <thead>
+  <tr>
+     <th style="border: 1px solid #000; padding: 10px;">Author</th>
+     <th style="border: 1px solid #000; padding: 10px;">Publish Date</th>
+     <th style="border: 1px solid #000; padding: 10px;">Title</th>
+     <th style="border: 1px solid #000; padding: 10px;">Synopsis</th>
+  </tr>
+ </thead>
+ <tbody>
+{% for article in object_list %}
+  <tr>
+     <td style="border: 1px solid #000; padding: 10px;">{{ article.author }}</td>
+     <td style="border: 1px solid #000; padding: 10px;">{{ article.created|date }}</td>
+     <td style="border: 1px solid #000; padding: 10px;"><a href="{% url 'page_detail' pk=article.id %}"">{{ article.title }}</a></td>
+     <td style="border: 1px solid #000; padding: 10px;">{{ article.synopsis }}</td>
+  </tr>
+{% endfor %}
+ </tbody>
+</table>
+{% endblock %}

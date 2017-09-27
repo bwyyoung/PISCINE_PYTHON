@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include app_example/static *
+recursive-include app_example/templates *
+recursive-include app_example/media *

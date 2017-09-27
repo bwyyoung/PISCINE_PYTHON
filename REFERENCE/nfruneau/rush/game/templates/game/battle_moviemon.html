@@ -1,0 +1,16 @@
+{% extends "game/base.html" %}
+{% block content %}
+<h1>Essayez de capturer le Moviemon que vous avez débusqué !</h1>
+<br>
+moviemon_poster = <img src="{{ moviemon.Poster }}" alt=""></img>
+<br>
+moviemon_id = {{ moviemon.imdbID }}
+<br>
+balls = {{ nbr_balls }}
+<br>
+force joueur = {{ strength }}
+<br>
+force moviemon = {{ moviemon.imdbRating }}
+<br>
+taux de reussite = {{ taux }}%
+{% endblock %}

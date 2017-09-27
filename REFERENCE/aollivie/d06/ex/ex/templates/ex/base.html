@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Life Pro Tips
+  </title>
+    {% block style %}
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href={% static 'ex/tips.css'   %} />
+      {% endblock %}
+	</head>
+	<body>
+    {% include "ex/nav.html" %}
+		{% block form %}
+		{% endblock %}
+		{% block content %}
+    <form  method="POST">
+        {% csrf_token %}
+      {% autoescape off %}
+      {{tips}}
+      {% endautoescape %}
+    </form>
+		{% endblock %}
+	</body>
+</html>

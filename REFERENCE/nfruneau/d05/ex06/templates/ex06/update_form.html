@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		<select name="title">
+		{% for item in data %}
+			<option name="movie_name" value="{{ item.1 }}">{{ item.0 }}</option>
+		{% endfor %}
+		</select>
+		<textarea name="crawling_text" rows="10" cols="50"></textarea>
+		<input type="submit" value="Submit">
+	</form>
+	</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<p>You are already logged in. To create a new account, <a href="{% url 'myauth-logout' %}">logout</a> and then go back to Register page.</p>
+{% else %}
+<form method='POST'>
+	<div class="form-group">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Register" class="btn btn-success" role="button">
+	</div>
+</form>
+{% endif %}
+{% endblock %}

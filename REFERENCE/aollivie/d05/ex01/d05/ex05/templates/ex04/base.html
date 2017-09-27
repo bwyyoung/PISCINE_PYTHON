@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      d05
+  </title>
+	</head>
+	<body>
+    <form  method="POST">
+	  {% csrf_token %}
+    {% autoescape off %}
+    {{form}}
+    {% endautoescape %}
+  </form>
+	</body>
+</html>

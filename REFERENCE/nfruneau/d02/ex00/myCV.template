@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CV Template</title>
+	</head>
+	<body>
+		<h1>{title}</h1>
+		<p>"-What is your Firstname?
+		-{firstname}!"</p>
+		<p>"-What is your Lastname?
+		-{lastname}!"</p>
+		<p>"-How old are you?
+		-I'm {age} years old!"</p>
+		<p>"-What is your job?
+		-I'm {job}!"</p>
+	</body>
+</html>
