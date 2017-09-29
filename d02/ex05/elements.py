@@ -104,6 +104,7 @@ if __name__ == '__main__':
 
 	try:
 		print(Html("This test must pass"))
+		print(Html("\"This test must pass\""))
 	except Exception as e:
 		print(e)
 	print('-----------')
