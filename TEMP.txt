@@ -22,12 +22,69 @@ bit.ly/1O72s3U
 
 
 
+	#print("b {0}", b)
+	##if not b:
+	#	print('It leads to a dead end !')
+	#	exit(1)
+	#a = p.find_all('a')
+	#print("a {0}", a)
+
+	exit(1);
+	if not a:
+		print('It leads to a dead end !')
+		exit(1)
+	for elem in a:
+		if str(elem).find('title') > 0:
+			target = elem['title']
+			if target:
+				if not target.startswith('Help:'):
+					return target
 
 
 
 
 
 
+
+def web_request(req):
+	url = 'https://en.wikipedia.org/wiki/' + req
+	r = requests.get(url)
+	if r.status_code != 200:
+		if r.status_code == 404:
+			print('It leads to a dead end !')
+		else:
+			print('HTTP error ', str(r.status_code))
+		exit(1)
+	soup = BeautifulSoup(r.text, 'html.parser')
+	title = str(soup.title.string)
+	title = title.replace(' - Wikipedia', '')
+	content = soup.find(id="mw-content-text")
+	for para in content.find_all('p'):
+		for link in para.find_all('a', attrs={}):
+			print(link)
+	exit(1)
+
+
+def process_request(req):
+	roads = [req]
+	while (req.lower() != 'philosophy'):
+		req = web_request(req)
+		if req in roads:
+			print('It leads to an infinite loop !')
+			exit(1)
+		roads.append(req)
+	for road in roads:
+		print(road)
+	print(str(len(roads)) + " roads from " + roads[0] + " to philosophy")
+
+def usage():
+	print("Usage : python3 roads_to_philosophy.py string_search_query")
+
+if __name__ == '__main__':
+	if len(sys.argv) == 2:
+		process_request(sys.argv[1])
+	else:
+		usage()
 
 
 
