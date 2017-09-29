@@ -3,3 +3,5 @@ file.template
 myCV.html
 myCVdd.html
 __pycache__
+page.html
+tests.py
