@@ -7,69 +7,69 @@ from bs4 import BeautifulSoup
 
 
 class MediaWikiError(Exception):
-    """
-    Raised when the MediaWiki API returns an error.
-    """
-    def __init__(self, message, errors):
-        super(MediaWikiError, self).__init__(message)
-        self.errors = errors
+	"""
+	Raised when the MediaWiki API returns an error.
+	"""
+	def __init__(self, message, errors):
+		super(MediaWikiError, self).__init__(message)
+		self.errors = errors
 
 class LoopException(Exception):
-    """
-    Raised when a loop is detected.
-    """
-    pass
+	"""
+	Raised when a loop is detected.
+	"""
+	pass
 
 class InvalidPageNameError(Exception):
-    """
-    Raised when an invalid page name is
-    passed to self.trace().
-    """
-    pass
+	"""
+	Raised when an invalid page name is
+	passed to self.trace().
+	"""
+	pass
 
 class LinkNotFoundError(Exception):
-    """
-    Raised when no valid link is found
-    after parsing.
-    """
-    pass
+	"""
+	Raised when no valid link is found
+	after parsing.
+	"""
+	pass
 
 @staticmethod
-    def strip_parentheses(string):
-        """
-        Remove parentheses from a string, leaving
-        parentheses between <tags> in place
+	def strip_parentheses(string):
+		"""
+		Remove parentheses from a string, leaving
+		parentheses between <tags> in place
 
-        Args:
-            string: the string to remove parentheses from
-        Returns:
-            the processed string after removal of parentheses
-        """
-        p = a = 0
-        result = ''
-        for c in string:
-            # When outside of parentheses within <tags>
-            if p < 1:
-                if c == '<':
-                    a += 1
-                if c == '>':
-                    a -= 1
+		Args:
+			string: the string to remove parentheses from
+		Returns:
+			the processed string after removal of parentheses
+		"""
+		p = a = 0
+		result = ''
+		for c in string:
+			# When outside of parentheses within <tags>
+			if p < 1:
+				if c == '<':
+					a += 1
+				if c == '>':
+					a -= 1
 
-            # When outside of <tags>
-            if a < 1:
-                if c == '(':
-                    p += 1
-                if p > 0:
-                    result += ' '
-                else:
-                    result += c
-                if c == ')':
-                    p -= 1
-            # When inside of <tags>
-            else:
-                result +=c
+			# When outside of <tags>
+			if a < 1:
+				if c == '(':
+					p += 1
+				if p > 0:
+					result += ' '
+				else:
+					result += c
+				if c == ')':
+					p -= 1
+			# When inside of <tags>
+			else:
+				result +=c
 
-        return result
+		return result
 
 @staticmethod
 def valid_page_name(page):
