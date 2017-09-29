@@ -1,6 +1,0 @@
-firstname = "Brian"
-title = "CV PRO"
-name = "Young"
-age = "28"
-profession = "Engineer"
-score = "42"
