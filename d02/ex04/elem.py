@@ -23,7 +23,6 @@ class Elem:
 		self.tag = tag
 		self.attr = attr
 		self.content = []
-
 		if content:
 			self.add_content(content)
 		elif content is not None:
