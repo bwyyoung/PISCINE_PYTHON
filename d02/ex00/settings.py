@@ -1,0 +1,6 @@
+title = "CV PRO"
+firstname = "Brian"
+name = "Young"
+age = "28"
+profession = "Engineer"
+score = "42"

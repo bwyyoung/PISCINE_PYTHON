@@ -1,8 +1,11 @@
-Ask maxime about d01/ex07. Why am i Wrong here?
 
 d00 -  (100)
 d01 -  (94)
+Ask maxime about d01/ex07. Why am i Wrong here?
+Are hash comments allowed, or must we use """
 d02 -  (69)
+
+
 d03 -  (80)
 d04 -  (74)
 d05 -  (55)

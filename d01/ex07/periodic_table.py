@@ -7,7 +7,6 @@ def string_to_dict(line):
 	for data in second_split:
 		third_split = data.split(":")
 		my_dict[third_split[0].strip(" ")] = third_split[1].strip(" \n")
-
 	return my_dict
 
 
@@ -47,18 +46,26 @@ def footer(f):
 
 
 def write_to_file(tab):
-	with open("periodic_table.html", "w") as f:
-		header(f)
-		body(f, tab)
-		footer(f)
+	try:
+		with open("periodic_table.html", "w") as f:
+			header(f)
+			body(f, tab)
+			footer(f)
+	except FileNotFoundError as e:
+		print("File {0} Not Created".format(e.filename))
+		exit(1)
 
 def read_file():
-	with open("periodic_table.txt") as f:
-		tab = []
-		for line in f:
-			my_dict = string_to_dict(line)
-			tab.append(my_dict)
-		return tab
+	try:
+		with open("periodic_table.txt") as f:
+			tab = []
+			for line in f:
+				my_dict = string_to_dict(line)
+				tab.append(my_dict)
+			return tab
+	except FileNotFoundError as e:
+		print("File {0} Not Found".format(e.filename))
+		exit(1)
 
 def generate_html():
 	tab = read_file()
