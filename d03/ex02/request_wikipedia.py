@@ -19,7 +19,7 @@ def process_request(req):
 	payload = {'action': 'query', 'titles': req, 'prop': 'revisions','rvprop': 'content', 'format': 'json'}
 	r = requests.get(url, params=payload)
 	if r.status_code != 200:
-		print("Erreur HTTP, code ", str(r.status_code))
+		print("Error HTTP with code ", str(r.status_code))
 		exit(1)
 	res = r.json()
 	if res.get('query'):
