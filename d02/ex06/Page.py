@@ -6,9 +6,9 @@ class Page:
 	def __init__(self, elem):
 		self.i =0
 		self.elem = elem
-		self.__valide_instance__ = [Html, Head, Body, Title, Meta, Img, Table, Th,
+		self.valid_list = [Html, Head, Body, Title, Meta, Img, Table, Th,
 		Tr, Td, Ul, Ol, Li, H1, H2, P, Div, Span, Hr, Br, Text]
-		self.__valide_instance_body_div__ = [H1, H2, Div, Table, Ul, Ol, Span, Text]
+		self.__valid_instance_body_div__ = [H1, H2, Div, Table, Ul, Ol, Span, Text]
 
 	def __str__(self):
 		s = ''
@@ -16,10 +16,10 @@ class Page:
 			s = '<!DOCTYPE html>\n'
 		return s + str(self.elem)
 
-	def __is_valide_instance__(self, node, instance):
+	def __v_instance__(self, node, instance):
 		return isinstance(node, instance)
 
-	def __is_valide_html__(self, node):
+	def __v_html__(self, node):
 		if len(node.content) != 2:
 			return False
 		if not isinstance(node.content[0], Head):
@@ -28,33 +28,33 @@ class Page:
 			return False
 		return True
 
-	def __is_valide_head__(self, node):
+	def __v_head__(self, node):
 		if len(node.content) != 1:
 			return False
 		return isinstance(node.content[0], Title)
 
-	def __is_valide_body_div__(self, node):
+	def __v_body_div__(self, node):
 		if len(node.content) == 0:
 			return True
 		check = True
 		for elem in node.content:
 			if check == False:
 				return False
-			for instance in self.__valide_instance_body_div__:
-				if self.__is_valide_instance__(elem, instance):
+			for instance in self.__valid_instance_body_div__:
+				if self.__v_instance__(elem, instance):
 					check = True
 					break;
 				check = False
 		return check
 
-	def __is_valide_node_with_text(self, node):
+	def __v_node_with_text(self, node):
 		if len(node.content) == 0:
 			return True
 		if len(node.content) > 1:
 			return False
 		return isinstance(node.content[0], Text)
 
-	def __is_valid_p__(self, node):
+	def __v_p__(self, node):
 		if len(node.content) == 0:
 			return True
 		for elem in node.content:
@@ -62,7 +62,7 @@ class Page:
 				return False
 		return True
 
-	def __is_valid_span__(self, node):
+	def __v_span__(self, node):
 		if len(node.content) == 0:
 			return True
 		for elem in node.content:
@@ -71,7 +71,7 @@ class Page:
 					return False
 		return True
 
-	def __is_valid_list__(self, node):
+	def __v_list__(self, node):
 		if len(node.content) < 1:
 			return False
 		for elem in node.content:
@@ -79,7 +79,7 @@ class Page:
 				return False
 		return True
 
-	def __is_valid_Tr__(self, node):
+	def __v_Tr__(self, node):
 		if len(node.content) < 1:
 			return False
 		if isinstance(node.content[0], Th):
@@ -94,7 +94,7 @@ class Page:
 			return True
 		return False
 
-	def __is_valid_table__(self, node):
+	def __v_table__(self, node):
 		if len(node.content) == 0:
 			return True
 		for elem in node.content:
@@ -103,30 +103,30 @@ class Page:
 		return True
 
 
-	def __is_valid_node__(self, node):
-		for instance in self.__valide_instance__:
-			if self.__is_valide_instance__(node, instance):
+	def __v_node__(self, node):
+		for instance in self.valid_list:
+			if self.__v_instance__(node, instance):
 				if isinstance(node, Html):
-					return self.__is_valide_html__(node)
+					return self.__v_html__(node)
 				if isinstance(node, Head):
-					return self.__is_valide_head__(node)
+					return self.__v_head__(node)
 				if isinstance(node, Body):
-					return self.__is_valide_body_div__(node)
+					return self.__v_body_div__(node)
 				if isinstance(node, Div):
-					return self.__is_valide_body_div__(node)
+					return self.__v_body_div__(node)
 				if (isinstance(node, Title) or isinstance(node, H1) or isinstance(node, H2)
 					or isinstance(node, Li) or isinstance(node, Th) or isinstance(node, Td)):
-					return self.__is_valide_node_with_text(node)
+					return self.__v_node_with_text(node)
 				if isinstance(node, P):
-					return self.__is_valid_p__(node)
+					return self.__v_p__(node)
 				if isinstance(node, Span):
-					return self.__is_valid_span__(node)
+					return self.__v_span__(node)
 				if isinstance(node, Ul) or isinstance(node, Ol):
-					return self.__is_valid_list__(node)
+					return self.__v_list__(node)
 				if isinstance(node, Tr):
-					return self.__is_valid_Tr__(node)
+					return self.__v_Tr__(node)
 				if isinstance(node, Table):
-					return self.__is_valid_table__(node)
+					return self.__v_table__(node)
 				if isinstance(node, Text):
 					return True
 		return False
@@ -134,7 +134,7 @@ class Page:
 	def __loop_tree__(self, elem):
 		if isinstance(elem, Text):
 			return True
-		if self.__is_valid_node__(elem) is False:
+		if self.__v_node__(elem) is False:
 			return False
 		for node in elem.content:
 			if self.__loop_tree__(node) is False:
