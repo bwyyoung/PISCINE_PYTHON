@@ -19,8 +19,6 @@ def web_request(req):
 	title = str(soup.title.string)
 	#print("debug : title = ", title)
 	title = title.replace(' - Wikipedia', '')
-
-
 	content = soup.find(id="mw-content-text")
 	p = content.p
 	b = p.b

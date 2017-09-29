@@ -6,209 +6,6 @@ import requests
 from bs4 import BeautifulSoup
 
 
-class MediaWikiError(Exception):
-	"""
-	Raised when the MediaWiki API returns an error.
-	"""
-	def __init__(self, message, errors):
-		super(MediaWikiError, self).__init__(message)
-		self.errors = errors
-
-class LoopException(Exception):
-	"""
-	Raised when a loop is detected.
-	"""
-	pass
-
-class InvalidPageNameError(Exception):
-	"""
-	Raised when an invalid page name is
-	passed to self.trace().
-	"""
-	pass
-
-class LinkNotFoundError(Exception):
-	"""
-	Raised when no valid link is found
-	after parsing.
-	"""
-	pass
-
-@staticmethod
-	def strip_parentheses(string):
-		"""
-		Remove parentheses from a string, leaving
-		parentheses between <tags> in place
-
-		Args:
-			string: the string to remove parentheses from
-		Returns:
-			the processed string after removal of parentheses
-		"""
-		p = a = 0
-		result = ''
-		for c in string:
-			# When outside of parentheses within <tags>
-			if p < 1:
-				if c == '<':
-					a += 1
-				if c == '>':
-					a -= 1
-
-			# When outside of <tags>
-			if a < 1:
-				if c == '(':
-					p += 1
-				if p > 0:
-					result += ' '
-				else:
-					result += c
-				if c == ')':
-					p -= 1
-			# When inside of <tags>
-			else:
-				result +=c
-
-		return result
-
-@staticmethod
-def valid_page_name(page):
-	"""
-	Checks for valid mainspace Wikipedia page name
-	"""
-	return (page.find('File:') == -1
-			and page.find('File talk') == -1
-			and page.find('Wikipedia:') == -1
-			and page.find('Wikipedia talk:') == -1
-			and page.find('Project:') == -1
-			and page.find('Project talk:') == -1
-			and page.find('Portal:') == -1
-			and page.find('Portal talk:') == -1
-			and page.find('Special:') == -1
-			and page.find('Help:') == -1
-			and page.find('Help talk:') == -1
-			and page.find('Template:') == -1
-			and page.find('Template talk:') == -1
-			and page.find('Talk:') == -1
-			and page.find('Category:') == -1
-			and page.find('Category talk:') == -1)
-
-
-def trace(self, page=None, whole_page=False):
-	"""
-	Visit the first non-italicized, not-within-parentheses
-		link of page recursively until the page self.end
-		(default: 'Philosophy') is reached.
-
-	Args:
-		page: The Wikipedia page name to start with
-		(optional, defaults to self.page)
-	Returns:
-		A generator with the page names generated in sequence
-		in real time (including self.end).
-	Raises:
-		MediaWikiError: if MediaWiki API responds with an error
-		requests.exceptions.ConnectionError: if cannot initiate request
-		LoopException: if a loop is detected
-		InvalidPageNameError: if invalid page name is passed as argument
-		LinkNotFoundError: if a valid link cannot be found for
-		page
-	"""
-
-	if page is None:
-		page = self.page
-
-	if not PhilosophyGame.valid_page_name(page):
-		raise InvalidPageNameError("Invalid page name '{0}'"
-								   .format(page))
-	params = dict(action='parse', page=page, prop='text',
-				  format='json', redirects=1)
-
-	if not whole_page:
-		params['section'] = 0
-
-	result = requests.get(self.BASE_URL, params=params,
-						  headers=self.HEADERS).json()
-
-	if 'error' in result:
-		raise MediaWikiError('MediaWiki error',
-							 result['error'])
-
-	title = result['parse']['title'].encode('utf-8')
-
-	# Don't yield if whole page requested
-	# (which should only be done as a second attempt)
-	if not whole_page:
-		yield title
-
-	# This needs to be done AFTER yield title
-	# (The only) normal termination
-	if not self.dont_stop and page == self.end:
-		return
-	raw_html = result['parse']['text']['*'].encode('utf-8')
-	html = lh.fromstring(raw_html)
-
-	# This takes care of most MediaWiki templates,
-	# images, red links, hatnotes, italicized text
-	# and anything that's strictly not text-only
-	for elm in html.cssselect('.reference,span,div,.thumb,'
-									  + 'table,a.new,i,#coordinates'):
-		elm.drop_tree()
-
-	html = lh.fromstring(PhilosophyGame.strip_parentheses(
-		lh.tostring(html)))
-	link_found = False
-	for elm, attr, link, pos in html.iterlinks():
-		# Because .iterlinks() picks up 'src' and the like too
-		if attr != 'href':
-			continue
-		next_page = link
-
-		# Must be a valid internal wikilink
-		if next_page[:len('/wiki/')] != '/wiki/':
-			continue
-
-		# Extract the Wikipedia page name
-		next_page = next_page[len('/wiki/'):]
-
-		# Decode escaped characters
-		next_page = urllib.unquote(next_page)
-
-		# Skip non-valid names
-		if not PhilosophyGame.valid_page_name(next_page):
-			continue
-
-		# Links use an underscore ('_')
-		# instead of a space (' '), this
-		# fixes that
-		next_page = next_page.replace('_', ' ')
-
-		# Eliminate named anchor, if any
-		pos = next_page.find('#')
-		if pos != -1:
-			next_page = next_page[:pos]
-
-		# Detect loop
-		if next_page in self.visited:
-			raise LoopException('Loop detected')
-
-		link_found = True
-		self.link_count += 1
-		self.visited.append(page)
-
-		for m in self.trace(next_page):
-			yield m
-
-		break
-	if not link_found:
-		if whole_page:
-			raise LinkNotFoundError(
-				'No valid link found in page "{0}"'.format(
-					page.encode('utf-8')))
-		else:
-			for m in self.trace(page, whole_page=True):
-				yield m
-
 def web_request(req):
 	url = 'https://en.wikipedia.org/wiki/' + req
 	r = requests.get(url)
@@ -218,7 +15,19 @@ def web_request(req):
 		else:
 			print('HTTP error ', str(r.status_code))
 		exit(1)
-	valid_page_name(url)
+	soup = BeautifulSoup(r.text, 'html.parser')
+	content = soup.find(id="mw-content-text")
+	for para in content.find_all('p'):
+		for link in para.find_all('a', attrs={}):
+			if not link['href'].startswith('/wiki/'):
+				continue
+			if str(link).find('title') > 0:
+				target = link['title']
+				if target:
+					if not target.startswith('Help:'):
+						return target
+	print('It leads to a dead end !')
+	exit(1)
 
 
 def process_request(req):

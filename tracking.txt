@@ -10,6 +10,8 @@ d03 -  (80)
 ex01 - https://stackoverflow.com/questions/24257803/distutilsoptionerror-must-supply-either-home-or-prefix-exec-prefix-not-both
 ex02 -    python3 -m pip install --user --install-option="--prefix=" requests dewiki
 ex03 - https://codereview.stackexchange.com/questions/114537/getting-to-wikipedias-philosophy-article-using-python
+https://xefer.com/wikipedia
+
 d04 -  (74)
 d05 -  (55)
 d06 -  (57)
