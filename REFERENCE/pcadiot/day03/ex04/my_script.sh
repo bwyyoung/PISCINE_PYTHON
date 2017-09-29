@@ -8,6 +8,9 @@ pip3 install -r django_venv/requirement.txt
 
 cd django_venv
 
-source bin/activate
+python3 manage.py runserver 127.0.0.1:8000
+
+
+##source bin/activate
 
 
