@@ -65,8 +65,10 @@ def process_request(req):
 		print(road)
 	print(str(len(roads)) + " roads from " + roads[0] + " to philosophy")
 
+
 def usage():
 	print("Usage : python3 roads_to_philosophy.py string_search_query")
+
 
 if __name__ == '__main__':
 	if len(sys.argv) == 2:
