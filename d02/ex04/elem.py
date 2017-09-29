@@ -26,7 +26,7 @@ class Elem:
 
 		if content:
 			self.add_content(content)
-		elif content != None:
+		elif content is not None:
 			if not isinstance(content, Text):
 				raise Elem.ValidationError
 		self.tag_type = tag_type
@@ -72,8 +72,8 @@ class Elem:
 
 if __name__ == '__main__':
 	e = Elem(tag='html',
-				content=[Elem(tag='head', content=Elem(tag='title',
-				content=Text('"Hello Ground!"'))),Elem(tag='body',
-				content=[Elem(tag='h1', content=Text('"Oh no, not again!"')),
-				Elem(tag='img', tag_type='simple', attr={'src': 'http://i.imgur.com/pfp3T.jpg'})])])
+		content=[Elem(tag='head', content=Elem(tag='title',
+		content=Text('"Hello Ground!"'))),Elem(tag='body',
+		content=[Elem(tag='h1', content=Text('"Oh no, not again!"')),
+		Elem(tag='img', tag_type='simple', attr={'src': 'http://i.imgur.com/pfp3T.jpg'})])])
 	print(e)
