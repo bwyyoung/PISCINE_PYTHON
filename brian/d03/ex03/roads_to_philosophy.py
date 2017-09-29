@@ -6,6 +6,28 @@ import requests
 from bs4 import BeautifulSoup
 
 
+def valid_page_name(page):
+	"""
+	Checks for valid mainspace Wikipedia page name
+	"""
+	return (page.find('File:') == -1
+			and page.find('File talk') == -1
+			and page.find('Wikipedia:') == -1
+			and page.find('Wikipedia talk:') == -1
+			and page.find('Project:') == -1
+			and page.find('Project talk:') == -1
+			and page.find('Portal:') == -1
+			and page.find('Portal talk:') == -1
+			and page.find('Special:') == -1
+			and page.find('Help:') == -1
+			and page.find('Help talk:') == -1
+			and page.find('Template:') == -1
+			and page.find('Template talk:') == -1
+			and page.find('Talk:') == -1
+			and page.find('Category:') == -1
+			and page.find('Category talk:') == -1)
+
+
 def web_request(req):
 	url = 'https://en.wikipedia.org/wiki/' + req
 	r = requests.get(url)
@@ -25,7 +47,8 @@ def web_request(req):
 				target = link['title']
 				if target:
 					if not target.startswith('Help:'):
-						return target
+						if valid_page_name(target):
+							return target
 	print('It leads to a dead end !')
 	exit(1)
 
