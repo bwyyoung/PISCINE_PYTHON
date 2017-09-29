@@ -6,7 +6,7 @@ class Page:
 	def __init__(self, elem):
 		self.i =0
 		self.elem = elem
-		self.valid_list = [Html, Head, Body, Title, Meta, Img, Table, Th,
+		self.valid_elem = [Html, Head, Body, Title, Meta, Img, Table, Th,
 		Tr, Td, Ul, Ol, Li, H1, H2, P, Div, Span, Hr, Br, Text]
 		self.__valid_instance_body_div__ = [H1, H2, Div, Table, Ul, Ol, Span, Text]
 
@@ -104,7 +104,7 @@ class Page:
 
 
 	def __v_node__(self, node):
-		for instance in self.valid_list:
+		for instance in self.valid_elem:
 			if self.__v_instance__(node, instance):
 				if isinstance(node, Html):
 					return self.__v_html__(node)
