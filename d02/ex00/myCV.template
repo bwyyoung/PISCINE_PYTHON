@@ -13,8 +13,8 @@
     </head> 
     <body> 
     <h1>{title}</h1>
-    <h2>Prénom : {firstname}</h2>
-    <h2>Nom :  {name}</h2>
+    <h2>Name : {firstname}</h2>
+    <h2>Given Name :  {name}</h2>
     <table class="identity">
         <tr>
             <th>Information</th><th>Description</th>

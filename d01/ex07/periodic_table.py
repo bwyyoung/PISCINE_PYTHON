@@ -10,7 +10,6 @@ def string_to_dict(line):
 	return my_dict
 
 
-
 def content(f, tab):
 	previous = 0
 	s = "<table>"
@@ -30,16 +29,19 @@ def content(f, tab):
 	s += "</table>"	
 	f.write(s)
 
+
 def header(f):
 	f.write("<!DOCTYPE html>\n")
 	f.write("<html lang='en'>\n")
 	f.write("<head>\n<meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Periodic table</title>\n")
 	f.write("<style>table {	width: 100%;} td {border: 1px solid black; padding:10px} </style></head>\n")
 
+
 def body(f, tab):
 	f.write("<body>\n")
 	content(f, tab)
 	f.write("</body>\n")
+
 
 def footer(f):
 	f.write("</html>\n")
@@ -55,6 +57,7 @@ def write_to_file(tab):
 		print("File {0} Not Created".format(e.filename))
 		exit(1)
 
+
 def read_file():
 	try:
 		with open("periodic_table.txt") as f:
@@ -66,6 +69,7 @@ def read_file():
 	except FileNotFoundError as e:
 		print("File {0} Not Found".format(e.filename))
 		exit(1)
+
 
 def generate_html():
 	tab = read_file()

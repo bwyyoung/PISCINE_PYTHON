@@ -1,17 +1,18 @@
 import sys
 
 states = {
-"Oregon" : "OR",
-"Alabama" : "AL",
-"New Jersey": "NJ",
-"Colorado" : "CO"
+	"Oregon" : "OR",
+	"Alabama" : "AL",
+	"New Jersey": "NJ",
+	"Colorado" : "CO"
 }
 capital_cities = {
-"OR": "Salem",
-"AL": "Montgomery",
-"NJ": "Trenton",
-"CO": "Denver"
+	"OR": "Salem",
+	"AL": "Montgomery",
+	"NJ": "Trenton",
+	"CO": "Denver"
 }
+
 
 def find_state(cap):
 	for abbrev, capital in capital_cities.items():
@@ -21,12 +22,14 @@ def find_state(cap):
 					return [capital, state]
 	return None
 
+
 def find_capital_city(state):
 	for state_key in states:
 		if state_key.lower() == state.lower():
 			if capital_cities.get(states[state_key]):
 				return [capital_cities[states[state_key]], state_key]
 	return None
+
 
 def split_params(str):
 	values = str.split(",")
@@ -44,4 +47,4 @@ def split_params(str):
 
 if __name__ == '__main__' :
 	if len(sys.argv) == 2:
-	    split_params(sys.argv[1])
+		split_params(sys.argv[1])

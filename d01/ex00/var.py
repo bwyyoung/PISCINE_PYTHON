@@ -13,4 +13,4 @@ def my_var():
 	show_type(set())
 	
 if __name__ == '__main__' :
-    my_var()
+	my_var()

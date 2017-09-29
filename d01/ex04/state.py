@@ -1,17 +1,18 @@
 import sys
 
+
 def capital(cap):
 	states = {
-	"Oregon" : "OR",
-	"Alabama" : "AL",
-	"New Jersey": "NJ",
-	"Colorado" : "CO"
+		"Oregon" : "OR",
+		"Alabama" : "AL",
+		"New Jersey": "NJ",
+		"Colorado" : "CO"
 	}
 	capital_cities = {
-	"OR": "Salem",
-	"AL": "Montgomery",
-	"NJ": "Trenton",
-	"CO": "Denver"
+		"OR": "Salem",
+		"AL": "Montgomery",
+		"NJ": "Trenton",
+		"CO": "Denver"
 	}
 	for abbrev, capital in capital_cities.items():
 		if cap == capital:
@@ -22,4 +23,4 @@ def capital(cap):
 	print("Unknown capital city")
 if __name__ == '__main__' :
 	if len(sys.argv) == 2:
-	    capital(sys.argv[1])
+		capital(sys.argv[1])

@@ -1,17 +1,18 @@
 import sys
 
+
 def capital_city(state):
-	states = {
-	"Oregon" : "OR",
-	"Alabama" : "AL",
-	"New Jersey": "NJ",
-	"Colorado" : "CO"
-	}
 	capital_cities = {
-	"OR": "Salem",
-	"AL": "Montgomery",
-	"NJ": "Trenton",
-	"CO": "Denver"
+		"OR": "Salem",
+		"AL": "Montgomery",
+		"NJ": "Trenton",
+		"CO": "Denver"
+	}
+	states = {
+		"Oregon": "OR",
+		"Alabama": "AL",
+		"New Jersey": "NJ",
+		"Colorado": "CO"
 	}
 	if not states.get(state):
 		print("Unknown state")
@@ -21,6 +22,6 @@ def capital_city(state):
 	else:
 		print("Error : no capital for this state!")
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
 	if len(sys.argv) == 2:
-	    capital_city(sys.argv[1])
+		capital_city(sys.argv[1])
