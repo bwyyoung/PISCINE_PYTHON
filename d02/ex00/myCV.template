@@ -26,7 +26,7 @@
             <td>Profession</td><td>{profession}</td>
         </tr>
         <tr>
-            <td>Score à 42</td><td>{score}</td>
+            <td>Score at 42</td><td>{score}</td>
         </tr>
     </table>
     </body> 

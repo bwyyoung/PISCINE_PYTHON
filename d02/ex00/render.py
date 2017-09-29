@@ -28,7 +28,6 @@ class Render(FileReader):
 		except FileNotFoundError as e:
 			print("File {0} Not found".format(e.filename))
 			exit(1)
-
 		f_html.close()
 
 class Settings(FileReader):
