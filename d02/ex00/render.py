@@ -64,5 +64,5 @@ if __name__ == '__main__' :
 		try:
 				render(sys.argv[1])
 		except Exception as e:
-			print("File {0} Not found".format(e.filename))
+			print("Unknown Error: {0}".format(sys.exc_info()[0]))
 			exit(1)
