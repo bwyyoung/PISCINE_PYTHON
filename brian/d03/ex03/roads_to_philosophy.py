@@ -57,6 +57,7 @@ def process_request(req):
 	roads = [req]
 	while (req.lower() != 'philosophy'):
 		req = web_request(req)
+		#print("debug req: " + req)
 		if req in roads:
 			print('It leads to an infinite loop !')
 			exit(1)
