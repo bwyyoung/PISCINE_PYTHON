@@ -12,4 +12,3 @@ def opener():
 		print 'Error, file not present'
 
 opener()
-	
