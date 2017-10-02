@@ -13,11 +13,11 @@ def hist_filename():
 
 
 def read_history():
-	histo = []
+	hist_list = []
 	if os.path.isfile(hist_filename()):
 		with open(hist_filename()) as f:
-			histo = f.readlines()
-	return histo
+			hist_list = f.readlines()
+	return hist_list
 
 
 def add_history(msg):
