@@ -17,6 +17,9 @@ ex04 - brew install postgresql@9.5
 .bashrc ---> export PATH=$PATH:/usr/local/opt/postgresql\@9.5/bin/
 
 d04 -  (74)
+
+ex03 -- I NEED HELP HERE MAXIME
+
 d05 -  (55)
 d06 -  (57)
 d07 -  (57)

@@ -1,6 +1,7 @@
 bit.ly/1O72s3U
 
 
+   pip install  --user --install-option="--prefix=" pseudo-python
 
 
 

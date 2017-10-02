@@ -64,7 +64,7 @@ def process_request(req):
 		roads.append(req)
 	for road in roads:
 		print(road)
-	print(str(len(roads)) + " roads from " + roads[0] + " to philosophy")
+	print(str(len(roads)) + " roads from " + roads[0] + " to philosophy !")
 
 
 def usage():
