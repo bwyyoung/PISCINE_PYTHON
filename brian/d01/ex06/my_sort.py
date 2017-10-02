@@ -1,4 +1,4 @@
-def dico():
+def dictionary():
 	d = {
 		'Hendrix' : '1942',
 		'Allman' : '1946',
@@ -23,13 +23,15 @@ def dico():
 	}
 	return d
 
+
 def printer(d):
 	for key, value in d:
 		print(key)
 
+
 def starter():
 	tmp = {}
-	sorted_name = sorted(dico().items(), key=lambda t: t[0])
+	sorted_name = sorted(dictionary().items(), key=lambda t: t[0])
 	sorted_date = sorted(sorted_name, key=lambda t: t[1])
 	printer(sorted_date)
 
