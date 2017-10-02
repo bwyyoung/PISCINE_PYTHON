@@ -4,7 +4,6 @@ import datetime
 import os.path
 from django.conf import settings
 
-# Create your views here.
 
 def hist_filename():
 	hist = getattr(settings, "HISTORY_FILE", None)
@@ -15,7 +14,7 @@ def hist_filename():
 
 def read_history():
 	histo = []
-	if os.path.isfile(hist_filename()) : # on ne lit que si le fichier existe
+	if os.path.isfile(hist_filename()):
 		with open(hist_filename()) as f:
 			histo = f.readlines()
 	return histo
