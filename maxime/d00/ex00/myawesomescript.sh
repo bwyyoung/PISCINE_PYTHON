@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-curl $1 2>&1 | grep 'moved here' | cut -d \" -f 2
+curl -I -s  $1 | grep Location | cut -d " " -f 2
