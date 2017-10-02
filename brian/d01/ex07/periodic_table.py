@@ -61,11 +61,11 @@ def write_to_file(tab):
 def read_file():
 	try:
 		with open("periodic_table.txt") as f:
-			tab = []
+			file_lines = []
 			for line in f:
 				my_dict = string_to_dict(line)
-				tab.append(my_dict)
-			return tab
+				file_lines.append(my_dict)
+			return file_lines
 	except FileNotFoundError as e:
 		print("File {0} Not Found".format(e.filename))
 		exit(1)
