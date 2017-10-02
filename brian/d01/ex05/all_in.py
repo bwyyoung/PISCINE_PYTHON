@@ -2,7 +2,6 @@ import sys
 
 
 def find_state(cap,  states, capital_cities):
-
 	for abbrev, capital in capital_cities.items():
 		if cap.lower() == capital.lower():
 			for state, abbreviation in states.items():
