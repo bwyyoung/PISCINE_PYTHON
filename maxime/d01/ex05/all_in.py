@@ -19,7 +19,7 @@ def cities():
 	return capital_cities
 
 def printer(city, state):
-	print ('{} is the capital of {}'.format(city, state))
+	print('{} is the capital of {}'.format(city, state))
 
 def state_from_capital(city):
 	for key, value in cities().items():
@@ -48,7 +48,7 @@ def finder(array):
 			elif s != -1:
 				printer(s[0], s[1])
 			else:
-				print ('{0} is neither a capital city nor a state'.format(item))
+				print('{0} is neither a capital city nor a state'.format(item))
 
 if __name__ == '__main__' :
 	if len(sys.argv) == 2 and sys.argv[1].find(',,') == -1:
