@@ -21,7 +21,7 @@ def cities():
 def find_name(abbr):
 	for key, value in states().items():
 		if value == abbr:
-			print key
+			print(key)
 			return
 
 def finder(city):
@@ -31,9 +31,6 @@ def finder(city):
 			return
 	print("Unknown capital city")
 
-def starter():
+if __name__ == '__main__' :
 	if len(sys.argv) == 2:
 		finder(sys.argv[1])
-	return
-
-starter()

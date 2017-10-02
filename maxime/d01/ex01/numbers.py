@@ -9,6 +9,7 @@ def opener():
 			for line in f:
 				splitter(line)
 	except:
-		print 'Error, file not present'
+		print('Error: check numbers.txt file')
 
-opener()
+if __name__ == '__main__' :
+	opener()

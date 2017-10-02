@@ -29,7 +29,8 @@ def printer():
 	]
 	dico = larousse(d)
 	for key, value in dico.items():
-		print "%d : %s" % (key, value)
+		print("%d : %s" % (key, value))
 	return
 
-printer()
+if __name__ == '__main__' :
+	printer()

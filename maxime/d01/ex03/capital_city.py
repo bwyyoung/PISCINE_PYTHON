@@ -24,11 +24,8 @@ def finder(state):
 		print("Unknown state")
 		return 
 	capital = cities().get(abbr)
-	print capital
+	print(capital)
 
-def starter():
+if __name__ == '__main__':
 	if len(sys.argv) == 2:
 		finder(sys.argv[1])
-	return
-
-starter()

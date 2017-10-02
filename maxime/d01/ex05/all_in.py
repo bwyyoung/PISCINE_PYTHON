@@ -19,22 +19,22 @@ def cities():
 	return capital_cities
 
 def printer(city, state):
-	print "%s is the capital of %s" % (city, state)
+	print ('{} is the capital of {}'.format(city, state))
 
 def state_from_capital(city):
 	for key, value in cities().items():
 		if value.lower() == city.lower():
 			for state, abbr in states().items():
 				if abbr.lower() == key.lower():
-					return [city, state]
+					return [cities()[abbr], state]
 	return -1
-	
+
 def capital_from_state(state):
 	for key, value in states().items():
 		if key.lower() == state.lower():
 			for abbr, capital in cities().items():
 				if abbr == value:
-					return [capital, state]
+					return [capital, cities()[abbr]]
 	return -1
 
 def finder(array):
@@ -48,18 +48,9 @@ def finder(array):
 			elif s != -1:
 				printer(s[0], s[1])
 			else:
-				print "%s is neither a capital city nor a state" % (item)
+				print ('{0} is neither a capital city nor a state'.format(item))
 
-def checker(s):
-	if s.find(',,') == -1:
-		array = s.split(',')
+if __name__ == '__main__' :
+	if len(sys.argv) == 2 and sys.argv[1].find(',,') == -1:
+		array = sys.argv[1].split(',')
 		finder(array)
-	else:
-		print 'Bad argv'
-
-def starter():
-	if len(sys.argv) == 2:
-		checker(sys.argv[1])
-	return
-
-starter()
