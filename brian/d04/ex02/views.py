@@ -6,21 +6,23 @@ from django.conf import settings
 
 # Create your views here.
 
-hist_filename = getattr(settings, "HISTORY_FILE", None)
-if not hist_filename:
-	hist_filename = 'default.log'
+def hist_filename():
+	hist = getattr(settings, "HISTORY_FILE", None)
+	if not hist:
+		hist = 'default.log'
+	return hist
 
 
 def read_history():
 	histo = []
-	if os.path.isfile(hist_filename) : # on ne lit que si le fichier existe
-		with open(hist_filename) as f:
+	if os.path.isfile(hist_filename()) : # on ne lit que si le fichier existe
+		with open(hist_filename()) as f:
 			histo = f.readlines()
 	return histo
 
 
 def add_history(msg):
-	f = open(hist_filename,'a')
+	f = open(hist_filename(),'a')
 	f.write(msg+'\n')
 	f.close()
 
