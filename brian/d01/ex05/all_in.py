@@ -1,20 +1,8 @@
 import sys
 
-states = {
-	"Oregon" : "OR",
-	"Alabama" : "AL",
-	"New Jersey": "NJ",
-	"Colorado" : "CO"
-}
-capital_cities = {
-	"OR": "Salem",
-	"AL": "Montgomery",
-	"NJ": "Trenton",
-	"CO": "Denver"
-}
 
+def find_state(cap,  states, capital_cities):
 
-def find_state(cap):
 	for abbrev, capital in capital_cities.items():
 		if cap.lower() == capital.lower():
 			for state, abbreviation in states.items():
@@ -23,7 +11,7 @@ def find_state(cap):
 	return None
 
 
-def find_capital_city(state):
+def find_capital_city(state, states, capital_cities):
 	for state_key in states:
 		if state_key.lower() == state.lower():
 			if capital_cities.get(states[state_key]):
@@ -32,12 +20,24 @@ def find_capital_city(state):
 
 
 def split_params(str):
+	states = {
+		"Oregon": "OR",
+		"Alabama": "AL",
+		"New Jersey": "NJ",
+		"Colorado": "CO"
+	}
+	capital_cities = {
+		"OR": "Salem",
+		"AL": "Montgomery",
+		"NJ": "Trenton",
+		"CO": "Denver"
+	}
 	values = str.split(",")
 	for val in values:
 		stripped_val = val.strip(" ")
 		if stripped_val:
-			ret_state = find_state(stripped_val)
-			ret_cap = find_capital_city(stripped_val)
+			ret_state = find_state(stripped_val, states, capital_cities)
+			ret_cap = find_capital_city(stripped_val, states, capital_cities)
 			if ret_state:
 				print("{0} is the capital of {1}".format(ret_state[0], ret_state[1]))
 			elif ret_cap:
