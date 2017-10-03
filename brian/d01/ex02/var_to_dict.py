@@ -36,5 +36,5 @@ def var_to_dict():
 			val += v + " "
 		print("%s : %s" % (cle, val))
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
 	var_to_dict()
