@@ -6,9 +6,6 @@ class Intern:
 	def __str__(self):
 		return self.Name
 
-	def work(self):
-		raise Exception("I’m just an intern, I can’t do that...")
-
 	class Coffee:
 		def __str__(self):
 			return "This is the worst coffee you ever tasted."
@@ -16,16 +13,16 @@ class Intern:
 	def make_coffee(self):
 		return self.Coffee()
 
+	def work(self):
+		raise Exception("I’m just an intern, I can’t do that...")
+
 if __name__ == '__main__':
 	mark = Intern("Mark")
 	no_name = Intern()
-
 	print(mark)
 	print(no_name)
-
 	caf = mark.make_coffee()
 	print(caf)
-
 	try:
 		no_name.work()
 	except Exception as e:

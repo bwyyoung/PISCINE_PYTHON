@@ -1,9 +1,21 @@
 import random
 import beverages
 
+
 class CoffeeMachine:
 	def __init__(self):
 		self.countUsage = 0
+
+	class EmptyCup(beverages.Beverage):
+		price = 0.90
+		name = "empty cup"
+
+		def description(self):
+			return "An empty cup?! Gimme my money back!"
+
+	class BrokenMachineException(Exception):
+		def __init__(self, msg= "This coffee machine has to be repaired."):
+			super().__init__(self, msg)
 
 	def repair(self):
 		self.countUsage = 0
@@ -19,16 +31,6 @@ class CoffeeMachine:
 			res = self.EmptyCup()
 		return res
 
-	class EmptyCup(beverages.Beverage):
-		price = 0.90
-		name = "empty cup"
-
-		def description(self):
-			return "An empty cup?! Gimme my money back!"
-
-	class BrokenMachineException(Exception):
-		def __init__(self, msg= "This coffee machine has to be repaired."):
-			super().__init__(self, msg)
 
 
 if __name__ == '__main__':

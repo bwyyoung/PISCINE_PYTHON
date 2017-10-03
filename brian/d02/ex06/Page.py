@@ -47,37 +47,6 @@ class Page:
 				check = False
 		return check
 
-	def __v_node_with_text(self, node):
-		if len(node.content) == 0:
-			return True
-		if len(node.content) > 1:
-			return False
-		return isinstance(node.content[0], Text)
-
-	def __v_p__(self, node):
-		if len(node.content) == 0:
-			return True
-		for elem in node.content:
-			if not isinstance(elem, Text):
-				return False
-		return True
-
-	def __v_span__(self, node):
-		if len(node.content) == 0:
-			return True
-		for elem in node.content:
-			if not isinstance(elem, Text):
-				if not isinstance(elem, P):
-					return False
-		return True
-
-	def __v_list__(self, node):
-		if len(node.content) < 1:
-			return False
-		for elem in node.content:
-			if not isinstance(elem, Li):
-				return False
-		return True
 
 	def __v_Tr__(self, node):
 		if len(node.content) < 1:
@@ -99,6 +68,39 @@ class Page:
 			return True
 		for elem in node.content:
 			if not isinstance(elem, Tr):
+				return False
+		return True
+
+	def __v_p__(self, node):
+		if len(node.content) == 0:
+			return True
+		for elem in node.content:
+			if not isinstance(elem, Text):
+				return False
+		return True
+
+	def __v_span__(self, node):
+		if len(node.content) == 0:
+			return True
+		for elem in node.content:
+			if not isinstance(elem, Text):
+				if not isinstance(elem, P):
+					return False
+		return True
+
+	def __v_node_with_text(self, node):
+		if len(node.content) == 0:
+			return True
+		if len(node.content) > 1:
+			return False
+		return isinstance(node.content[0], Text)
+
+
+	def __v_list__(self, node):
+		if len(node.content) < 1:
+			return False
+		for elem in node.content:
+			if not isinstance(elem, Li):
 				return False
 		return True
 
