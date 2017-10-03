@@ -1,5 +1,3 @@
-
-
 def var_to_dict():
 	d = [
 		('Hendrix', '1942'),
@@ -23,18 +21,18 @@ def var_to_dict():
 		('Thompson', '1949'),
 		('Burton', '1939')
 	]
-	mdict = dict()
-	for couple in d:
-		if mdict.get(couple[1]):
-			mdict[couple[1]].append(couple[0])
+	dct = dict()
+	for key, value in d:
+		if dct.get(value):
+			dct[value].append(key)
 		else:
-			mdict[couple[1]] = [couple[0]]
+			dct[value] = [key]
 
-	for cle in mdict:
+	for key in dct:
 		val = ""
-		for v in mdict[cle]:
+		for v in dct[key]:
 			val += v + " "
-		print("%s : %s" % (cle, val))
+		print("{} : {}".format(key, val[:-1]))
 
 if __name__ == '__main__':
 	var_to_dict()
