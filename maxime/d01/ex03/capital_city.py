@@ -1,5 +1,6 @@
 import sys
 
+
 def states():
 	states = {
 		"Oregon"    : "OR",
@@ -9,6 +10,7 @@ def states():
 	}
 	return states
 
+
 def cities():
 	capital_cities = {
 		"OR": "Salem",
@@ -17,6 +19,7 @@ def cities():
 		"CO": "Denver"
 	}
 	return capital_cities
+
 
 def finder(state):
 	abbr = states().get(state)
