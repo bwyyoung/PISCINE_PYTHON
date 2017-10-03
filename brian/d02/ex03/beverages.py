@@ -1,5 +1,5 @@
 
-class Beverage:
+class HotBeverage:
 	price = 0.30
 	name = "hot beverage"
 
@@ -11,7 +11,7 @@ class Beverage:
 		return "Just some hot water in a cup."
 
 
-class Coffee(Beverage):
+class Coffee(HotBeverage):
 	price = 0.40
 	name = "coffee"
 
@@ -19,7 +19,7 @@ class Coffee(Beverage):
 		return "A coffee, to stay awake."
 
 
-class Cappuccino(Beverage):
+class Cappuccino(HotBeverage):
 	price = 0.45
 	name = "cappuccino"
 
@@ -27,7 +27,7 @@ class Cappuccino(Beverage):
 		return "Un po' di Italia nella sua tazza!"
 
 
-class Chocolate(Beverage):
+class Chocolate(HotBeverage):
 	price = 0.50
 	name = "chocolate"
 
@@ -35,5 +35,5 @@ class Chocolate(Beverage):
 		return "Chocolate, sweet chocolate..."
 
 
-class Tea(Beverage):
+class Tea(HotBeverage):
 	name = "tea"

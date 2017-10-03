@@ -6,7 +6,7 @@ class CoffeeMachine:
 	def __init__(self):
 		self.countUsage = 0
 
-	class EmptyCup(beverages.Beverage):
+	class EmptyCup(beverages.HotBeverage):
 		price = 0.90
 		name = "empty cup"
 
