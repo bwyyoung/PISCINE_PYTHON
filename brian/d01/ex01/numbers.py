@@ -9,5 +9,5 @@ def read_file(file):
 		print("File {0} not found".format(e.filename))
 		exit(1)
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
 	read_file("numbers.txt")
