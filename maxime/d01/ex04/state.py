@@ -1,5 +1,6 @@
 import sys
 
+
 def states():
 	states = {
 		"Oregon"    : "OR",
@@ -8,6 +9,7 @@ def states():
 		"Colorado"  : "CO"
 	}
 	return states
+
 
 def cities():
 	capital_cities = {
@@ -18,11 +20,13 @@ def cities():
 	}
 	return capital_cities
 
+
 def find_name(abbr):
 	for key, value in states().items():
 		if value == abbr:
 			print(key)
 			return
+
 
 def finder(city):
 	for key, value in cities().items():
