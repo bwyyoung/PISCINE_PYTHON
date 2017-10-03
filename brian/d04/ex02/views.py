@@ -29,7 +29,7 @@ def add_history(msg):
 def ex02(request):
 	msgs = read_history()
 	if request.method == 'POST':
-		form = MyForm (request.POST)
+		form = MyForm(request.POST)
 		if form.is_valid():
 			date = datetime.datetime.now()
 			msg = form.cleaned_data['message']

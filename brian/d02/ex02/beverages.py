@@ -1,33 +1,22 @@
+
 class Beverage:
 	price = 0.30
-	name = "hot beverage" 
-
-	def description(self):
-		return "Just some hot water in a cup."
+	name = "hot beverage"
 
 	def __str__(self):
 		s = "name : " + self.name + "\nprice : " + str(self.price) + "\ndescription : " + self.description()
 		return s
 
+	def description(self):
+		return "Just some hot water in a cup."
+
 
 class Coffee(Beverage):
 	price = 0.40
-	name = "coffee" 
+	name = "coffee"
 
 	def description(self):
 		return "A coffee, to stay awake."
-
-
-class Tea(Beverage):
-	name = "tea" 
-
-
-class Chocolate(Beverage):
-	price = 0.50
-	name = "chocolate" 
-
-	def description(self):
-		return "Chocolate, sweet chocolate..."
 
 
 class Cappuccino(Beverage):
@@ -36,6 +25,18 @@ class Cappuccino(Beverage):
 
 	def description(self):
 		return "Un po' di Italia nella sua tazza!"
+
+
+class Chocolate(Beverage):
+	price = 0.50
+	name = "chocolate"
+
+	def description(self):
+		return "Chocolate, sweet chocolate..."
+
+
+class Tea(Beverage):
+	name = "tea"
 
 
 if __name__ == '__main__' :

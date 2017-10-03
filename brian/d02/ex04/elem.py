@@ -12,12 +12,12 @@ class Text(str):
 
 
 class Elem:
-	class ValidationError(Exception):
-		def __init__(self):
-			self.message = "This content is not a Text or an Elem."
-
-		def __str__(self):
-			return self.message
+	@staticmethod
+	def check_type(content):
+		return (isinstance(content, Elem) or type(content) == Text or
+				(type(content) == list and all([type(elem) == Text or
+												isinstance(elem, Elem)
+												for elem in content])))
 
 	def __init__(self, tag='div', attr={}, content=None, tag_type='double'):
 		self.tag = tag
@@ -31,22 +31,22 @@ class Elem:
 		self.tag_type = tag_type
 
 	def __str__(self):
-		attr = self.__make_attr()
+		attr = self.make_attr()
 		if self.tag_type == 'double':
 			result = "<" + self.tag + attr + ">"
-			result += self.__make_content()
+			result += self.make_content()
 			result += "</" + self.tag + ">"
 		elif self.tag_type == 'simple':
 			result = "<" + self.tag + attr + ">"
 		return result
 
-	def __make_attr(self):
+	def make_attr(self):
 		result = ''
 		for pair in sorted(self.attr.items()):
 			result += ' ' + str(pair[0]) + '="' + str(pair[1]) + '"'
 		return result
 
-	def __make_content(self):
+	def make_content(self):
 		if len(self.content) == 0:
 			return ''
 		result = '\n'
@@ -62,12 +62,12 @@ class Elem:
 		elif content != Text(''):
 			self.content.append(content)
 
-	@staticmethod
-	def check_type(content):
-		return (isinstance(content, Elem) or type(content) == Text or
-				(type(content) == list and all([type(elem) == Text or
-												isinstance(elem, Elem)
-												for elem in content])))
+	class ValidationError(Exception):
+		def __init__(self):
+			self.message = "This content is not a Text or an Elem."
+
+		def __str__(self):
+			return self.message
 
 if __name__ == '__main__':
 	e = Elem(tag='html',
