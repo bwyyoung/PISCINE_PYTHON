@@ -27,4 +27,10 @@ d08 -  (100)
 d09 -
 
 rush00 -  (105)
+   sudo -H pip install -r requirements.txt
+   sudo -H virtualenv -p python3 rush00
+   sudo -H pip install --upgrade virtualenv
+
+
+
 rush01 -  (65)
