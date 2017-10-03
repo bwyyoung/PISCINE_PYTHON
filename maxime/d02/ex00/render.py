@@ -29,6 +29,7 @@ def create_html(settings, file):
 	html = open('myCV.html', 'w')
 	with open(file, 'r') as template:
 		for line in template :
+			line = line.replace("{title}", settings['title'])
 			line = line.replace("{lastname}", settings['lastname'])
 			line = line.replace("{firstname}", settings['firstname'])
 			line = line.replace("{age}", settings['age'])
