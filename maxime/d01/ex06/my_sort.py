@@ -23,9 +23,11 @@ def dico():
 	}
 	return d
 
+
 def printer(d):
 	for key, value in d:
 		print(key)
+
 
 def starter():
 	tmp = {}

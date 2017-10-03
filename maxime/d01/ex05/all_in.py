@@ -1,5 +1,6 @@
 import sys
 
+
 def states():
 	states = {
 		"Oregon"    : "OR",
@@ -8,6 +9,7 @@ def states():
 		"Colorado"  : "CO"
 	}
 	return states
+
 
 def cities():
 	capital_cities = {
@@ -18,8 +20,10 @@ def cities():
 	}
 	return capital_cities
 
+
 def printer(city, state):
 	print('{} is the capital of {}'.format(city, state))
+
 
 def state_from_capital(city):
 	for key, value in cities().items():
@@ -29,6 +33,7 @@ def state_from_capital(city):
 					return [cities()[abbr], state]
 	return -1
 
+
 def capital_from_state(state):
 	for key, value in states().items():
 		if key.lower() == state.lower():
@@ -36,6 +41,7 @@ def capital_from_state(state):
 				if abbr == value:
 					return [capital, cities()[abbr]]
 	return -1
+
 
 def finder(array):
 	for item in array:

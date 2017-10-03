@@ -75,5 +75,5 @@ def generate_html():
 	tab = read_file()
 	write_to_file(tab)
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
 	generate_html()

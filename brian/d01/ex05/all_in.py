@@ -44,6 +44,6 @@ def split_params(str):
 			else:
 				print("{0} is neither a capital city nor a state".format(stripped_val))
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
 	if len(sys.argv) == 2 and sys.argv[1].find(',,') == -1:
 		split_params(sys.argv[1])
