@@ -1,0 +1,42 @@
+->	list = [(1,2), (3,4), (5,6)]
+
+->	new_list = [(a, b) for a, b in list]
+[(1, 2), (3, 4), (5, 6)]
+
+->	[(b, a) for a, b in list]
+[(2, 1), (4, 3), (6, 5)]
+
+
+
+->	[(b, a) for (a, b) in list]
+[(2, 1), (4, 3), (6, 5)]
+
+equivalent for in
+->	list2 = []
+->	for a, b in list:
+		list2.append((b, a))
+
+-> list2
+[(2, 1), (4, 3), (6, 5)]
+
+->	[(b, a) for (a, b) in list]
+[(2, 1), (4, 3), (6, 5)]
+
+
+->	[(b+1, a+2) for (a, b) in list]
+[(3, 3), (5, 5), (7, 7)]
+
+->	{b+1: a+2 for (a, b) in list}
+{3: 3, 5: 5, 7: 7}
+
+equivalent en for in
+-> dct = {}
+-> for k, v in list:
+		dct[v+1] = k + 2
+
+
+afficher le resultat
+-> dct
+{3: 3, 5: 5, 7: 7}
+-> list
+[(1, 2), (3, 4), (5, 6)]

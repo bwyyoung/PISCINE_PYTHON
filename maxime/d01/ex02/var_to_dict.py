@@ -21,9 +21,9 @@ def var_to_dict():
 		('Thompson', '1949'),
 		('Burton', '1939')
 	]
-	dct = dict()
+	dct = {}
 	for key, value in d:
-		if dct.get(value):
+		if value in dct:
 			dct[value].append(key)
 		else:
 			dct[value] = [key]
