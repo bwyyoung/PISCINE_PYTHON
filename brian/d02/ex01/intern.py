@@ -26,4 +26,4 @@ if __name__ == '__main__':
 	try:
 		no_name.work()
 	except Exception as e:
-		print("Exception Found!")
+		print(e)
