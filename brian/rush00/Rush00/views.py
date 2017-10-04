@@ -5,7 +5,7 @@ from .forms import MyForm
 
 import random
 
-from .movieclass import Gestion
+from .movieclass import Datamanager
 
 def calcul(StrenghtMovie, StrenghtPlayer):
 	C = 50 - (float(StrenghtMovie) * 10) + (StrenghtPlayer * 5)
@@ -23,7 +23,7 @@ def capture(C):
 def New(request):
 	print (request)
 	if request.GET.get('a') == 'a':
-		db = Gestion()
+		db = Datamanager()
 		db.load_default_settings()
 		db.save("save.pickle")
 		return redirect('/worldmap')
@@ -42,10 +42,9 @@ def Options(request):
 	return render(request, "Rush00/options.html")
 
 def OptionsSave(request):
-	dirtybase = Gestion()
+	dirtybase = Datamanager()
 	slotsMy = []
 	slotsmon = []
-	# progression = [3]
 	slots = ["slotA.pickle", "slotB.pickle", "slotC.pickle"]
 	slotscut = ["slotA", "slotB", "slotC"]
 	i = 0
@@ -55,7 +54,7 @@ def OptionsSave(request):
 		slotsmon.append([slot[0:5], len(dirtybase.Moviemons)])
 		i+=1
 
-	db = Gestion()
+	db = Datamanager()
 	db.load("save.pickle")
 	index = db.index;
 
@@ -63,7 +62,7 @@ def OptionsSave(request):
 	if request.GET.get('a') == 'up':
 		db.index = (db.index - 1) % 3
 	if request.GET.get('a') == 'down':
-		db.index = (db.index +1) % 3
+		db.index = (db.index + 1) % 3
 
 	if request.GET.get('process') == '1':
 		db.save(slots[db.index])
@@ -81,7 +80,7 @@ def OptionsSave(request):
 
 
 def OptionsLoad(request):
-	dirtybase = Gestion()
+	dirtybase = Datamanager()
 	slotsMy = []
 	slotsmon = []
 	# progression = [3]
@@ -94,7 +93,7 @@ def OptionsLoad(request):
 		slotsmon.append([slot[0:5], len(dirtybase.Moviemons)])
 		i+=1
 
-	db = Gestion()
+	db = Datamanager()
 	db.load("save.pickle")
 	index = db.index;
 
@@ -118,7 +117,7 @@ def OptionsLoad(request):
 
 
 def Moviedex(request):
-	db = Gestion()
+	db = Datamanager()
 	db.load("save.pickle")
 	newdico = {}
 
@@ -148,7 +147,7 @@ def Moviedex(request):
 	else:
 		return render(request, "Rush00/moviedex.html")
 def MoviedexDetail(request, moviemon_id):
-	db = Gestion()
+	db = Datamanager()
 	db.load("save.pickle")
 
 	if request.GET.get('a') == 'b':
@@ -158,7 +157,7 @@ def MoviedexDetail(request, moviemon_id):
 def Battle(request, moviemon_id):
 	remarque = ""
 	print (request, moviemon_id)
-	db = Gestion()
+	db = Datamanager()
 	db.load("save.pickle")
 
 	if moviemon_id not in db.My_Moviemons:
@@ -170,11 +169,8 @@ def Battle(request, moviemon_id):
 		else:
 			return redirect('/')
 		if request.GET.get('a') == 'a':
-			#print(db.Moviemons[moviemon_id])
-			# print(imdbRating)
 			if db.movieballs > 0:
 				db.movieballs -= 1
-				# print(db.Moviemons[moviemon_id]['imdbRating'])
 				if (capture(calcul(db.Moviemons[moviemon_id]['imdbRating'], db.Strenght))):
 					db.My_Moviemons.append(moviemon_id)
 					remarque = moviemon_id +  " Captured !"
@@ -216,7 +212,7 @@ print('MAPMIN = ', MAPMIN)
 print('MAPMAX = ', MAPMAX)
 
 def Worldmap(request):
-	db = Gestion()
+	db = Datamanager()
 	db.load("save.pickle")
 	choix = ['left', 'right','up', 'down']
 	# if request.GET in choix
@@ -272,8 +268,8 @@ def Worldmap(request):
 	db.save("save.pickle")
 
 	return render(request, "Rush00/game.html", {
-													"LATI":db.coord[0],
-													"LONG":db.coord[1],
+													"latitude":db.coord[0],
+													"longitude":db.coord[1],
 													"movieball": db.movieballs,
 													"movietitle":db.MoviemonBattle,
 													"etat":etat,

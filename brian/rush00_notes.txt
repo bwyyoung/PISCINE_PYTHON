@@ -1,0 +1,85 @@
+
+   background: url("{% static "splash_screen.jpg" %}")no-repeat 50% 50% fixed;
+   background-size: cover;
+   sudo -H pip install -r requirements.txt
+   sudo -H virtualenv -p python3 rush00
+   sudo -H pip install --upgrade virtualenv
+   sudo -H pip install --upgrade  --ignore-installed requests
+
+
+# django_rush00
+Ceci est le rendu du rush00 de la Piscine Python Django de l'Ecole 42
+
+Pour installer :
+1/ commencer par creer un environnement virtuel : virtualenv -p python3 rush00
+2/ cd rush00
+3/ activer le virtual env : source bin/activate
+4/ faire un clone du repository : git clone xxxx rush00
+5/ cd rush00
+6/ installer les packages : pip install -r requirements.txt
+7/ lancer ./manage.py migrate
+8/ lancer ./manage.py runserver
+
+Il ne reste plus qu'a ouvrir l'url http://127.0.0.1:8000/ ...
+
+NB:  les fichiers de sauvegarde semblent ne pas etre rechargeables...
+
+
+https://pocketmortys.net/music?download=1:a-ton-of-bad-memories
+https://pocketmortys.net/music?download=1:a-ton-of-bad-memories
+https://pocketmortys.net/music?download=2:alien-jazz-rap
+https://pocketmortys.net/music?download=2:alien-jazz-rap
+https://pocketmortys.net/music?download=3:bad-couples-therapy
+https://pocketmortys.net/music?download=3:bad-couples-therapy
+https://pocketmortys.net/music?download=4:bar-music
+https://pocketmortys.net/music?download=4:bar-music
+https://pocketmortys.net/music?download=5:bbq-background
+https://pocketmortys.net/music?download=5:bbq-background
+https://pocketmortys.net/music?download=6:beth-bird-person-background
+https://pocketmortys.net/music?download=6:beth-bird-person-background
+https://pocketmortys.net/music?download=7:blips-and-chitz
+https://pocketmortys.net/music?download=7:blips-and-chitz
+https://pocketmortys.net/music?download=8:come-together
+https://pocketmortys.net/music?download=8:come-together
+https://pocketmortys.net/music?download=9:derelict-ship
+https://pocketmortys.net/music?download=9:derelict-ship
+https://pocketmortys.net/music?download=10:do-you-feel-it
+https://pocketmortys.net/music?download=10:do-you-feel-it
+https://pocketmortys.net/music?download=11:do-you-feel-it-tinny
+https://pocketmortys.net/music?download=11:do-you-feel-it-tinny
+https://pocketmortys.net/music?download=12:elevator-music
+https://pocketmortys.net/music?download=12:elevator-music
+https://pocketmortys.net/music?download=13:escape-part-1
+https://pocketmortys.net/music?download=13:escape-part-1
+https://pocketmortys.net/music?download=14:get-schwifty
+https://pocketmortys.net/music?download=14:get-schwifty
+https://pocketmortys.net/music?download=15:go-son-go
+https://pocketmortys.net/music?download=15:go-son-go
+https://pocketmortys.net/music?download=16:goodbye-moon-men
+https://pocketmortys.net/music?download=16:goodbye-moon-men
+https://pocketmortys.net/music?download=17:head-bent-over
+https://pocketmortys.net/music?download=17:head-bent-over
+https://pocketmortys.net/music?download=18:human-muzak
+https://pocketmortys.net/music?download=18:human-muzak
+https://pocketmortys.net/music?download=19:let-me-out-dance
+https://pocketmortys.net/music?download=19:let-me-out-dance
+https://pocketmortys.net/music?download=20:main-theme
+https://pocketmortys.net/music?download=20:main-theme
+https://pocketmortys.net/music?download=21:party-music
+https://pocketmortys.net/music?download=21:party-music
+https://pocketmortys.net/music?download=22:party-music-full
+https://pocketmortys.net/music?download=22:party-music-full
+https://pocketmortys.net/music?download=23:put-on-your-collars
+https://pocketmortys.net/music?download=23:put-on-your-collars
+https://pocketmortys.net/music?download=24:roy
+https://pocketmortys.net/music?download=24:roy
+https://pocketmortys.net/music?download=25:slow-jam
+https://pocketmortys.net/music?download=25:slow-jam
+https://pocketmortys.net/music?download=26:stealth-infiltration
+https://pocketmortys.net/music?download=26:stealth-infiltration
+https://pocketmortys.net/music?download=27:tiny-rick-song
+https://pocketmortys.net/music?download=27:tiny-rick-song
+https://pocketmortys.net/music?download=28:way-to-go-summer
+https://pocketmortys.net/music?download=28:way-to-go-summer
+https://pocketmortys.net/music?download=29:wedding-music
+https://pocketmortys.net/music?download=29:wedding-music

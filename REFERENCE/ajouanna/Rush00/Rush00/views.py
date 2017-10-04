@@ -272,7 +272,7 @@ def Worldmap(request):
 	db.save("save.pickle")
 
 	return render(request, "Rush00/game.html", {
-													"LATI":db.coord[0],
+													"latitude":db.coord[0],
 													"LONG":db.coord[1],
 													"movieball": db.movieballs,
 													"movietitle":db.MoviemonBattle,
