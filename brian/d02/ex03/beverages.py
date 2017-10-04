@@ -4,7 +4,7 @@ class HotBeverage:
 	name = "hot beverage"
 
 	def __str__(self):
-		s = "name : " + self.name + "\nprice : " + str(self.price) + "\ndescription : " + self.description()
+		s = "name : " + self.name + "\nprice : " + '%.2f' % self.price + "\ndescription : " + self.description()
 		return s
 
 	def description(self):
