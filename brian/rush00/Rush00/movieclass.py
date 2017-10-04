@@ -1,7 +1,8 @@
 import sys, json, requests, pickle, random, os
 from django.conf import settings
 
-class Gestion(object):
+
+class Datamanager(object):
 
 	# mapx = 50
 	# mapy = 50
@@ -89,6 +90,7 @@ class Gestion(object):
 
 	def load(self, name):
 		info = []
+		print("Data Loading....... 1")
 		print(name,os.path.isfile(name))
 		if os.path.isfile(name):
 			with (open(name, "rb")) as openfile:
@@ -132,7 +134,7 @@ class Gestion(object):
 		self.set_default()
 		F = open("info.pickle", "wb")
 		for item in self.lst:
-			r = requests.get("http://www.omdbapi.com/?t=" + item + "&apikey=xxxxxxxx")
+			r = requests.get("http://www.omdbapi.com/?t=" + item + "&apikey=41f80ff7")
 			if r.status_code != 200:
 				raise Exception ("Error: " + str(r.status_code))
 			Moviemon = json.loads(r.text)
@@ -164,6 +166,7 @@ class Gestion(object):
 		return list(info[3].keys())
 
 	def save(self, name):
+
 		F = open(name, "wb")
 		info = [
 				self.coord,

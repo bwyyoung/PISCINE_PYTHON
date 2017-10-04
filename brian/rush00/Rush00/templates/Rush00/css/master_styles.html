@@ -1,0 +1,264 @@
+<style>
+
+	{% load static %}
+
+body
+{
+    background: url('../../static/background_wallpaper.jpg')
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+.game_area
+{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center;
+    justify-content: center;
+}
+.game_area2
+{
+    height: 50%;
+    padding: 0;
+    margin: 0;
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: flex-start;
+    justify-content: center;
+	width: 100%;
+}
+
+
+.row {
+    width: auto;
+    justify-content: center;
+}
+.row2 {
+	padding-top: 23%;
+}
+
+.game_area-logo{
+    align-self: flex-start;
+    position:relative;
+    background-image:url("{% static "logo.png" %}") ;
+    width: 538px;
+    height: 145px;
+}
+.game_area-gameview{
+    position:relative;
+    background-image:url("{% static "gameboy.png" %}") ;
+    width: 575px;
+    height: 943px;
+    background-size:cover;
+}
+
+#backview{
+    position:relative;
+    padding-top: 20px;
+    height: 50%;
+    width: 100%;
+}
+
+#splash_screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.game_area-gameview-screen{
+	align-self: flex-start;
+	justify-content: center;
+	background-color: #FFFF00;
+    background: url("{% static "splash_screen.jpg" %}");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    overflow: hidden;
+     color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    max-width:298px;
+    max-height:268px;
+  	width:298px;
+	height:268px;
+}
+
+.control_area{
+	height: 31%;
+	width: 100%;
+    padding: 0;
+    margin: 0;
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	justify-content: space-between;
+	width: 100%;
+}
+
+
+.d_pad
+{
+padding-top: 20%;
+    padding-left: 15%;
+	margin-right: auto;
+}
+.buttons_a_b
+{
+	padding-top: 20%;
+    padding-right: 15%;
+margin-left: auto;
+}
+
+
+.control
+{
+
+}
+
+.control a {
+    color: transparent;
+}
+.control #btn_up{
+    left: 60px;
+    bottom: 63px;
+}
+.control #btn_down{
+    left: 59px;
+    bottom: 21px;
+}
+.control #btn_right{
+    left: 79px;
+    bottom: 42px;
+}
+
+.control #btn_left{
+        left: 37px;
+        bottom: 42px;
+}
+
+
+.control #btn_a{
+    left: 259px;
+    bottom: 58px;
+    height: 25px;
+    width: 40px;
+}
+
+.control #btn_b{
+    left: 223px;
+    bottom: 42px;
+    height: 25px;
+    width: 30px;
+}
+
+.control_area-lower
+{
+	   padding: 0;
+    margin: 0;
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	justify-content: space-between;
+
+	width: 100%;
+	height: 18% !important;
+}
+
+.control_btn_select{
+	width: 10%;
+	padding-left: 30%;
+	margin-right: auto;
+}
+
+.control_btn_start{
+width: 10%;
+	padding-right: 40%;
+	margin-left: auto;
+}
+
+.player{
+    background-image: url("{% static "avatar.png" %}");
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    top: 130px;
+    left: 130px;
+    position: absolute;
+}
+
+.moviballs{
+    position: absolute;
+    left: 18px;
+    padding-left: 10px;
+    bottom: 0;
+    height: 25px;
+    width: 253px;
+    color: #fff;
+    background-color: #333;
+    opacity: 0.5;
+}
+
+.message {
+    position: absolute;
+    top: 83px;
+    left: 50px;
+    width: 190px;
+    background: #333;
+    height: 89px;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.6;
+}
+
+.coord {
+    position: absolute;
+    right: -5px;
+    bottom: 249px;
+    background-color: #333;
+    opacity: 0.8;
+}
+
+.imgmon{
+    background-size: cover;
+    width: 51px;
+    height: 77px;
+    float: left;
+}
+
+.tuning {
+    border:1px solid #f00;
+}
+.miniaturedetail {
+    font-size: 8px;
+    position: absolute;
+    top: 13px;
+    right: 8px;
+    width: 113px;
+}
+
+.poster{
+    background-size: cover;
+    width: 141px;
+    height: 211px;
+    position: absolute;
+}
+
+p.test{
+    font-weight: bold;
+    color: #f95;
+    text-decoration: underline;
+}
+</style>
