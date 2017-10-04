@@ -47,4 +47,3 @@ if __name__ == '__main__':
 	print(tea)
 	print(chocolate)
 	print(cappuccino)
-	
