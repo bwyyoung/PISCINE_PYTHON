@@ -1,3 +1,11 @@
+I am feeling really stressed out about these guys around us...
+ They want to look at our project, but I am afraid they will sabotage us.
+Anyway, please keep our dev secrets to yourself ok?
+
+I know. but jealous folks will always want you to fail.
+People can be assholes, u dont know.
+Anyway just be careful when u r working. dont show the references
+
 Stuff to do:
 - rename classes
 - fix save file LOADING and getting into the GAME

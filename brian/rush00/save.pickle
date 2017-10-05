@@ -1,8 +1,8 @@
 (lp0
 (lp1
-F1.352083
-aF103.819836
-aaI100
+F1.3540829999999997
+aF103.820836
+aaI96
 a(lp2
 a(dp3
 VZombie_Nation
@@ -1331,10 +1331,9 @@ sVYear
 p682
 V2016
 p683
-ssaS''
-p684
+ssag258
 aI0
-aI50
-aI50
+aI51
+aI48
 aI0
 a.
