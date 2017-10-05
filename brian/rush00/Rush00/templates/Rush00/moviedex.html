@@ -3,7 +3,7 @@
 {% block content %}
 
 	<div class="game_area-gameview-screen" id="moviedex_detail">
-			<center>MOVIEDEX</center>
+		<center><span class="read_text">MOVIEDEX</span></center>
 			{%for title,value in dico.items %}
 				<div class ="imgmon {% if title == cursor %} tuning {% endif %}" style="background-image:url('{{value.Poster}}');">
 

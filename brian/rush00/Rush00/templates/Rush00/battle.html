@@ -4,13 +4,13 @@
 
 	<div class="game_area-gameview-screen" id="battle_screen">
 
-	<img src="{{ Dictionary_Movie.Poster }}" width="60"/>Rating : {{ Dictionary_Movie.imdbRating }}    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp; &nbsp;    Luck : {{ Luck }} %
+	<img src="{{ Dictionary_Movie.Poster }}" width="60"/><span class="read_text">Rating : {{ Dictionary_Movie.imdbRating }}    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp; &nbsp;    Luck : {{ Luck }} %</span>
 	<br/>
-	<b><u>{{ Dictionary_Movie.Title }}</b></u><br/>
-	{{ Dictionary_Movie.Plot }}
+		<b><u><span class="read_text">{{ Dictionary_Movie.Title }},</span></b></u><br/>
+		<span class="read_text">{{ Dictionary_Movie.Plot }}</span>
 	{% if battle_commentary|length > 0 %}
-		<div class="message"> {{ battle_commentary }}</div>{% endif %}
+		<div class="message"> <span class="read_text">{{ battle_commentary }}</span></div>{% endif %}
 	<div class="moviballs"> Movieballs: {{ movieballs }}</div>
 	</div>
 

@@ -1,17 +1,19 @@
 {% extends "Rush00/layout.html" %}
 
 {% block content %}
-<center>LOAD GAME
+	<center><span class="read_text">LOAD GAME</span>
 <br /><br />
 
 
-	Select SAVE SLOT to LOAD<br />
-{% for key, value in slotsMy %}
+	<span class="read_text">Select SAVE SLOT to LOAD</span><br />
+{% for key, value in data_player %}
 	<p class= "{% if name == key %} test {% endif %}">
+	<span class="read_text">
 			{{ key }}.pickle | {{value}} /
-			{% for kay, valay in slotsmon %}
-				{% if key == kay %} {{valay}} {% endif %}
+			{% for kay, value in data_monster %}
+				{% if key == kay %} {{value}} {% endif %}
 			{% endfor %}
+	</span>
 	</p>
 {% endfor %}
 </center>

@@ -1,58 +1,93 @@
 import sys, json, requests, pickle, random, os
 from django.conf import settings
+from pygame import mixer
+
+class Singleton(type):
+	_instances = {}
+	def __call__(cls, *args, **kwargs):
+		if cls not in cls._instances:
+			cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+		return cls._instances[cls]
+
+class Soundmanager(object):
+	__metaclass__ = Singleton
+
+	def __init__(self):
+		print('init')
+		mixer.pre_init(48000, -16, 2, 2048)
+		mixer.init()
+	#	//file_path = '/path/to/sound.wav'
+	#/	#file_wav = wave.open(file_path)
+	#	frequency = file_wav.getframerate()
+
+	@classmethod
+	def play_song_main(cls):
+		mixer.music.load('Rush00/static/main_theme.mp3')
+		mixer.music.play(-1)
+
+	@classmethod
+	def play_song_world(cls):
+		mixer.music.load('Rush00/static/goodbye_moon_men.mp3')
+		mixer.music.play(-1)
+
+	@classmethod
+	def play_song_battle(cls):
+		mixer.music.load('Rush00/static/get_schwifty.mp3')
+		mixer.music.play(-1)
 
 
-class Datamanager(object):
 
-	# mapx = 50
-	# mapy = 50
-	#
-	# coord           = [48.8584, 2.2945]
-	# movieballs      = 100
-	# Moviemons       = {}
-	# My_Moviemons    = []
-	# MoviemonBattle  = ''
-	# Strenght        = 0
+class Datamanager:
+
+	def __init__(self):
+		print('Datamanager created')
+		params = getattr(settings, "MOVIEMON", None)
+		if not params:
+			print('Missing setting MOVIEMON')
+			movies = ['My Little Pony - Friendship is Magic']
+		else:
+			movies = params['MOVIES']
+		self.lst = movies
+		print('Movie list : ',self.lst)
+
 
 	@classmethod
 	def set_default(cls):
 		params = getattr(settings, "MOVIEMON", None)
 		if not params:
-			print('Missing setting MOVIEMON')
-			cls.mapx = 50 # par defaut
-			cls.mapy = 50 # par defaut
+			print('Missing settings for MOVIEMON')
+			cls.mapx = 50
+			cls.mapy = 50
 		else:
 			pos = params['INITIAL_PLAYER_POS']
 			cls.mapx = pos[0]
 			cls.mapy = pos[1]
-		print('Initial player position: ', cls.mapx, ", ", cls.mapy)
-
 		cls.coord           = [1.352083, 103.819836]
 		cls.movieballs      = 100
 		cls.Moviemons       = {}
 		cls.My_Moviemons    = []
 		cls.MoviemonBattle  = ''
-		cls.Strenght        = 0
+		cls.strength        = 0
 		cls.index 			= 0
 
 	@classmethod
 	def set_value(cls,
-					new_corrd,
+					new_coordinates,
 					new_movieballs,
 					new_Moviemons,
 					new_My_Moviemons,
 					new_MoviemonBattle = [],
-					new_Strenght = 0,
+					new_strength = 0,
 					new_mapx = 50,
 					new_mapy = 50,
 					new_index = 0):
 
-		cls.coord           = new_corrd
+		cls.coord           = new_coordinates
 		cls.movieballs      = new_movieballs
 		cls.Moviemons       = new_Moviemons
 		cls.My_Moviemons    = new_My_Moviemons
 		cls.MoviemonBattle  = new_MoviemonBattle
-		cls.Strenght        = new_Strenght
+		cls.strength        = new_strength
 		cls.mapx			= new_mapx
 		cls.mapy            = new_mapy
 		cls.index			= new_index
@@ -78,15 +113,6 @@ class Datamanager(object):
 	def del_battlemovie(cls, moviemon_id):
 		self.MoviemonBattle = ''
 
-	def __init__(self):
-		params = getattr(settings, "MOVIEMON", None)
-		if not params:
-			print('Missing setting MOVIEMON')
-			movies = ['My Little Pony - Friendship is Magic']
-		else:
-			movies = params['MOVIES']
-		self.lst = movies
-		print('Movie list : ',self.lst)
 
 	def load(self, name):
 		info = []
@@ -113,6 +139,7 @@ class Datamanager(object):
 			openfile.close()
 			return info[0]
 		return ("Free")
+		#return redirect('/worldmap')
 
 	def dump(self):
 		info = []
@@ -145,7 +172,7 @@ class Datamanager(object):
 				self.My_Moviemons,
 				self.Moviemons,
 				self.MoviemonBattle,
-				self.Strenght,
+				self.strength,
 				self.mapx,
 				self.mapy,
 				self.index
@@ -174,7 +201,7 @@ class Datamanager(object):
 				self.My_Moviemons,
 				self.Moviemons,
 				self.MoviemonBattle,
-				self.Strenght,
+				self.strength,
 				self.mapx,
 				self.mapy,
 				self.index

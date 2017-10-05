@@ -1,14 +1,9 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.conf import settings
-
 from .forms import MyForm
-
 import random
-
 from .movieclass import Datamanager
-
-
-
+from .movieclass import Soundmanager
 
 def New(request):
 	print (request)
@@ -16,9 +11,11 @@ def New(request):
 		db = Datamanager()
 		db.load_default_settings()
 		db.save("save.pickle")
+		Soundmanager().play_song_world()
 		return redirect('/worldmap')
 	if request.GET.get('a') == 'b':
 		return redirect('/options/load_game')
+	Soundmanager().play_song_main()
 	return render(request, "Rush00/new.html")
 
 
@@ -33,8 +30,8 @@ def Options(request):
 
 
 
-def calcul(StrenghtMovie, StrenghtPlayer):
-	C = 50 - (float(StrenghtMovie) * 10) + (StrenghtPlayer * 5)
+def calcul(strengthMovie, strengthPlayer):
+	C = 50 - (float(strengthMovie) * 10) + (strengthPlayer * 5)
 	if C < 1:
 		C = 1
 	if C > 90:
@@ -47,16 +44,16 @@ def capture(C):
 	return (False)
 
 def OptionsSave(request):
-	dirtybase = Datamanager()
-	slotsMy = []
-	slotsmon = []
+	my_database = Datamanager()
+	data_player = []
+	data_monster = []
 	slots = ["slotA.pickle", "slotB.pickle", "slotC.pickle"]
-	slotscut = ["slotA", "slotB", "slotC"]
+	save_slot_indices = ["slotA", "slotB", "slotC"]
 	i = 0
 	for slot in slots:
-		dirtybase.load(slot)
-		slotsMy.append([ slot[0:5], len(dirtybase.My_Moviemons)])
-		slotsmon.append([slot[0:5], len(dirtybase.Moviemons)])
+		my_database.load(slot)
+		data_player.append([ slot[0:5], len(my_database.My_Moviemons)])
+		data_monster.append([slot[0:5], len(my_database.Moviemons)])
 		i+=1
 
 	db = Datamanager()
@@ -81,21 +78,21 @@ def OptionsSave(request):
 		return redirect('/options/save_game?process=1')
 	if request.GET.get('a') == 'b':
 		return redirect('/options')
-	return render(request, "Rush00/optionsSave.html", {"slots":slots, "slotsmon":slotsmon,"slotsMy":slotsMy, "name":slotscut[db.index]})
+	return render(request, "Rush00/optionsSave.html", {"slots":slots, "data_monster":data_monster,"data_player":data_player, "name":save_slot_indices[db.index]})
 
 
 def OptionsLoad(request):
-	dirtybase = Datamanager()
-	slotsMy = []
-	slotsmon = []
+	my_database = Datamanager()
+	data_player = []
+	data_monster = []
 	# progression = [3]
 	slots = ["slotA.pickle", "slotB.pickle", "slotC.pickle"]
-	slotscut = ["slotA", "slotB", "slotC"]
+	save_slot_indices = ["slotA", "slotB", "slotC"]
 	i = 0
 	for slot in slots:
-		dirtybase.load(slot)
-		slotsMy.append([ slot[0:5], len(dirtybase.My_Moviemons)])
-		slotsmon.append([slot[0:5], len(dirtybase.Moviemons)])
+		my_database.load(slot)
+		data_player.append([ slot[0:5], len(my_database.My_Moviemons)])
+		data_monster.append([slot[0:5], len(my_database.Moviemons)])
 		i+=1
 
 	db = Datamanager()
@@ -110,6 +107,9 @@ def OptionsLoad(request):
 
 	if request.GET.get('process') == '1':
 		db.load(slots[db.index])
+		print('LOADED DATA')
+		Soundmanager().play_song_world()
+		return redirect('/worldmap')
 
 	db.save("save.pickle")
 	if request.GET.get('a') == 'start':
@@ -118,7 +118,7 @@ def OptionsLoad(request):
 		return redirect('/options/load_game?process=1')
 	if request.GET.get('a') == 'b':
 		return redirect('/options')
-	return render(request, "Rush00/optionsLoad.html", {"slots":slots, "slotsmon":slotsmon,"slotsMy":slotsMy, "name":slotscut[db.index]})
+	return render(request, "Rush00/optionsLoad.html", {"slots":slots, "data_monster":data_monster,"data_player":data_player, "name":save_slot_indices[db.index]})
 
 
 def Moviedex(request):
@@ -176,11 +176,11 @@ def Battle(request, moviemon_id):
 		if request.GET.get('a') == 'a':
 			if db.movieballs > 0:
 				db.movieballs -= 1
-				if (capture(calcul(db.Moviemons[moviemon_id]['imdbRating'], db.Strenght))):
+				if (capture(calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength))):
 					db.My_Moviemons.append(moviemon_id)
 					battle_commentary = moviemon_id +  " Captured !"
 					db.MoviemonBattle = ""
-					db.Strenght += 1
+					db.strength += 1
 			else:
 				print("Moquerie")
 				battle_commentary = "Dommage ! C'est vide ! B pour continuer ..."
@@ -188,6 +188,7 @@ def Battle(request, moviemon_id):
 	if request.GET.get('a') == 'b':
 		db.MoviemonBattle = []
 		db.save("save.pickle")
+		Soundmanager().play_song_world()
 		return redirect('/worldmap')
 
 	print("Print db.moviemon: ",moviemon_id , " : \n",db.Moviemons[moviemon_id])
@@ -200,8 +201,8 @@ def Battle(request, moviemon_id):
 		"Dictionary_Movie":db.Moviemons[moviemon_id],
 		"movieballs":db.movieballs,
 		"battle_commentary": battle_commentary,
-		"Strenght": db.Strenght,
-		"Luck" : calcul(db.Moviemons[moviemon_id]['imdbRating'], db.Strenght)
+		"strength": db.strength,
+		"Luck" : calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength)
 	})
 
 params = getattr(settings, "MOVIEMON", None)
@@ -266,6 +267,7 @@ def Worldmap(request):
 		etat = "attack"
 		print(db.MoviemonBattle)
 		if request.GET.get('a') == 'a':
+			Soundmanager().play_song_battle()
 			return redirect('/battle/'+db.MoviemonBattle)
 		elif request.GET.get('a') == 'b':
 			db.MoviemonBattle = ""
