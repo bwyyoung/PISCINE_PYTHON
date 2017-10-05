@@ -27,7 +27,7 @@ class Datamanager(object):
 			cls.mapy = pos[1]
 		print('Initial player position: ', cls.mapx, ", ", cls.mapy)
 
-		cls.coord           = [48.8584, 2.2945]
+		cls.coord           = [1.352083, 103.819836]
 		cls.movieballs      = 100
 		cls.Moviemons       = {}
 		cls.My_Moviemons    = []
@@ -82,7 +82,7 @@ class Datamanager(object):
 		params = getattr(settings, "MOVIEMON", None)
 		if not params:
 			print('Missing setting MOVIEMON')
-			movies = ['Manos: The Hands of Fate'] # par defaut
+			movies = ['My Little Pony - Friendship is Magic']
 		else:
 			movies = params['MOVIES']
 		self.lst = movies
@@ -96,7 +96,7 @@ class Datamanager(object):
 			with (open(name, "rb")) as openfile:
 				while True:
 					try:
-						print("Chargement fichier :", name);
+						print("Loading Game File -  :", name);
 						info.append(pickle.load(openfile))
 					except EOFError:
 						break

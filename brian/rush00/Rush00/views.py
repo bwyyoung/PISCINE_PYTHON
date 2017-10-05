@@ -7,18 +7,8 @@ import random
 
 from .movieclass import Datamanager
 
-def calcul(StrenghtMovie, StrenghtPlayer):
-	C = 50 - (float(StrenghtMovie) * 10) + (StrenghtPlayer * 5)
-	if C < 1:
-		C = 1
-	if C > 90:
-		C = 90
-	return C
 
-def capture(C):
-	if random.randint(0,100) < C:
-		return (True)
-	return (False)
+
 
 def New(request):
 	print (request)
@@ -40,6 +30,21 @@ def Options(request):
 	if request.GET.get('a') == 'b':
 		return redirect('/')
 	return render(request, "Rush00/options.html")
+
+
+
+def calcul(StrenghtMovie, StrenghtPlayer):
+	C = 50 - (float(StrenghtMovie) * 10) + (StrenghtPlayer * 5)
+	if C < 1:
+		C = 1
+	if C > 90:
+		C = 90
+	return C
+
+def capture(C):
+	if random.randint(0,100) < C:
+		return (True)
+	return (False)
 
 def OptionsSave(request):
 	dirtybase = Datamanager()
@@ -155,7 +160,7 @@ def MoviedexDetail(request, moviemon_id):
 	return render(request, "Rush00/moviedexdetail.html", {"detail": db.Moviemons[moviemon_id]})
 
 def Battle(request, moviemon_id):
-	remarque = ""
+	battle_commentary = ""
 	print (request, moviemon_id)
 	db = Datamanager()
 	db.load("save.pickle")
@@ -173,12 +178,12 @@ def Battle(request, moviemon_id):
 				db.movieballs -= 1
 				if (capture(calcul(db.Moviemons[moviemon_id]['imdbRating'], db.Strenght))):
 					db.My_Moviemons.append(moviemon_id)
-					remarque = moviemon_id +  " Captured !"
+					battle_commentary = moviemon_id +  " Captured !"
 					db.MoviemonBattle = ""
 					db.Strenght += 1
 			else:
 				print("Moquerie")
-				remarque = "Dommage ! C'est vide ! B pour continuer ..."
+				battle_commentary = "Dommage ! C'est vide ! B pour continuer ..."
 
 	if request.GET.get('a') == 'b':
 		db.MoviemonBattle = []
@@ -192,9 +197,9 @@ def Battle(request, moviemon_id):
 	# 	db.add_moviemons(moviemon_id)
 	db.save("save.pickle")
 	return render(request, "Rush00/battle.html", {
-		"DicoMovie":db.Moviemons[moviemon_id],
+		"Dictionary_Movie":db.Moviemons[moviemon_id],
 		"movieballs":db.movieballs,
-		"remarque": remarque,
+		"battle_commentary": battle_commentary,
 		"Strenght": db.Strenght,
 		"Luck" : calcul(db.Moviemons[moviemon_id]['imdbRating'], db.Strenght)
 	})

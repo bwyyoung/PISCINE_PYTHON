@@ -96,6 +96,20 @@ body
 	height:268px;
 }
 
+.game_area-gameview-screen #battle_screen{
+	    background: url("{% static "battle.png" %}");
+	 background-size:     cover;
+		background-repeat:   no-repeat;
+		background-position: center center;
+}
+
+.game_area-gameview-screen #moviedex_detail{
+	    background: url("{% static "moviedex.jpg" %}");
+	 background-size:     cover;
+		background-repeat:   no-repeat;
+		background-position: center center;
+}
+
 .control_area{
 	height: 31%;
 	width: 100%;
@@ -194,27 +208,27 @@ width: 10%;
     width: 30px;
     height: 30px;
     background-size: cover;
-    top: 130px;
-    left: 130px;
+	top: 26%;
+    left: 48%;
     position: absolute;
 }
 
 .moviballs{
     position: absolute;
-    left: 18px;
-    padding-left: 10px;
-    bottom: 0;
+  	top: 40%;
+    left: 28%;
     height: 25px;
     width: 253px;
     color: #fff;
     background-color: #333;
     opacity: 0.5;
+	text-align: center;
 }
 
 .message {
     position: absolute;
-    top: 83px;
-    left: 50px;
+	top: 28%;
+    left: 31%;
     width: 190px;
     background: #333;
     height: 89px;
@@ -242,11 +256,12 @@ width: 10%;
     border:1px solid #f00;
 }
 .miniaturedetail {
-    font-size: 8px;
     position: absolute;
-    top: 13px;
-    right: 8px;
-    width: 113px;
+	top: 14%;
+    right: 24%;
+    font-size: 0.8em;
+    width: 27%;
+    height: 29%;
 }
 
 .poster{
