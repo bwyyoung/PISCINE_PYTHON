@@ -45,3 +45,31 @@ ________________________________________________________________________________
 
 Pip https://www.zoomeranalytics.com/blog/pip-install-t
 http://docs.python-requests.org/en/master/user/quickstart/#make-a-request
+
+_________________________________________________________________________________
+
+Class notes
+
+>>> class Bob:
+...     i = 4
+...
+>>> bobi = Bob()
+>>> bobi.i
+4
+>>> boba = Bob()
+>>> boba.i
+4
+>>> bobi.i = 676
+>>> boba.i
+4
+>>> Bob.i
+4
+>>> Bob.i = 42
+>>> bobi.i
+676
+>>> bobu = Bob()
+>>> bobu.i
+42
+
+_________________________________________________________________________________
+
