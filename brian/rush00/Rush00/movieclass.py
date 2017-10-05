@@ -16,9 +16,6 @@ class Soundmanager(object):
 		print('init')
 		mixer.pre_init(48000, -16, 2, 2048)
 		mixer.init()
-	#	//file_path = '/path/to/sound.wav'
-	#/	#file_wav = wave.open(file_path)
-	#	frequency = file_wav.getframerate()
 
 	@classmethod
 	def play_song_main(cls):
