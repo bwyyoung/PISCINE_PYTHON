@@ -1,23 +1,23 @@
 {% extends "Rush00/layout.html" %}
 
 {% block content %}
-			<div class="game_area-gameview-screen" id="options">
+	<div class="game_area-gameview-screen" id="options">
 
-	<center><span class="read_text">LOAD GAME</span>
-<br /><br />
+		<center><span class="read_text">LOAD GAME</span>
+			<br /><br />
 
 
-	<span class="read_text">Select SAVE SLOT to LOAD</span><br />
-{% for key, value in data_player %}
-	<p class= "{% if name == key %} test {% endif %}">
+			<span class="read_text">Select SAVE SLOT to LOAD</span><br />
+			{% for key, value in data_player %}
+				<p class= "{% if name == key %} test {% endif %}">
 	<span class="read_text">
 			{{ key }}.pickle | {{value}} /
-			{% for kay, value in data_monster %}
-				{% if key == kay %} {{value}} {% endif %}
-			{% endfor %}
+		{% for kay, value in data_monster %}
+			{% if key == kay %} {{value}} {% endif %}
+		{% endfor %}
 	</span>
-	</p>
-{% endfor %}
-</center>
-			</div>
+				</p>
+			{% endfor %}
+		</center>
+	</div>
 {% endblock %}

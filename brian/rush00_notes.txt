@@ -1,10 +1,14 @@
-I am feeling really stressed out about these guys around us...
- They want to look at our project, but I am afraid they will sabotage us.
-Anyway, please keep our dev secrets to yourself ok?
+U need to please change the New, Load, etc.
+and if u can put them into different python folders for better organisation.
 
-I know. but jealous folks will always want you to fail.
-People can be assholes, u dont know.
-Anyway just be careful when u r working. dont show the references
+No, I already did change a few, but New is the old name.
+
+I trust your judgement. I didnt change these things because I wanted to give u somethings stable.
+Frankly, I didnt do a good job in the coding and i had to clean up a lot of bugs.
+my code crashed several times and i fixed the most severe ones.
+my code could not save/load properly.
+But pls double check to make sure that part is working ok.
+
 
 Stuff to do:
 - rename classes
