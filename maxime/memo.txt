@@ -40,3 +40,8 @@ afficher le resultat
 {3: 3, 5: 5, 7: 7}
 -> list
 [(1, 2), (3, 4), (5, 6)]
+
+_________________________________________________________________________________
+
+Pip https://www.zoomeranalytics.com/blog/pip-install-t
+http://docs.python-requests.org/en/master/user/quickstart/#make-a-request
