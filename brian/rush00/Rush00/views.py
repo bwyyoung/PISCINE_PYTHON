@@ -85,7 +85,6 @@ def OptionsLoad(request):
 	my_database = Datamanager()
 	data_player = []
 	data_monster = []
-	# progression = [3]
 	slots = ["slotA.pickle", "slotB.pickle", "slotC.pickle"]
 	save_slot_indices = ["slotA", "slotB", "slotC"]
 	i = 0
@@ -93,13 +92,12 @@ def OptionsLoad(request):
 		my_database.load(slot)
 		data_player.append([ slot[0:5], len(my_database.My_Moviemons)])
 		data_monster.append([slot[0:5], len(my_database.Moviemons)])
-		i+=1
+		i += 1
 
 	db = Datamanager()
 	db.load("save.pickle")
-	index = db.index;
-
-	db.index = index;
+	index = db.index
+	db.index = index
 	if request.GET.get('a') == 'up':
 		db.index = (db.index - 1) % 3
 	if request.GET.get('a') == 'down':
@@ -182,8 +180,7 @@ def Battle(request, moviemon_id):
 					db.MoviemonBattle = ""
 					db.strength += 1
 			else:
-				print("Moquerie")
-				battle_commentary = "Dommage ! C'est vide ! B pour continuer ..."
+				battle_commentary = "You ran out of Balls! Press B to quit battle..."
 
 	if request.GET.get('a') == 'b':
 		db.MoviemonBattle = []

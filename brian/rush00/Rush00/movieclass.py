@@ -22,22 +22,25 @@ class Soundmanager(object):
 
 	@classmethod
 	def play_song_main(cls):
+		mixer.music.stop()
 		mixer.music.load('Rush00/static/main_theme.mp3')
 		mixer.music.play(-1)
 
 	@classmethod
 	def play_song_world(cls):
+		mixer.music.stop()
 		mixer.music.load('Rush00/static/goodbye_moon_men.mp3')
 		mixer.music.play(-1)
 
 	@classmethod
 	def play_song_battle(cls):
+		mixer.music.stop()
 		mixer.music.load('Rush00/static/get_schwifty.mp3')
 		mixer.music.play(-1)
 
 
 
-class Datamanager:
+class Datamanager(object):
 
 	def __init__(self):
 		print('Datamanager created')

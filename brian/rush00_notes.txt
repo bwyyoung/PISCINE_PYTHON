@@ -2,8 +2,7 @@ Stuff to do:
 - rename classes
 - fix save file LOADING and getting into the GAME
 
-For now, submit d03 with gitignore
-
+For now, submit d03 with giti O
    background: url("{% static "splash_screen.jpg" %}")no-repeat 50% 50% fixed;
    background-size: cover;
    sudo -H pip install -r requirements.txt

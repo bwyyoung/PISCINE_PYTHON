@@ -75,7 +75,7 @@ class Gestion(object):
 
 	@classmethod
 	def del_battlemovie(cls, moviemon_id):
-		self.MoviemonBattle = ''
+		cls.MoviemonBattle = ''
 
 	def __init__(self):
 		params = getattr(settings, "MOVIEMON", None)
