@@ -118,7 +118,7 @@ class Datamanager(object):
 
 	@classmethod
 	def del_battlemovie(cls, moviemon_id):
-		self.MoviemonBattle = ''
+		cls.MoviemonBattle = ''
 
 
 	def load(self, name):
