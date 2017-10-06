@@ -222,14 +222,11 @@ def Worldmap(request):
 	db = Datamanager()
 	db.load("save.pickle")
 	choix = ['left', 'right','up', 'down']
-	# if request.GET in choix
-
 
 	if request.GET.get('a') == "select":
 		return redirect('/moviedex')
 	if request.GET.get('a') == "start":
 		return redirect('/options')
-
 	miv = 0
 	rand = 0
 	etat = "balade"
