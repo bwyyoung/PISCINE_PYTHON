@@ -6,6 +6,17 @@ from .movieclass import Datamanager
 from .movieclass import Soundmanager
 
 def New(request):
+	params = getattr(settings, "MOVIEMON", None)
+	if not params:
+		print('Missing setting MOVIEMON')
+		MAPMIN = 0  # par defaut
+		MAPMAX = 100  # par defaut
+	else:
+		pos = params['GRID_SIZE']
+		MAPMIN = pos[0]
+		MAPMAX = pos[1]
+		print('MAPMIN = ', MAPMIN)
+		print('MAPMAX = ', MAPMAX)
 	print (request)
 	if request.GET.get('a') == 'a':
 		db = Datamanager()
@@ -205,23 +216,13 @@ def Battle(request, moviemon_id):
 		"Luck": calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength)
 	})
 
-params = getattr(settings, "MOVIEMON", None)
-if not params:
-	print('Missing setting MOVIEMON')
-	MAPMIN = 0 # par defaut
-	MAPMAX = 100 # par defaut
-else:
-	pos = params['GRID_SIZE']
-	MAPMIN = pos[0]
-	MAPMAX = pos[1]
-print('MAPMIN = ', MAPMIN)
-print('MAPMAX = ', MAPMAX)
+
 
 
 def Worldmap(request):
 	db = Datamanager()
 	db.load("save.pickle")
-	choix = ['left', 'right','up', 'down']
+	directions = ['left', 'right','up', 'down']
 
 	if request.GET.get('a') == "select":
 		return redirect('/moviedex')
@@ -231,7 +232,7 @@ def Worldmap(request):
 	rand = 0
 	game_state = "walking"
 	if len(db.MoviemonBattle) == 0:
-		if request.GET.get('a') in choix:
+		if request.GET.get('a') in directions:
 			if request.GET.get('a') == 'left' and db.mapx > MAPMIN:
 				db.mapx-=1
 				db.coord[1]-=0.0010
@@ -252,12 +253,10 @@ def Worldmap(request):
 			if (miv):
 				rand = random.randint(1,100)
 				if rand > 60 and len(db.get_random_movie()) > 0: #A VERIF
-					print("Moviemon trouve", random.choice(db.get_random_movie()))
 					game_state = "attack"
 					db.MoviemonBattle = random.choice(db.get_random_movie())
 				elif rand > 40:
 					db.modif_movieballs(db.movieballs+1)
-					print("Movieball trouve")
 					game_state = "ball"
 
 
@@ -283,13 +282,3 @@ def Worldmap(request):
 	})
 
 
-def Form(request):
-	if (request.method == 'POST'):
-		form = MyForm(request.POST)
-		if form.is_valid():
-			return HttpResponse("Form Valid %s -----------   %s" %(form.cleaned_data['name'], form.cleaned_data['email']))
-		else:
-			return HttpResponse("NON")
-	else:
-		form = MyForm()
-	return render(request, "Rush00/form.html", {'form' : form})
