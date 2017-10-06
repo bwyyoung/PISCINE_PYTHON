@@ -229,7 +229,7 @@ def Worldmap(request):
 		return redirect('/options')
 	miv = 0
 	rand = 0
-	etat = "balade"
+	game_state = "walking"
 	if len(db.MoviemonBattle) == 0:
 		if request.GET.get('a') in choix:
 			if request.GET.get('a') == 'left' and db.mapx > MAPMIN:
@@ -253,23 +253,23 @@ def Worldmap(request):
 				rand = random.randint(1,100)
 				if rand > 60 and len(db.get_random_movie()) > 0: #A VERIF
 					print("Moviemon trouve", random.choice(db.get_random_movie()))
-					etat = "attack"
+					game_state = "attack"
 					db.MoviemonBattle = random.choice(db.get_random_movie())
 				elif rand > 40:
 					db.modif_movieballs(db.movieballs+1)
 					print("Movieball trouve")
-					etat = "ball"
+					game_state = "ball"
 
 
 	if len(db.MoviemonBattle) > 0:
-		etat = "attack"
+		game_state = "attack"
 		print(db.MoviemonBattle)
 		if request.GET.get('a') == 'a':
 			Soundmanager().play_song_battle()
 			return redirect('/battle/'+db.MoviemonBattle)
 		elif request.GET.get('a') == 'b':
 			db.MoviemonBattle = ""
-			etat = "balade"
+			game_state = "walking"
 	db.save("save.pickle")
 
 	return render(request, "Rush00/game.html", {
@@ -277,7 +277,7 @@ def Worldmap(request):
 													"longitude":db.coord[1],
 													"movieball": db.movieballs,
 													"movietitle":db.MoviemonBattle,
-													"etat":etat,
+													"game_state":game_state,
 													"mapx":db.mapx,
 													"mapy":db.mapy
 	})

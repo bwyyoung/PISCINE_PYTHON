@@ -116,15 +116,10 @@ class Datamanager(object):
 	def del_moviemons(cls, name):
 		del cls.Moviemons[name]
 
-	@classmethod
-	def del_battlemovie(cls, moviemon_id):
-		cls.MoviemonBattle = ''
-
-
 	def load(self, name):
 		info = []
 		print("Data Loading....... 1")
-		print(name,os.path.isfile(name))
+		print(name, os.path.isfile(name))
 		if os.path.isfile(name):
 			with (open(name, "rb")) as openfile:
 				while True:
@@ -165,7 +160,9 @@ class Datamanager(object):
 		return [x for x in mon if x not in my_mon]
 
 	def load_default_settings(self):
+
 		self.set_default()
+		print('LOAD DEFAULT SETTINGS')
 		F = open("info.pickle", "wb")
 		for item in self.lst:
 			r = requests.get("http://www.omdbapi.com/?t=" + item + "&apikey=41f80ff7")
@@ -173,6 +170,7 @@ class Datamanager(object):
 				raise Exception ("Error: " + str(r.status_code))
 			Moviemon = json.loads(r.text)
 			self.Moviemons[Moviemon['Title'].replace(" ", "_").replace(":", "-")] = Moviemon
+
 		info = [
 				self.coord,
 				self.movieballs,
@@ -184,6 +182,7 @@ class Datamanager(object):
 				self.mapy,
 				self.index
 		]
+		print(self.Moviemons)
 
 		pickle.dump(info, F)
 		F.close()

@@ -1,18 +1,17 @@
 {% extends "Rush00/layout.html" %}
 
 {% block content %}
-				<div class="game_area-gameview-screen" id="options">
-
-	<center><span class="read_text">SAVE GAME</span>
-<br /><br /><br />
-{% for key, value in data_player %}
-	<p class= "{% if name == key %} test {% endif %}">
-			{{ key }}.pickle | {{value}} /
-			{% for kay, valay in data_monster %}
-				{% if key == kay %} {{valay}} {% endif %}
+	<div class="game_area-gameview-screen" id="options">
+		<center><span class="read_text">SAVE GAME</span>
+			<br /><br /><br />
+			{% for key, value in data_player %}
+				<p class= "{% if name == key %} test {% endif %}">
+					{{ key }}.pickle | {{value}} /
+					{% for key2, value2 in data_monster %}
+						{% if key == key2 %} {{value2}} {% endif %}
+					{% endfor %}
+				</p>
 			{% endfor %}
-	</p>
-{% endfor %}
-</center>
-				</div>
+		</center>
+	</div>
 {% endblock %}

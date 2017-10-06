@@ -1,3 +1,6 @@
+
+
+
 U need to please change the New, Load, etc.
 and if u can put them into different python folders for better organisation.
 
@@ -8,6 +11,9 @@ Frankly, I didnt do a good job in the coding and i had to clean up a lot of bugs
 my code crashed several times and i fixed the most severe ones.
 my code could not save/load properly.
 But pls double check to make sure that part is working ok.
+
+ python3 -m pip install  --user --install-option="--prefix=" -r
+$ python3 manage.py startapp ex00 ex01 etc...
 
 
 Stuff to do:
