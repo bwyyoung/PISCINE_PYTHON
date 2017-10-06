@@ -2,7 +2,6 @@
 import sys, requests
 from bs4 import BeautifulSoup
 
-
 def request(search):
 	url = 'https://en.wikipedia.org/wiki/' + search
 	r = requests.get(url)
@@ -14,7 +13,9 @@ def request(search):
 			for link in p.find_all('a', recursive=False):
 				if not link['href'].startswith('/wiki/'):
 					continue
-				return(link['title'])
+				target = link['title']
+				if target and target.startswith('Help:') == False:
+					return(link['title'])
 	else:
 		print('It leads to a dead end !')
 		exit(1)
