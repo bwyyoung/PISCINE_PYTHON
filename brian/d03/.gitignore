@@ -3,3 +3,4 @@ __pycache__
 __init__.pyc
 *.pyc
 __pycache__
+django_venv
