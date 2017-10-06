@@ -22,34 +22,49 @@
 						{% block content %}
 							<h2>Gameplay Contents</h2>
 						{% endblock %}
-
 					</div>
-
 				</div>
 			</div>
 			<div class="control_area">
-				<div class="d_pad">
 
-					<a href="?a=up"> <div id="btn_up" class="left">UP</div></a>
-					<a href="?a=down"> <div id="btn_down" class="left">DOWN</div></a>
-					<a href="?a=right{% if index %}&index={{index}}{% endif %}">
-						<div id="btn_right" class="left">RIGHT</div></a>
-					<a href="?a=left"> <div id="btn_left" class="left">LEFT</div></a>
+				<div class="d_pad">
+					<div class="control">
+						<a href="?a=up"> <div class="control" id="btn_up" >
+							<span class="read_text">UP</span></div></a>
+						<a href="?a=down"> <div class="control" id="btn_down" >
+							<span class="read_text">DOWN</span></div></a>
+
+						<div class="control" id="btn_right" >
+							<a href="?a=right{% if index %}&index={{index}}{% endif %}">
+								<span class="read_text">RIGHT</span>
+							</a>
+						</div>
+						<a href="?a=left"> <div class="control" id="btn_left" >
+							<span class="read_text">LEFT</span></div></a>
+					</div>
 				</div>
 				<div class="buttons_a_b">
-					<a href="?a=a"> <div id="btn_a">BTN_A</div></a>
-					<a href="?a=b"> <div id="btn_b">BTN_B</div></a>
+					<div class="control">
+
+						<a href="?a=a"> <div class="control" id="btn_a">
+							<span class="read_text">BTN_A</span></div></a>
+						<a href="?a=b"> <div class="control"  id="btn_b">
+							<span class="read_text">BTN_B
+							</span></div></a>
+					</div>
 				</div>
 
 			</div>
 			<div class="control_area-lower">
-				<div class="control_btn_select">
-					<a href="?a=select">SELECT</a>
-				</div>
-				<div class="control_btn_start">
-					<a href="?a=start">START</a>
-				</div>
-
+					<div class="control_btn_select">
+						<a href="?a=select">
+							<span class="read_text">SELECT
+							</span></a>
+					</div>
+					<div class="control_btn_start">
+						<a href="?a=start">
+							<span class="read_text">START</span></a>
+					</div>
 			</div>
 		</div>
 	</div>

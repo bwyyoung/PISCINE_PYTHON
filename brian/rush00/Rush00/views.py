@@ -115,7 +115,7 @@ def OptionsLoad(request):
 	if request.GET.get('a') == 'a':
 		return redirect('/options/load_game?process=1')
 	if request.GET.get('a') == 'b':
-		return redirect('/options')
+		return redirect('/')
 	return render(request, "Rush00/optionsLoad.html", {"slots":slots, "data_monster":data_monster,"data_player":data_player, "name":save_slot_indices[db.index]})
 
 

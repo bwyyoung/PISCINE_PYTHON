@@ -11,26 +11,33 @@ class Singleton(type):
 
 class Soundmanager(object):
 	__metaclass__ = Singleton
-
+	mute = True
 	def __init__(self):
 		print('init')
 		mixer.pre_init(48000, -16, 2, 2048)
 		mixer.init()
+		self.mute = True
 
 	@classmethod
 	def play_song_main(cls):
+		if cls.mute:
+			return
 		mixer.music.stop()
 		mixer.music.load('Rush00/static/main_theme.mp3')
 		mixer.music.play(-1)
 
 	@classmethod
 	def play_song_world(cls):
+		if cls.mute:
+			return
 		mixer.music.stop()
 		mixer.music.load('Rush00/static/goodbye_moon_men.mp3')
 		mixer.music.play(-1)
 
 	@classmethod
 	def play_song_battle(cls):
+		if cls.mute:
+			return
 		mixer.music.stop()
 		mixer.music.load('Rush00/static/get_schwifty.mp3')
 		mixer.music.play(-1)
