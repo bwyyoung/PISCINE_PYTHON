@@ -6,17 +6,6 @@ from .movieclass import Datamanager
 from .movieclass import Soundmanager
 
 def New(request):
-	params = getattr(settings, "MOVIEMON", None)
-	if not params:
-		print('Missing setting MOVIEMON')
-		MAPMIN = 0  # par defaut
-		MAPMAX = 100  # par defaut
-	else:
-		pos = params['GRID_SIZE']
-		MAPMIN = pos[0]
-		MAPMAX = pos[1]
-		print('MAPMIN = ', MAPMIN)
-		print('MAPMAX = ', MAPMAX)
 	print (request)
 	if request.GET.get('a') == 'a':
 		db = Datamanager()
@@ -216,8 +205,17 @@ def Battle(request, moviemon_id):
 		"Luck": calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength)
 	})
 
-
-
+params = getattr(settings, "MOVIEMON", None)
+if not params:
+	print('Missing setting MOVIEMON')
+	MAPMIN = 0 # par defaut
+	MAPMAX = 100 # par defaut
+else:
+	pos = params['GRID_SIZE']
+	MAPMIN = pos[0]
+	MAPMAX = pos[1]
+print('MAPMIN = ', MAPMIN)
+print('MAPMAX = ', MAPMAX)
 
 def Worldmap(request):
 	db = Datamanager()

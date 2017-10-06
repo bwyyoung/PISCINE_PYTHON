@@ -1,11 +1,11 @@
 (lp0
 (lp1
-F1.352083
+F1.351083
 aF103.819836
 aaI100
 a(lp2
 a(dp3
-VAliens
+VZombie_Nation
 p4
 (dp5
 VRatings
@@ -18,1246 +18,1246 @@ VInternet Movie Database
 p10
 sVValue
 p11
-V8.4/10
+V2.1/10
 p12
-sa(dp13
-VSource
-p14
-VRotten Tomatoes
-p15
-sVValue
-p16
-V98%
-p17
-sa(dp18
-VSource
-p19
-VMetacritic
-p20
-sVValue
-p21
-V86/100
-p22
 sasVRated
-p23
+p13
 VR
-p24
+p14
 sVPlot
-p25
-V57 years later, Ellen Ripley is rescued by a deep salvage team during her hypersleep. The moon from the original movie has been colonized, but contact is lost. This time, colonial marines have impressive firepower, but will that be enough?
-p26
+p15
+VA psychotic police officer who murders his female arrests gets what's coming to him when a horde of zombified women rise from their graves to seek revenge.
+p16
 sVDVD
-p27
-V01 Jun 1999
-p28
+p17
+V19 Dec 2006
+p18
 sVWriter
-p29
-VJames Cameron (story by), David Giler (story by), Walter Hill (story by), Dan O'Bannon (based on characters created by), Ronald Shusett (based on characters created by), James Cameron (screenplay)
-p30
+p19
+VUlli Lommel
+p20
 sVProduction
-p31
-V20th Century Fox Film Corporat
-p32
+p21
+VLionsGate Entertainment
+p22
 sVActors
-p33
-VSigourney Weaver, Carrie Henn, Michael Biehn, Paul Reiser
-p34
+p23
+VGunter Ziegler, Brandon Dean, Axel Montgomery, Phil Lander
+p24
 sVType
-p35
+p25
 Vmovie
-p36
+p26
 sVimdbVotes
-p37
-V539,191
-p38
+p27
+V7,764
+p28
 sVWebsite
+p29
+VN/A
+p30
+sVPoster
+p31
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTczNjE5Njk5Ml5BMl5BanBnXkFtZTcwNDc3MDA0MQ@@._V1_SX300.jpg
+p32
+sVTitle
+p33
+VZombie Nation
+p34
+sVDirector
+p35
+VUlli Lommel
+p36
+sVReleased
+p37
+V05 Oct 2004
+p38
+sVAwards
 p39
 VN/A
 p40
-sVPoster
+sVGenre
 p41
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BYzVlMWViZGEtYjEyYy00YWZmLThmZGEtYmM4MDZlN2Q5MmRmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+VHorror
 p42
-sVTitle
+sVimdbRating
 p43
-g4
-sVDirector
+V2.1
 p44
-VJames Cameron
+sVLanguage
 p45
-sVReleased
+VEnglish
 p46
-V18 Jul 1986
+sVCountry
 p47
-sVAwards
+VUSA
 p48
-VWon 2 Oscars. Another 18 wins & 22 nominations.
+sVBoxOffice
 p49
-sVGenre
+VN/A
 p50
-VAction, Adventure, Sci-Fi
+sVRuntime
 p51
-sVimdbRating
+V81 min
 p52
-V8.4
+sVimdbID
 p53
-sVLanguage
+Vtt0463392
 p54
-VEnglish
+sVMetascore
 p55
-sVCountry
+VN/A
 p56
-VUSA, UK
+sVResponse
 p57
-sVBoxOffice
+VTrue
 p58
-VN/A
+sVYear
 p59
-sVRuntime
+V2004
 p60
-V137 min
+ssVAliens
 p61
-sVimdbID
-p62
-Vtt0090605
+(dp62
+VRatings
 p63
-sVMetascore
-p64
-V86
-p65
-sVResponse
+(lp64
+(dp65
+VSource
 p66
-VTrue
-p67
-sVYear
-p68
-V1986
-p69
-ssVThe_Rocky_Horror_Picture_Show
-p70
-(dp71
-VRatings
-p72
-(lp73
-(dp74
-VSource
-p75
 VInternet Movie Database
-p76
+p67
 sVValue
-p77
-V7.4/10
-p78
-sa(dp79
+p68
+V8.4/10
+p69
+sa(dp70
 VSource
-p80
+p71
 VRotten Tomatoes
-p81
+p72
 sVValue
-p82
-V80%
-p83
-sa(dp84
+p73
+V98%
+p74
+sa(dp75
 VSource
-p85
+p76
 VMetacritic
-p86
+p77
 sVValue
-p87
-V58/100
-p88
+p78
+V86/100
+p79
 sasVRated
-p89
-g24
+p80
+g14
 sVPlot
-p90
-VA newly engaged couple have a breakdown in an isolated area and must pay a call to the bizarre residence of Dr. Frank-N-Furter.
-p91
+p81
+V57 years later, Ellen Ripley is rescued by a deep salvage team during her hypersleep. The moon from the original movie has been colonized, but contact is lost. This time, colonial marines have impressive firepower, but will that be enough?
+p82
 sVDVD
-p92
-V03 Oct 2000
-p93
+p83
+V01 Jun 1999
+p84
 sVWriter
-p94
-VRichard O'Brien (original musical play), Jim Sharman (screenplay), Richard O'Brien (screenplay)
-p95
+p85
+VJames Cameron (story by), David Giler (story by), Walter Hill (story by), Dan O'Bannon (based on characters created by), Ronald Shusett (based on characters created by), James Cameron (screenplay)
+p86
 sVProduction
-p96
-V20th Century Fox
-p97
+p87
+V20th Century Fox Film Corporat
+p88
 sVActors
-p98
-VTim Curry, Susan Sarandon, Barry Bostwick, Richard O'Brien
-p99
+p89
+VSigourney Weaver, Carrie Henn, Michael Biehn, Paul Reiser
+p90
 sVType
-p100
+p91
 Vmovie
-p101
+p92
 sVimdbVotes
-p102
-V112,215
-p103
+p93
+V539,191
+p94
 sVWebsite
-p104
-Vhttp://rockyhorror.co.uk/
-p105
-sVPoster
-p106
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BNDIzZmE1MzEtNTRjMS00NmViLWE2ZTEtYmE2MWE1Y2FjNmYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
-p107
-sVTitle
-p108
-VThe Rocky Horror Picture Show
-p109
-sVDirector
-p110
-VJim Sharman
-p111
-sVReleased
-p112
-V31 Aug 1975
-p113
-sVAwards
-p114
-V3 wins & 4 nominations.
-p115
-sVGenre
-p116
-VComedy, Musical
-p117
-sVimdbRating
-p118
-V7.4
-p119
-sVLanguage
-p120
-VEnglish
-p121
-sVCountry
-p122
-VUK, USA
-p123
-sVBoxOffice
-p124
+p95
 VN/A
-p125
+p96
+sVPoster
+p97
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BYzVlMWViZGEtYjEyYy00YWZmLThmZGEtYmM4MDZlN2Q5MmRmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+p98
+sVTitle
+p99
+g61
+sVDirector
+p100
+VJames Cameron
+p101
+sVReleased
+p102
+V18 Jul 1986
+p103
+sVAwards
+p104
+VWon 2 Oscars. Another 18 wins & 22 nominations.
+p105
+sVGenre
+p106
+VAction, Adventure, Sci-Fi
+p107
+sVimdbRating
+p108
+V8.4
+p109
+sVLanguage
+p110
+VEnglish
+p111
+sVCountry
+p112
+VUSA, UK
+p113
+sVBoxOffice
+p114
+VN/A
+p115
 sVRuntime
-p126
-V100 min
-p127
+p116
+V137 min
+p117
 sVimdbID
-p128
-Vtt0073629
-p129
+p118
+Vtt0090605
+p119
 sVMetascore
-p130
-V58
-p131
+p120
+V86
+p121
 sVResponse
-p132
+p122
 VTrue
-p133
+p123
 sVYear
-p134
-V1975
-p135
-ssVHellboy
-p136
-(dp137
+p124
+V1986
+p125
+ssVThe_Rocky_Horror_Picture_Show
+p126
+(dp127
 VRatings
+p128
+(lp129
+(dp130
+VSource
+p131
+VInternet Movie Database
+p132
+sVValue
+p133
+V7.4/10
+p134
+sa(dp135
+VSource
+p136
+VRotten Tomatoes
+p137
+sVValue
 p138
-(lp139
-(dp140
+V80%
+p139
+sa(dp140
 VSource
 p141
-VInternet Movie Database
+VMetacritic
 p142
 sVValue
 p143
-V6.8/10
+V58/100
 p144
-sa(dp145
-VSource
-p146
-VRotten Tomatoes
-p147
-sVValue
-p148
-V81%
-p149
-sa(dp150
-VSource
-p151
-VMetacritic
-p152
-sVValue
-p153
-V72/100
-p154
 sasVRated
-p155
-VPG-13
-p156
+p145
+g14
 sVPlot
-p157
-VA demon, raised from infancy after being conjured by and rescued from the Nazis, grows up to become a defender against the forces of darkness.
-p158
+p146
+VA newly engaged couple have a breakdown in an isolated area and must pay a call to the bizarre residence of Dr. Frank-N-Furter.
+p147
 sVDVD
-p159
-V27 Jul 2004
-p160
+p148
+V03 Oct 2000
+p149
 sVWriter
-p161
-VGuillermo del Toro (screenplay), Guillermo del Toro (screen story), Peter Briggs (screen story), Mike Mignola (comic books)
-p162
+p150
+VRichard O'Brien (original musical play), Jim Sharman (screenplay), Richard O'Brien (screenplay)
+p151
 sVProduction
-p163
-VSony Pictures
-p164
+p152
+V20th Century Fox
+p153
 sVActors
-p165
-VRon Perlman, John Hurt, Selma Blair, Rupert Evans
-p166
+p154
+VTim Curry, Susan Sarandon, Barry Bostwick, Richard O'Brien
+p155
 sVType
-p167
+p156
 Vmovie
-p168
+p157
 sVimdbVotes
-p169
-V261,436
-p170
+p158
+V112,215
+p159
 sVWebsite
-p171
-Vhttp://www.sonypictures.com/movies/hellboy/
-p172
+p160
+Vhttp://rockyhorror.co.uk/
+p161
 sVPoster
-p173
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BNTc1ZWY0ZTEtZTVmNi00MTg0LTg4NmQtZTI4OWNiMmQ0MWZkXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg
-p174
+p162
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BNDIzZmE1MzEtNTRjMS00NmViLWE2ZTEtYmE2MWE1Y2FjNmYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+p163
 sVTitle
-p175
-g136
+p164
+VThe Rocky Horror Picture Show
+p165
 sVDirector
-p176
-VGuillermo del Toro
-p177
+p166
+VJim Sharman
+p167
 sVReleased
-p178
-V02 Apr 2004
-p179
+p168
+V31 Aug 1975
+p169
 sVAwards
-p180
-V3 wins & 23 nominations.
-p181
+p170
+V3 wins & 4 nominations.
+p171
 sVGenre
-p182
-VAction, Fantasy, Horror
-p183
+p172
+VComedy, Musical
+p173
 sVimdbRating
-p184
-V6.8
-p185
+p174
+V7.4
+p175
 sVLanguage
-p186
-VEnglish, Russian
-p187
+p176
+VEnglish
+p177
 sVCountry
-p188
-VUSA
-p189
+p178
+VUK, USA
+p179
 sVBoxOffice
-p190
-V$59,035,104
-p191
+p180
+VN/A
+p181
 sVRuntime
-p192
-V122 min
-p193
+p182
+V100 min
+p183
 sVimdbID
-p194
-Vtt0167190
-p195
+p184
+Vtt0073629
+p185
 sVMetascore
-p196
-V72
-p197
+p186
+V58
+p187
 sVResponse
-p198
+p188
 VTrue
-p199
+p189
 sVYear
-p200
-V2004
-p201
-ssVPride_and_Prejudice_and_Zombies
-p202
-(dp203
+p190
+V1975
+p191
+ssVHellboy
+p192
+(dp193
 VRatings
+p194
+(lp195
+(dp196
+VSource
+p197
+VInternet Movie Database
+p198
+sVValue
+p199
+V6.8/10
+p200
+sa(dp201
+VSource
+p202
+VRotten Tomatoes
+p203
+sVValue
 p204
-(lp205
-(dp206
+V81%
+p205
+sa(dp206
 VSource
 p207
-VInternet Movie Database
+VMetacritic
 p208
 sVValue
 p209
-V5.8/10
+V72/100
 p210
-sa(dp211
-VSource
+sasVRated
+p211
+VPG-13
 p212
-VRotten Tomatoes
+sVPlot
 p213
-sVValue
+VA demon, raised from infancy after being conjured by and rescued from the Nazis, grows up to become a defender against the forces of darkness.
 p214
-V43%
+sVDVD
 p215
-sa(dp216
-VSource
+V27 Jul 2004
+p216
+sVWriter
 p217
-VMetacritic
+VGuillermo del Toro (screenplay), Guillermo del Toro (screen story), Peter Briggs (screen story), Mike Mignola (comic books)
 p218
-sVValue
+sVProduction
 p219
-V45/100
-p220
-sasVRated
-p221
-VPG-13
-p222
-sVPlot
-p223
-VFive sisters in 19th century England must cope with the pressures to marry while protecting themselves from a growing population of zombies.
-p224
-sVDVD
-p225
-V31 May 2016
-p226
-sVWriter
-p227
-VBurr Steers (screenplay), Jane Austen (Quirk Books novel), Seth Grahame-Smith (Quirk Books novel)
-p228
-sVProduction
-p229
 VSony Pictures
+p220
+sVActors
+p221
+VRon Perlman, John Hurt, Selma Blair, Rupert Evans
+p222
+sVType
+p223
+Vmovie
+p224
+sVimdbVotes
+p225
+V261,436
+p226
+sVWebsite
+p227
+Vhttp://www.sonypictures.com/movies/hellboy/
+p228
+sVPoster
+p229
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BNTc1ZWY0ZTEtZTVmNi00MTg0LTg4NmQtZTI4OWNiMmQ0MWZkXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg
 p230
-sVActors
+sVTitle
 p231
-VLily James, Sam Riley, Bella Heathcote, Ellie Bamber
+g192
+sVDirector
 p232
-sVType
+VGuillermo del Toro
 p233
-Vmovie
+sVReleased
 p234
-sVimdbVotes
+V02 Apr 2004
 p235
-V37,115
+sVAwards
 p236
-sVWebsite
+V3 wins & 23 nominations.
 p237
-VN/A
+sVGenre
 p238
-sVPoster
+VAction, Fantasy, Horror
 p239
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMjE1MzA3NzYxMl5BMl5BanBnXkFtZTgwMzQ0NDA5NzE@._V1_SX300.jpg
+sVimdbRating
 p240
-sVTitle
+V6.8
 p241
-VPride and Prejudice and Zombies
+sVLanguage
 p242
-sVDirector
+VEnglish, Russian
 p243
-VBurr Steers
+sVCountry
 p244
-sVReleased
-p245
-V05 Feb 2016
-p246
-sVAwards
-p247
-V1 win & 3 nominations.
-p248
-sVGenre
-p249
-VAction, Horror, Romance
-p250
-sVimdbRating
-p251
-V5.8
-p252
-sVLanguage
-p253
-VEnglish, Japanese, Chinese
-p254
-sVCountry
-p255
-VUSA, UK
-p256
-sVBoxOffice
-p257
-V$8,639,097
-p258
-sVRuntime
-p259
-V108 min
-p260
-sVimdbID
-p261
-Vtt1374989
-p262
-sVMetascore
-p263
-V45
-p264
-sVResponse
-p265
-VTrue
-p266
-sVYear
-p267
-V2016
-p268
-ssVFreddy
-p269
-(dp270
-VRatings
-p271
-(lp272
-(dp273
-VSource
-p274
-VInternet Movie Database
-p275
-sVValue
-p276
-V6.1/10
-p277
-sasVRated
-p278
-VN/A
-p279
-sVPlot
-p280
-VN/A
-p281
-sVDVD
-p282
-VN/A
-p283
-sVWriter
-p284
-VRobert Thomas (dialogue), Robert Thomas (play), Robert Thomas (screenplay)
-p285
-sVProduction
-p286
-VN/A
-p287
-sVActors
-p288
-VJean Lefebvre, Pierre Doris, Marie-Christine Adam, Sophie Daumier
-p289
-sVType
-p290
-Vmovie
-p291
-sVimdbVotes
-p292
-V12
-p293
-sVWebsite
-p294
-VN/A
-p295
-sVPoster
-p296
-VN/A
-p297
-sVTitle
-p298
-g269
-sVDirector
-p299
-VRobert Thomas
-p300
-sVReleased
-p301
-V12 Apr 1978
-p302
-sVAwards
-p303
-VN/A
-p304
-sVGenre
-p305
-VComedy
-p306
-sVimdbRating
-p307
-V6.1
-p308
-sVLanguage
-p309
-VFrench
-p310
-sVCountry
-p311
-VFrance
-p312
-sVBoxOffice
-p313
-VN/A
-p314
-sVRuntime
-p315
-V90 min
-p316
-sVimdbID
-p317
-Vtt0233752
-p318
-sVMetascore
-p319
-VN/A
-p320
-sVResponse
-p321
-VTrue
-p322
-sVYear
-p323
-V1978
-p324
-ssVAvatar
-p325
-(dp326
-VRatings
-p327
-(lp328
-(dp329
-VSource
-p330
-VInternet Movie Database
-p331
-sVValue
-p332
-V7.8/10
-p333
-sa(dp334
-VSource
-p335
-VRotten Tomatoes
-p336
-sVValue
-p337
-V84%
-p338
-sa(dp339
-VSource
-p340
-VMetacritic
-p341
-sVValue
-p342
-V83/100
-p343
-sasVRated
-p344
-VPG-13
-p345
-sVPlot
-p346
-VA paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.
-p347
-sVDVD
-p348
-V22 Apr 2010
-p349
-sVWriter
-p350
-VJames Cameron
-p351
-sVProduction
-p352
-V20th Century Fox
-p353
-sVActors
-p354
-VSam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang
-p355
-sVType
-p356
-Vmovie
-p357
-sVimdbVotes
-p358
-V953,668
-p359
-sVWebsite
-p360
-Vhttp://www.avatarmovie.com/
-p361
-sVPoster
-p362
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg
-p363
-sVTitle
-p364
-g325
-sVDirector
-p365
-VJames Cameron
-p366
-sVReleased
-p367
-V18 Dec 2009
-p368
-sVAwards
-p369
-VWon 3 Oscars. Another 85 wins & 128 nominations.
-p370
-sVGenre
-p371
-VAction, Adventure, Fantasy
-p372
-sVimdbRating
-p373
-V7.8
-p374
-sVLanguage
-p375
-VEnglish, Spanish
-p376
-sVCountry
-p377
-VUK, USA
-p378
-sVBoxOffice
-p379
-V$749,700,000
-p380
-sVRuntime
-p381
-V162 min
-p382
-sVimdbID
-p383
-Vtt0499549
-p384
-sVMetascore
-p385
-V83
-p386
-sVResponse
-p387
-VTrue
-p388
-sVYear
-p389
-V2009
-p390
-ssVHorror
-p391
-(dp392
-VRatings
-p393
-(lp394
-(dp395
-VSource
-p396
-VInternet Movie Database
-p397
-sVValue
-p398
-V3.4/10
-p399
-sasVRated
-p400
-g24
-sVPlot
-p401
-VThis visually arresting chiller concerns a group of runaway teens that escape from a drug rehab and encounter demonic forces in a rural farmhouse.
-p402
-sVDVD
-p403
-V27 Sep 2005
-p404
-sVWriter
-p405
-VDante Tomaselli
-p406
-sVProduction
-p407
-VN/A
-p408
-sVActors
-p409
-VKreskin, Lizzy Mahon, Danny Lopes, Vincent Lamberti
-p410
-sVType
-p411
-Vmovie
-p412
-sVimdbVotes
-p413
-V922
-p414
-sVWebsite
-p415
-VN/A
-p416
-sVPoster
-p417
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTIxNzk5OTk4Nl5BMl5BanBnXkFtZTYwMzkyNzk5._V1_SX300.jpg
-p418
-sVTitle
-p419
-g391
-sVDirector
-p420
-VDante Tomaselli
-p421
-sVReleased
-p422
-V27 May 2003
-p423
-sVAwards
-p424
-V1 win.
-p425
-sVGenre
-p426
-VHorror
-p427
-sVimdbRating
-p428
-V3.4
-p429
-sVLanguage
-p430
-VEnglish
-p431
-sVCountry
-p432
 VUSA
-p433
+p245
 sVBoxOffice
-p434
-VN/A
-p435
+p246
+V$59,035,104
+p247
 sVRuntime
-p436
-VN/A
-p437
+p248
+V122 min
+p249
 sVimdbID
-p438
-Vtt0304166
-p439
+p250
+Vtt0167190
+p251
 sVMetascore
-p440
-VN/A
-p441
+p252
+V72
+p253
 sVResponse
-p442
+p254
 VTrue
-p443
+p255
 sVYear
-p444
-V2003
-p445
-ssVTerror
-p446
-(dp447
+p256
+V2004
+p257
+ssVManos-_The_Hands_of_Fate
+p258
+(dp259
 VRatings
-p448
-(lp449
-(dp450
+p260
+(lp261
+(dp262
 VSource
-p451
+p263
 VInternet Movie Database
-p452
+p264
 sVValue
-p453
-V5.0/10
-p454
+p265
+V1.9/10
+p266
+sa(dp267
+VSource
+p268
+VRotten Tomatoes
+p269
+sVValue
+p270
+V7%
+p271
 sasVRated
-p455
-g24
+p272
+VNOT RATED
+p273
 sVPlot
-p456
-VRoyal descendants feel the wrath of the curse of condemned witch Mad Dolly, who spews forth her prophecy while she is burned at the stake. The victims suffer death by having their heads ...
-p457
+p274
+VA family gets lost on the road and stumbles upon a hidden, underground, devil-worshiping cult led by the fearsome Master and his servant Torgo.
+p275
 sVDVD
+p276
+V07 Oct 2003
+p277
+sVWriter
+p278
+VHarold P. Warren (screenplay)
+p279
+sVProduction
+p280
+VSinister Cinema
+p281
+sVActors
+p282
+VTom Neyman, John Reynolds, Diane Adelson, Harold P. Warren
+p283
+sVType
+p284
+Vmovie
+p285
+sVimdbVotes
+p286
+V32,021
+p287
+sVWebsite
+p288
+VN/A
+p289
+sVPoster
+p290
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BNWUzNGExMGEtYzcwNS00OGY5LWE3NmItNDcxZTQ3YjljNmE2XkEyXkFqcGdeQXVyNTc4Njg5MjA@._V1_SX300.jpg
+p291
+sVTitle
+p292
+VManos: The Hands of Fate
+p293
+sVDirector
+p294
+VHarold P. Warren
+p295
+sVReleased
+p296
+V15 Nov 1966
+p297
+sVAwards
+p298
+VN/A
+p299
+sVGenre
+p300
+VHorror
+p301
+sVimdbRating
+p302
+V1.9
+p303
+sVLanguage
+p304
+VEnglish
+p305
+sVCountry
+p306
+VUSA
+p307
+sVBoxOffice
+p308
+VN/A
+p309
+sVRuntime
+p310
+V70 min
+p311
+sVimdbID
+p312
+Vtt0060666
+p313
+sVMetascore
+p314
+VN/A
+p315
+sVResponse
+p316
+VTrue
+p317
+sVYear
+p318
+V1966
+p319
+ssVFreddy
+p320
+(dp321
+VRatings
+p322
+(lp323
+(dp324
+VSource
+p325
+VInternet Movie Database
+p326
+sVValue
+p327
+V6.1/10
+p328
+sasVRated
+p329
+VN/A
+p330
+sVPlot
+p331
+VN/A
+p332
+sVDVD
+p333
+VN/A
+p334
+sVWriter
+p335
+VRobert Thomas (dialogue), Robert Thomas (play), Robert Thomas (screenplay)
+p336
+sVProduction
+p337
+VN/A
+p338
+sVActors
+p339
+VJean Lefebvre, Pierre Doris, Marie-Christine Adam, Sophie Daumier
+p340
+sVType
+p341
+Vmovie
+p342
+sVimdbVotes
+p343
+V12
+p344
+sVWebsite
+p345
+VN/A
+p346
+sVPoster
+p347
+VN/A
+p348
+sVTitle
+p349
+g320
+sVDirector
+p350
+VRobert Thomas
+p351
+sVReleased
+p352
+V12 Apr 1978
+p353
+sVAwards
+p354
+VN/A
+p355
+sVGenre
+p356
+VComedy
+p357
+sVimdbRating
+p358
+V6.1
+p359
+sVLanguage
+p360
+VFrench
+p361
+sVCountry
+p362
+VFrance
+p363
+sVBoxOffice
+p364
+VN/A
+p365
+sVRuntime
+p366
+V90 min
+p367
+sVimdbID
+p368
+Vtt0233752
+p369
+sVMetascore
+p370
+VN/A
+p371
+sVResponse
+p372
+VTrue
+p373
+sVYear
+p374
+V1978
+p375
+ssVAvatar
+p376
+(dp377
+VRatings
+p378
+(lp379
+(dp380
+VSource
+p381
+VInternet Movie Database
+p382
+sVValue
+p383
+V7.8/10
+p384
+sa(dp385
+VSource
+p386
+VRotten Tomatoes
+p387
+sVValue
+p388
+V84%
+p389
+sa(dp390
+VSource
+p391
+VMetacritic
+p392
+sVValue
+p393
+V83/100
+p394
+sasVRated
+p395
+VPG-13
+p396
+sVPlot
+p397
+VA paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.
+p398
+sVDVD
+p399
+V22 Apr 2010
+p400
+sVWriter
+p401
+VJames Cameron
+p402
+sVProduction
+p403
+V20th Century Fox
+p404
+sVActors
+p405
+VSam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang
+p406
+sVType
+p407
+Vmovie
+p408
+sVimdbVotes
+p409
+V953,668
+p410
+sVWebsite
+p411
+Vhttp://www.avatarmovie.com/
+p412
+sVPoster
+p413
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg
+p414
+sVTitle
+p415
+g376
+sVDirector
+p416
+VJames Cameron
+p417
+sVReleased
+p418
+V18 Dec 2009
+p419
+sVAwards
+p420
+VWon 3 Oscars. Another 85 wins & 128 nominations.
+p421
+sVGenre
+p422
+VAction, Adventure, Fantasy
+p423
+sVimdbRating
+p424
+V7.8
+p425
+sVLanguage
+p426
+VEnglish, Spanish
+p427
+sVCountry
+p428
+VUK, USA
+p429
+sVBoxOffice
+p430
+V$749,700,000
+p431
+sVRuntime
+p432
+V162 min
+p433
+sVimdbID
+p434
+Vtt0499549
+p435
+sVMetascore
+p436
+V83
+p437
+sVResponse
+p438
+VTrue
+p439
+sVYear
+p440
+V2009
+p441
+ssVHorror
+p442
+(dp443
+VRatings
+p444
+(lp445
+(dp446
+VSource
+p447
+VInternet Movie Database
+p448
+sVValue
+p449
+V3.4/10
+p450
+sasVRated
+p451
+g14
+sVPlot
+p452
+VThis visually arresting chiller concerns a group of runaway teens that escape from a drug rehab and encounter demonic forces in a rural farmhouse.
+p453
+sVDVD
+p454
+V27 Sep 2005
+p455
+sVWriter
+p456
+VDante Tomaselli
+p457
+sVProduction
 p458
 VN/A
 p459
-sVWriter
+sVActors
 p460
-VDavid McGillivray (screenplay), Les Young (story), Moira Young (story)
+VKreskin, Lizzy Mahon, Danny Lopes, Vincent Lamberti
 p461
-sVProduction
+sVType
 p462
-VN/A
+Vmovie
 p463
-sVActors
+sVimdbVotes
 p464
-VJohn Nolan, Carolyn Courage, James Aubrey, Sarah Keller
+V922
 p465
-sVType
+sVWebsite
 p466
-Vmovie
+VN/A
 p467
-sVimdbVotes
+sVPoster
 p468
-V777
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTIxNzk5OTk4Nl5BMl5BanBnXkFtZTYwMzkyNzk5._V1_SX300.jpg
 p469
-sVWebsite
+sVTitle
 p470
-VN/A
+g442
+sVDirector
 p471
-sVPoster
+VDante Tomaselli
 p472
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTc3NzRlYzUtMTFkYS00NWI1LThlZTItMzAxOTUyZjk4YTdmXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_SX300.jpg
+sVReleased
 p473
-sVTitle
+V27 May 2003
 p474
-g446
-sVDirector
+sVAwards
 p475
-VNorman J. Warren
+V1 win.
 p476
-sVReleased
+sVGenre
 p477
-V26 Oct 1979
+VHorror
 p478
-sVAwards
+sVimdbRating
 p479
-VN/A
+V3.4
 p480
-sVGenre
+sVLanguage
 p481
-VHorror
+VEnglish
 p482
-sVimdbRating
+sVCountry
 p483
-V5.0
+VUSA
 p484
-sVLanguage
+sVBoxOffice
 p485
-VEnglish
+VN/A
 p486
-sVCountry
+sVRuntime
 p487
-VUK
+VN/A
 p488
-sVBoxOffice
+sVimdbID
 p489
-VN/A
+Vtt0304166
 p490
-sVRuntime
+sVMetascore
 p491
-V84 min
+VN/A
 p492
-sVimdbID
+sVResponse
 p493
-Vtt0141897
+VTrue
 p494
-sVMetascore
+sVYear
 p495
-VN/A
+V2003
 p496
-sVResponse
+ssVTerror
 p497
-VTrue
-p498
-sVYear
+(dp498
+VRatings
 p499
-V1978
-p500
-ssVManos-_The_Hands_of_Fate
-p501
-(dp502
-VRatings
+(lp500
+(dp501
+VSource
+p502
+VInternet Movie Database
 p503
-(lp504
-(dp505
-VSource
+sVValue
+p504
+V5.0/10
+p505
+sasVRated
 p506
-VInternet Movie Database
+g14
+sVPlot
 p507
-sVValue
+VRoyal descendants feel the wrath of the curse of condemned witch Mad Dolly, who spews forth her prophecy while she is burned at the stake. The victims suffer death by having their heads ...
 p508
-V1.9/10
+sVDVD
 p509
-sa(dp510
-VSource
+VN/A
+p510
+sVWriter
 p511
-VRotten Tomatoes
+VDavid McGillivray (screenplay), Les Young (story), Moira Young (story)
 p512
-sVValue
+sVProduction
 p513
-V7%
+VN/A
 p514
-sasVRated
+sVActors
 p515
-VNOT RATED
+VJohn Nolan, Carolyn Courage, James Aubrey, Sarah Keller
 p516
-sVPlot
+sVType
 p517
-VA family gets lost on the road and stumbles upon a hidden, underground, devil-worshiping cult led by the fearsome Master and his servant Torgo.
+Vmovie
 p518
-sVDVD
+sVimdbVotes
 p519
-V07 Oct 2003
+V777
 p520
-sVWriter
+sVWebsite
 p521
-VHarold P. Warren (screenplay)
+VN/A
 p522
-sVProduction
+sVPoster
 p523
-VSinister Cinema
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTc3NzRlYzUtMTFkYS00NWI1LThlZTItMzAxOTUyZjk4YTdmXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_SX300.jpg
 p524
-sVActors
+sVTitle
 p525
-VTom Neyman, John Reynolds, Diane Adelson, Harold P. Warren
+g497
+sVDirector
 p526
-sVType
+VNorman J. Warren
 p527
-Vmovie
+sVReleased
 p528
-sVimdbVotes
+V26 Oct 1979
 p529
-V32,021
+sVAwards
 p530
-sVWebsite
+VN/A
 p531
-VN/A
+sVGenre
 p532
-sVPoster
-p533
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BNWUzNGExMGEtYzcwNS00OGY5LWE3NmItNDcxZTQ3YjljNmE2XkEyXkFqcGdeQXVyNTc4Njg5MjA@._V1_SX300.jpg
-p534
-sVTitle
-p535
-VManos: The Hands of Fate
-p536
-sVDirector
-p537
-VHarold P. Warren
-p538
-sVReleased
-p539
-V15 Nov 1966
-p540
-sVAwards
-p541
-VN/A
-p542
-sVGenre
-p543
 VHorror
+p533
+sVimdbRating
+p534
+V5.0
+p535
+sVLanguage
+p536
+VEnglish
+p537
+sVCountry
+p538
+VUK
+p539
+sVBoxOffice
+p540
+VN/A
+p541
+sVRuntime
+p542
+V84 min
+p543
+sVimdbID
 p544
-sVimdbRating
+Vtt0141897
 p545
-V1.9
+sVMetascore
 p546
-sVLanguage
+VN/A
 p547
-VEnglish
+sVResponse
 p548
-sVCountry
+VTrue
 p549
-VUSA
+sVYear
 p550
-sVBoxOffice
+V1978
 p551
-VN/A
-p552
-sVRuntime
-p553
-V70 min
-p554
-sVimdbID
-p555
-Vtt0060666
-p556
-sVMetascore
-p557
-VN/A
-p558
-sVResponse
-p559
-VTrue
-p560
-sVYear
-p561
-V1966
-p562
 ssVSaw
-p563
-(dp564
+p552
+(dp553
 VRatings
-p565
-(lp566
-(dp567
+p554
+(lp555
+(dp556
 VSource
-p568
+p557
 VInternet Movie Database
-p569
+p558
 sVValue
-p570
+p559
 V7.7/10
-p571
-sa(dp572
+p560
+sa(dp561
 VSource
-p573
+p562
 VRotten Tomatoes
-p574
+p563
 sVValue
-p575
+p564
 V48%
-p576
-sa(dp577
+p565
+sa(dp566
 VSource
-p578
+p567
 VMetacritic
-p579
+p568
 sVValue
-p580
+p569
 V46/100
-p581
+p570
 sasVRated
-p582
-g24
+p571
+g14
 sVPlot
-p583
+p572
 VTwo strangers awaken in a room with no recollection of how they got there or why, and soon discover they are pawns in a deadly game perpetrated by a notorious serial killer.
-p584
+p573
 sVDVD
-p585
+p574
 V15 Feb 2005
-p586
+p575
 sVWriter
-p587
+p576
 VLeigh Whannell, James Wan (story), Leigh Whannell (story)
-p588
+p577
 sVProduction
-p589
+p578
 VLions Gate Films
-p590
+p579
 sVActors
-p591
+p580
 VLeigh Whannell, Cary Elwes, Danny Glover, Ken Leung
-p592
+p581
 sVType
-p593
+p582
 Vmovie
-p594
+p583
 sVimdbVotes
-p595
+p584
 V320,986
-p596
+p585
 sVWebsite
-p597
+p586
 Vhttp://www.sawmovie.com/
-p598
+p587
 sVPoster
-p599
+p588
 Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMjE4MDYzNDE1OV5BMl5BanBnXkFtZTcwNDY2OTYwNA@@._V1_SX300.jpg
-p600
+p589
 sVTitle
-p601
-g563
+p590
+g552
 sVDirector
-p602
+p591
 VJames Wan
-p603
+p592
 sVReleased
-p604
+p593
 V29 Oct 2004
-p605
+p594
 sVAwards
-p606
+p595
 V8 wins & 10 nominations.
-p607
+p596
 sVGenre
-p608
+p597
 VHorror, Mystery, Thriller
-p609
+p598
 sVimdbRating
-p610
+p599
 V7.7
-p611
+p600
 sVLanguage
-p612
+p601
 VEnglish
-p613
+p602
 sVCountry
-p614
+p603
 VUSA
-p615
+p604
 sVBoxOffice
-p616
+p605
 V$55,100,000
-p617
+p606
 sVRuntime
-p618
+p607
 V103 min
-p619
+p608
 sVimdbID
-p620
+p609
 Vtt0387564
-p621
+p610
 sVMetascore
-p622
+p611
 V46
-p623
+p612
 sVResponse
-p624
+p613
 VTrue
-p625
+p614
 sVYear
-p626
+p615
 V2004
-p627
-ssVZombie_Nation
-p628
-(dp629
+p616
+ssVPride_and_Prejudice_and_Zombies
+p617
+(dp618
 VRatings
-p630
-(lp631
-(dp632
+p619
+(lp620
+(dp621
 VSource
-p633
+p622
 VInternet Movie Database
-p634
+p623
 sVValue
+p624
+V5.8/10
+p625
+sa(dp626
+VSource
+p627
+VRotten Tomatoes
+p628
+sVValue
+p629
+V43%
+p630
+sa(dp631
+VSource
+p632
+VMetacritic
+p633
+sVValue
+p634
+V45/100
 p635
-V2.1/10
-p636
 sasVRated
+p636
+VPG-13
 p637
-g24
 sVPlot
 p638
-VA psychotic police officer who murders his female arrests gets what's coming to him when a horde of zombified women rise from their graves to seek revenge.
+VFive sisters in 19th century England must cope with the pressures to marry while protecting themselves from a growing population of zombies.
 p639
 sVDVD
 p640
-V19 Dec 2006
+V31 May 2016
 p641
 sVWriter
 p642
-VUlli Lommel
+VBurr Steers (screenplay), Jane Austen (Quirk Books novel), Seth Grahame-Smith (Quirk Books novel)
 p643
 sVProduction
 p644
-VLionsGate Entertainment
+VSony Pictures
 p645
 sVActors
 p646
-VGunter Ziegler, Brandon Dean, Axel Montgomery, Phil Lander
+VLily James, Sam Riley, Bella Heathcote, Ellie Bamber
 p647
 sVType
 p648
@@ -1265,7 +1265,7 @@ Vmovie
 p649
 sVimdbVotes
 p650
-V7,764
+V37,115
 p651
 sVWebsite
 p652
@@ -1273,55 +1273,55 @@ VN/A
 p653
 sVPoster
 p654
-Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMTczNjE5Njk5Ml5BMl5BanBnXkFtZTcwNDc3MDA0MQ@@._V1_SX300.jpg
+Vhttps://images-na.ssl-images-amazon.com/images/M/MV5BMjE1MzA3NzYxMl5BMl5BanBnXkFtZTgwMzQ0NDA5NzE@._V1_SX300.jpg
 p655
 sVTitle
 p656
-VZombie Nation
+VPride and Prejudice and Zombies
 p657
 sVDirector
 p658
-VUlli Lommel
+VBurr Steers
 p659
 sVReleased
 p660
-V05 Oct 2004
+V05 Feb 2016
 p661
 sVAwards
 p662
-VN/A
+V1 win & 3 nominations.
 p663
 sVGenre
 p664
-VHorror
+VAction, Horror, Romance
 p665
 sVimdbRating
 p666
-V2.1
+V5.8
 p667
 sVLanguage
 p668
-VEnglish
+VEnglish, Japanese, Chinese
 p669
 sVCountry
 p670
-VUSA
+VUSA, UK
 p671
 sVBoxOffice
 p672
-VN/A
+V$8,639,097
 p673
 sVRuntime
 p674
-V81 min
+V108 min
 p675
 sVimdbID
 p676
-Vtt0463392
+Vtt1374989
 p677
 sVMetascore
 p678
-VN/A
+V45
 p679
 sVResponse
 p680
@@ -1329,12 +1329,11 @@ VTrue
 p681
 sVYear
 p682
-V2004
+V2016
 p683
-ssaS''
-p684
+ssag4
 aI0
 aI50
-aI50
+aI51
 aI0
 a.
