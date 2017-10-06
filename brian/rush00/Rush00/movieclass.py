@@ -101,8 +101,8 @@ class Datamanager(object):
 
 	@classmethod
 	def move_coord(cls, x, y):
-		coord[0] = x
-		coord[1] = y
+		cls.coord[0] = x
+		cls.coord[1] = y
 
 	@classmethod
 	def modif_movieballs(cls, nb):
