@@ -136,9 +136,9 @@ def Moviedex(request):
 		print(db.index)
 		if (len(db.My_Moviemons)):
 			if request.GET.get('a') == 'right':
-				db.index = (db.index  + 1) %len(db.My_Moviemons)
+				db.index = (db.index + 1) %len(db.My_Moviemons)
 			if request.GET.get('a') == 'left':
-				db.index = (db.index  + -1) %len(db.My_Moviemons)
+				db.index = (db.index + -1) %len(db.My_Moviemons)
 			db.save("save.pickle")
 
 		if request.GET.get('a') == 'a':
@@ -149,6 +149,8 @@ def Moviedex(request):
 		return render(request, "Rush00/moviedex.html", {"dico": newdico, "cursor": db.My_Moviemons[db.index]})
 	else:
 		return render(request, "Rush00/moviedex.html")
+
+
 def MoviedexDetail(request, moviemon_id):
 	db = Datamanager()
 	db.load("save.pickle")
@@ -156,6 +158,7 @@ def MoviedexDetail(request, moviemon_id):
 	if request.GET.get('a') == 'b':
 		return redirect('/moviedex')
 	return render(request, "Rush00/moviedexdetail.html", {"detail": db.Moviemons[moviemon_id]})
+
 
 def Battle(request, moviemon_id):
 	battle_commentary = ""
@@ -196,10 +199,10 @@ def Battle(request, moviemon_id):
 	db.save("save.pickle")
 	return render(request, "Rush00/battle.html", {
 		"Dictionary_Movie":db.Moviemons[moviemon_id],
-		"movieballs":db.movieballs,
+		"movieballs": db.movieballs,
 		"battle_commentary": battle_commentary,
 		"strength": db.strength,
-		"Luck" : calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength)
+		"Luck": calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength)
 	})
 
 params = getattr(settings, "MOVIEMON", None)
@@ -213,6 +216,7 @@ else:
 	MAPMAX = pos[1]
 print('MAPMIN = ', MAPMIN)
 print('MAPMAX = ', MAPMAX)
+
 
 def Worldmap(request):
 	db = Datamanager()
@@ -280,6 +284,7 @@ def Worldmap(request):
 													"mapx":db.mapx,
 													"mapy":db.mapy
 	})
+
 
 def Form(request):
 	if (request.method == 'POST'):
