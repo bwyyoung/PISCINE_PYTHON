@@ -1,3 +1,6 @@
+89cc205
+
+4d565754f8fcccd5e39ca746d696e734837c5a33
 $> python3 var.py
 42 est de type <class 'int'>
 42 est de type <class 'str'>
