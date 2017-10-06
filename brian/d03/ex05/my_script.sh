@@ -1,5 +1,8 @@
 #!/bin/bash
+python3 -m venv django_venv;
+source django_venv/bin/activate;
 pip3 install -r requirement.txt;
+source django_venv/bin/activate;
 ##django-admin startproject Django;
 cd Django;
 ##python3 manage.py startapp helloworld

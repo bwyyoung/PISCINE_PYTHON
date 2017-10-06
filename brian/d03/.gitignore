@@ -4,3 +4,4 @@ __init__.pyc
 *.pyc
 __pycache__
 django_venv
+db.sqlite3
