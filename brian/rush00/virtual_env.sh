@@ -1,5 +1,2 @@
 #!/bin/bash
-python3 -m venv django_venv;
-. django_venv/bin/activate;
-pip3 install -r requirements.txt;
-exec /bin/zsh -i;
+python3 -m venv django_venv && source django_venv/bin/activate && django_venv/bin/pip install -r requirements.txt && /bin/sh

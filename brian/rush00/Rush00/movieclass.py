@@ -1,42 +1,58 @@
 import sys, json, requests, pickle, random, os
 from django.conf import settings
-from pygame import mixer
+from distutils.version import LooseVersion, StrictVersion
+import platform
+if platform.release() <= "15.6.0":
+	from pygame import mixer
 
 class Singleton(type):
 	_instances = {}
-	def __call__(cls, *args, **kwargs):
-		if cls not in cls._instances:
-			cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-		return cls._instances[cls]
+	def __call__(self, *args, **kwargs):
+		if self not in self._instances:
+			self._instances[self] = super(Singleton, self).__call__(*args, **kwargs)
+		return self._instances[self]
 
 class Soundmanager(object):
 	__metaclass__ = Singleton
-	mute = True
+
 	def __init__(self):
 		print('init')
+		if platform.release() > "15.6.0":
+			return
 		mixer.pre_init(48000, -16, 2, 2048)
 		mixer.init()
-		self.mute = True
+		Soundmanager.mute = True
+		print(platform.platform())
+		print(platform.system())
+		print(platform.release())
+		print(platform.version())
+		print(sys.version_info)
 
 	@classmethod
-	def play_song_main(cls):
-		if cls.mute:
+	def play_song_main(self):
+		if platform.release() > "15.6.0":
+			return
+		if Soundmanager.mute:
 			return
 		mixer.music.stop()
 		mixer.music.load('Rush00/static/main_theme.mp3')
 		mixer.music.play(-1)
 
 	@classmethod
-	def play_song_world(cls):
-		if cls.mute:
+	def play_song_world(self):
+		if platform.release() > "15.6.0":
+			return
+		if Soundmanager.mute:
 			return
 		mixer.music.stop()
 		mixer.music.load('Rush00/static/goodbye_moon_men.mp3')
 		mixer.music.play(-1)
 
 	@classmethod
-	def play_song_battle(cls):
-		if cls.mute:
+	def play_song_battle(self):
+		if platform.release() > "15.6.0":
+			return
+		if Soundmanager.mute:
 			return
 		mixer.music.stop()
 		mixer.music.load('Rush00/static/get_schwifty.mp3')
@@ -55,30 +71,29 @@ class Datamanager(object):
 		else:
 			movies = params['MOVIES']
 		self.lst = movies
-		print('Movie list : ',self.lst)
 
 
 	@classmethod
-	def set_default(cls):
+	def set_default(self):
 		params = getattr(settings, "MOVIEMON", None)
 		if not params:
 			print('Missing settings for MOVIEMON')
-			cls.mapx = 50
-			cls.mapy = 50
+			self.mapx = 50
+			self.mapy = 50
 		else:
 			pos = params['INITIAL_PLAYER_POS']
-			cls.mapx = pos[0]
-			cls.mapy = pos[1]
-		cls.coord           = [1.352083, 103.819836]
-		cls.movieballs      = 100
-		cls.Moviemons       = {}
-		cls.My_Moviemons    = []
-		cls.MoviemonBattle  = ''
-		cls.strength        = 0
-		cls.index 			= 0
+			self.mapx = pos[0]
+			self.mapy = pos[1]
+		self.coord           = [1.352083, 103.819836]
+		self.movieballs      = 100
+		self.Moviemons       = {}
+		self.My_Moviemons    = []
+		self.MoviemonBattle  = ''
+		self.strength        = 0
+		self.index 			= 0
 
 	@classmethod
-	def set_value(cls,
+	def set_value(self,
 					new_coordinates,
 					new_movieballs,
 					new_Moviemons,
@@ -89,32 +104,32 @@ class Datamanager(object):
 					new_mapy = 50,
 					new_index = 0):
 
-		cls.coord           = new_coordinates
-		cls.movieballs      = new_movieballs
-		cls.Moviemons       = new_Moviemons
-		cls.My_Moviemons    = new_My_Moviemons
-		cls.MoviemonBattle  = new_MoviemonBattle
-		cls.strength        = new_strength
-		cls.mapx			= new_mapx
-		cls.mapy            = new_mapy
-		cls.index			= new_index
+		self.coord           = new_coordinates
+		self.movieballs      = new_movieballs
+		self.Moviemons       = new_Moviemons
+		self.My_Moviemons    = new_My_Moviemons
+		self.MoviemonBattle  = new_MoviemonBattle
+		self.strength        = new_strength
+		self.mapx			= new_mapx
+		self.mapy            = new_mapy
+		self.index			= new_index
 
 	@classmethod
-	def move_coord(cls, x, y):
-		cls.coord[0] = x
-		cls.coord[1] = y
+	def move_coord(self, x, y):
+		self.coord[0] = x
+		self.coord[1] = y
 
 	@classmethod
-	def modif_movieballs(cls, nb):
-		cls.movieballs = nb
+	def modif_movieballs(self, nb):
+		self.movieballs = nb
 
 	@classmethod
-	def add_moviemons(cls, name):
-		cls.My_Moviemons.append(name)
+	def add_moviemons(self, name):
+		self.My_Moviemons.append(name)
 
 	@classmethod
-	def del_moviemons(cls, name):
-		del cls.Moviemons[name]
+	def del_moviemons(self, name):
+		del self.Moviemons[name]
 
 	def load(self, name):
 		info = []

@@ -1,3 +1,7 @@
+__init__.py
+__pycache__
+__init__.pyc
 *.pyc
 __pycache__
-
+django_venv
+db.sqlite3

@@ -1,14 +1,15 @@
 import sys, requests, json
 from dewiki import parser
 
-def hack_wiki():
+
+def call_wiki():
 	adr = "https://fr.wikipedia.org/w/api.php?action=query&titles="\
 			+ sys.argv[1]\
 			+"&prop=revisions&redirects=&rvprop=content&format=json&formatversion=2&utf8="
 
 	r = requests.get(adr)
 	if not r:
-		print('Please check your internet conection')
+		print('Please check your internet connection')
 		return
 
 	if r.status_code != 200:
@@ -35,14 +36,10 @@ def hack_wiki():
 		print('Not acess to', new_file)
 	fd.write(p.parse_string(content))
 	fd.close()
-	# print(p.parse_string(content))
 
 
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
 		print('Ivalide number of arguments')
 		quit()
-	hack_wiki()
-
-	# except Exception as e:
-	# 	print('Not found')
+	call_wiki()

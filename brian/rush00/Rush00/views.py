@@ -226,7 +226,7 @@ def Worldmap(request):
 		return redirect('/moviedex')
 	if request.GET.get('a') == "start":
 		return redirect('/options')
-	miv = 0
+	moved = False
 	rand = 0
 	game_state = "walking"
 	if len(db.MoviemonBattle) == 0:
@@ -234,23 +234,22 @@ def Worldmap(request):
 			if request.GET.get('a') == 'left' and db.mapx > MAPMIN:
 				db.mapx-=1
 				db.coord[1]-=0.0010
-				miv = 1
+				moved = True
 			if request.GET.get('a') == 'right' and db.mapx < MAPMAX:
 				db.mapx+=1
 				db.coord[1]+=0.0010
-				miv = 1
+				moved = True
 			if request.GET.get('a') == 'up' and db.mapy > MAPMIN:
 				db.mapy-=1
 				db.coord[0]+=0.0010
-				miv = 1
+				moved = True
 			if request.GET.get('a') == 'down' and db.mapy < MAPMAX:
 				db.mapy+=1
 				db.coord[0]-=0.0010
-				miv = 1
-
-			if (miv):
+				moved = True
+			if moved:
 				rand = random.randint(1,100)
-				if rand > 60 and len(db.get_random_movie()) > 0: #A VERIF
+				if rand > 60 and len(db.get_random_movie()) > 0:
 					game_state = "attack"
 					db.MoviemonBattle = random.choice(db.get_random_movie())
 				elif rand > 40:

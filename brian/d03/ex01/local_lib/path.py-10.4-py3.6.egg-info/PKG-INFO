@@ -6,6 +6,7 @@ Home-page: https://github.com/jaraco/path.py
 Author: Jason R. Coombs
 Author-email: jaraco@jaraco.com
 License: UNKNOWN
+Description-Content-Type: UNKNOWN
 Description: .. image:: https://img.shields.io/pypi/v/path.py.svg
            :target: https://pypi.org/project/path.py
         
