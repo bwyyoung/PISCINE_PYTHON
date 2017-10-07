@@ -1,5 +1,4 @@
 #!/bin/sh
 
 pip3 --version
-pip3 install git+https://github.com/jaraco/path.py.git -t './local_lib' --upgrade --no-deps --ignore-installed --log 'pip.log'
-python3 my_program.py
+pip3 install git+https://github.com/jaraco/path.py.git -t './local_lib' --upgrade --log 'pip.log' && python3 my_program.py

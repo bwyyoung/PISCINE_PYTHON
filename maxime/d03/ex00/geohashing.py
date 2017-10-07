@@ -1,3 +1,4 @@
+# https://stackoverflow.com/questions/7585307/typeerror-unicode-objects-must-be-encoded-before-hashing
 import sys
 import antigravity
 
