@@ -21,7 +21,7 @@ class Soundmanager(object):
 			return
 		mixer.pre_init(48000, -16, 2, 2048)
 		mixer.init()
-		Soundmanager.mute = True
+		Soundmanager.mute = False
 		print(platform.platform())
 		print(platform.system())
 		print(platform.release())
@@ -180,6 +180,7 @@ class Datamanager(object):
 		print('LOAD DEFAULT SETTINGS')
 		F = open("info.pickle", "wb")
 		for item in self.lst:
+			print('CALLING OMDB '    +  item)
 			r = requests.get("http://www.omdbapi.com/?t=" + item + "&apikey=41f80ff7")
 			if r.status_code != 200:
 				raise Exception ("Error: " + str(r.status_code))

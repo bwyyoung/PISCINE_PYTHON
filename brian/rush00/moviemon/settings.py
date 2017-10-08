@@ -131,9 +131,7 @@ MOVIEMON = {
                     'Aliens',
                     'horror',
                     'rocky horror picture show',
-                    'hellboy',
-                    'Freddy'],
+                    'hellboy'],
     'INITIAL_PLAYER_POS' : [50, 50],
     'GRID_SIZE': [0, 100]
 }
-

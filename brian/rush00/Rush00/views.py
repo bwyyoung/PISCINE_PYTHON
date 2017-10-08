@@ -5,7 +5,7 @@ import random
 from .movieclass import Datamanager
 from .movieclass import Soundmanager
 
-def New(request):
+def splash_screen(request):
 	print (request)
 	if request.GET.get('a') == 'a':
 		db = Datamanager()
@@ -16,7 +16,7 @@ def New(request):
 	if request.GET.get('a') == 'b':
 		return redirect('/options/load_game')
 	Soundmanager().play_song_main()
-	return render(request, "Rush00/new.html")
+	return render(request, "Rush00/splash_screen.html")
 
 
 def Options(request):
@@ -28,15 +28,28 @@ def Options(request):
 		return redirect('/')
 	return render(request, "Rush00/options.html")
 
+def map():
+	params = getattr(settings, "MOVIEMON", None)
+	if not params:
+		print('Missing setting MOVIEMON')
+		MAPMIN = 0
+		MAPMAX = 100
+	else:
+		pos = params['GRID_SIZE']
+		MAPMIN = pos[0]
+		MAPMAX = pos[1]
+	print('MAPMIN = ', MAPMIN)
+	print('MAPMAX = ', MAPMAX)
+	return MAPMIN, MAPMAX
 
 
-def calcul(strengthMovie, strengthPlayer):
-	C = 50 - (float(strengthMovie) * 10) + (strengthPlayer * 5)
-	if C < 1:
-		C = 1
-	if C > 90:
-		C = 90
-	return C
+def get_probability(strengthMovie, strengthPlayer):
+	chance = 50 - (float(strengthMovie) * 10) + (strengthPlayer * 5)
+	if chance < 1:
+		chance = 1
+	if chance > 90:
+		chance = 90
+	return chance
 
 def capture(C):
 	if random.randint(0,100) < C:
@@ -54,23 +67,19 @@ def OptionsSave(request):
 		my_database.load(slot)
 		data_player.append([ slot[0:5], len(my_database.My_Moviemons)])
 		data_monster.append([slot[0:5], len(my_database.Moviemons)])
-		i+=1
+		i += 1
 
 	db = Datamanager()
 	db.load("save.pickle")
-	index = db.index;
-
-	db.index = index;
+	index = db.index
+	db.index = index
 	if request.GET.get('a') == 'up':
 		db.index = (db.index - 1) % 3
 	if request.GET.get('a') == 'down':
 		db.index = (db.index + 1) % 3
-
 	if request.GET.get('process') == '1':
 		db.save(slots[db.index])
-
 	print(db.index)
-
 	db.save("save.pickle")
 	if request.GET.get('a') == 'start':
 		return redirect('/options/save_game')
@@ -93,7 +102,6 @@ def OptionsLoad(request):
 		data_player.append([ slot[0:5], len(my_database.My_Moviemons)])
 		data_monster.append([slot[0:5], len(my_database.Moviemons)])
 		i += 1
-
 	db = Datamanager()
 	db.load("save.pickle")
 	index = db.index
@@ -108,7 +116,6 @@ def OptionsLoad(request):
 		print('LOADED DATA')
 		Soundmanager().play_song_world()
 		return redirect('/worldmap')
-
 	db.save("save.pickle")
 	if request.GET.get('a') == 'start':
 		return redirect('/options/load_game')
@@ -127,13 +134,15 @@ def Moviedex(request):
 	if request.GET.get('a') == 'select':
 		return redirect('/worldmap')
 
-	if (len(db.My_Moviemons)):
+	if (len(db.My_Moviemons)) > 0:
 		for elem in db.My_Moviemons:
 			newdico[elem] = db.Moviemons[elem]
 
 		db.My_Moviemons.sort()
 
 		print(db.index)
+		if db.index > len(db.My_Moviemons):
+			db.index = 0
 		if (len(db.My_Moviemons)):
 			if request.GET.get('a') == 'right':
 				db.index = (db.index + 1) %len(db.My_Moviemons)
@@ -177,7 +186,7 @@ def Battle(request, moviemon_id):
 		if request.GET.get('a') == 'a':
 			if db.movieballs > 0:
 				db.movieballs -= 1
-				if (capture(calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength))):
+				if (capture(get_probability(db.Moviemons[moviemon_id]['imdbRating'], db.strength))):
 					db.My_Moviemons.append(moviemon_id)
 					battle_commentary = moviemon_id +  " Captured !"
 					db.MoviemonBattle = ""
@@ -193,35 +202,21 @@ def Battle(request, moviemon_id):
 
 	print("Print db.moviemon: ",moviemon_id , " : \n",db.Moviemons[moviemon_id])
 	print("NB balls:",db.movieballs)
-
-	# if moviemon_id in db.Moviemons:
-	# 	db.add_moviemons(moviemon_id)
 	db.save("save.pickle")
 	return render(request, "Rush00/battle.html", {
 		"Dictionary_Movie":db.Moviemons[moviemon_id],
 		"movieballs": db.movieballs,
 		"battle_commentary": battle_commentary,
 		"strength": db.strength,
-		"Luck": calcul(db.Moviemons[moviemon_id]['imdbRating'], db.strength)
+		"Luck": get_probability(db.Moviemons[moviemon_id]['imdbRating'], db.strength)
 	})
-
-params = getattr(settings, "MOVIEMON", None)
-if not params:
-	print('Missing setting MOVIEMON')
-	MAPMIN = 0 # par defaut
-	MAPMAX = 100 # par defaut
-else:
-	pos = params['GRID_SIZE']
-	MAPMIN = pos[0]
-	MAPMAX = pos[1]
-print('MAPMIN = ', MAPMIN)
-print('MAPMAX = ', MAPMAX)
 
 def Worldmap(request):
 	db = Datamanager()
 	db.load("save.pickle")
 	directions = ['left', 'right','up', 'down']
-
+	MAPMIN = map()[0]
+	MAPMAX = map()[1]
 	if request.GET.get('a') == "select":
 		return redirect('/moviedex')
 	if request.GET.get('a') == "start":
@@ -277,5 +272,3 @@ def Worldmap(request):
 													"mapx":db.mapx,
 													"mapy":db.mapy
 	})
-
-
