@@ -72,4 +72,41 @@ Class notes
 42
 
 _________________________________________________________________________________
+django-admin startproject mysite
+python manage.py startapp polls
+python manage.py runserver
+_________________________________________________________________________________
 
+POSTGRES
+
+https://www.tutorialspoint.com/postgresql/postgresql_select_database.htm
+-------------
+export PGDATA=$HOME/.brew/var/postgres
+-------------
+pg_ctl --help
+pg_ctl status
+pg_ctl stop
+pg_ctl start
+-------------
+vim ~/.brew/var/postgres/pg_hba.conf
+-------------
+psql -d postgres
+-------------
+\h
+\l
+\du
+CREATE USER "djangouser" WITH PASSWORD 'secret';
+ALTER DATABASE "formationdjango" OWNER TO djangouser;
+-------------
+psql -U djangouser -d formationdjango
+
+-----------------
+Voir les Tables:
+SELECT * FROM <la_table>
+\dt
+
+Voir la description de la table
+\d+ ex00_movies
+-----------------
+Django Models
+https://docs.djangoproject.com/fr/1.11/topics/db/models/#field-types
