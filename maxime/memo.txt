@@ -99,7 +99,6 @@ CREATE USER "djangouser" WITH PASSWORD 'secret';
 ALTER DATABASE "formationdjango" OWNER TO djangouser;
 -------------
 psql -U djangouser -d formationdjango
-
 -----------------
 Voir les Tables:
 SELECT * FROM <la_table>
@@ -109,4 +108,6 @@ Voir la description de la table
 \d+ ex00_movies
 -----------------
 Django Models
-https://docs.djangoproject.com/fr/1.11/topics/db/models/#field-types
+-> https://docs.djangoproject.com/fr/1.11/topics/db/models/#field-types
+Postgres loop psycopg2
+-> http://zetcode.com/db/postgresqlpythontutorial/

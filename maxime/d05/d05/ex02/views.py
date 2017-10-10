@@ -5,11 +5,11 @@ import psycopg2
 def init(request):
 	try:
 		conn = psycopg2.connect(
-				database='formationdjango',
-				host='localhost',
-				user='djangouser',
-				password='secret'
-			)
+			database='formationdjango',
+			host='localhost',
+			user='djangouser',
+			password='secret'
+		)
 
 		curr = conn.cursor()
 
@@ -33,11 +33,11 @@ def init(request):
 def populate(request):
 	try:
 		conn = psycopg2.connect(
-				database='formationdjango',
-				host='localhost',
-				user='djangouser',
-				password='secret'
-			)
+			database='formationdjango',
+			host='localhost',
+			user='djangouser',
+			password='secret'
+		)
 
 		curr = conn.cursor()
 		db = 'ex02_movies'
@@ -58,9 +58,11 @@ def populate(request):
 			try:
 				curr.execute(query)
 				conn.commit()
-				trace.append('<br />{} => <span style="color:green">OK</span><br />\n'.format(item[1]))
+				trace.append('{} => <span style="color:green">OK</span><br />\n'.format(item[1]))
 			except Exception as e:
-				trace.append('<br />{} => <span style="color:red">ERROR</span><br />{}<br />\n'.format(item[1], e))
+				trace.append('{} => <span style="color:red">ERROR</span><br />{}<br />\n'.format(item[1], e))
+				conn.close()
+				return HttpResponse(trace)
 		conn.close()
 		return HttpResponse(trace)
 	except Exception as e:
@@ -69,11 +71,11 @@ def populate(request):
 def display(request):
 	try:
 		conn = psycopg2.connect(
-				database='formationdjango',
-				host='localhost',
-				user='djangouser',
-				password='secret'
-			)
+			database='formationdjango',
+			host='localhost',
+			user='djangouser',
+			password='secret'
+		)
 		curr = conn.cursor()
 		curr.execute(""" SELECT * FROM ex02_movies """)
 		res = curr.fetchall()
@@ -82,29 +84,28 @@ def display(request):
 		if (len(res) > 0):
 			return render(request, 'ex02/display.html', {'data': res})
 		else:
-			return HttpResponse('No data available')	
+			return HttpResponse('No data available')
 	except:
-		return HttpResponse('Fail')
+		return HttpResponse('No data available')
 
 
-def remove(request):
-	try:
-		trace = ''
-		conn = psycopg2.connect(
-				database='formationdjango',
-				host='localhost',
-				user='djangouser',
-				password='secret'
-			)
-		curr = conn.cursor()
-		try:
-			curr.execute(""" DROP TABLE ex02_movies """)
-			conn.commit()
-			trace = 'Done<br />'
-		except Exception as e:
-			trace = '{}<br />'.format(e)
-		conn.close()
-		return HttpResponse(trace)
-	except Exception as e:
-		return HttpResponse(e)
-
+# def remove(request):
+# 	try:
+# 		trace = ''
+# 		conn = psycopg2.connect(
+# 			database='formationdjango',
+# 			host='localhost',
+# 			user='djangouser',
+# 			password='secret'
+# 		)
+# 		curr = conn.cursor()
+# 		try:
+# 			curr.execute(""" DROP TABLE ex02_movies """)
+# 			conn.commit()
+# 			trace = 'Done<br />'
+# 		except Exception as e:
+# 			trace = '{}<br />'.format(e)
+# 		conn.close()
+# 		return HttpResponse(trace)
+# 	except Exception as e:
+# 		return HttpResponse(e)

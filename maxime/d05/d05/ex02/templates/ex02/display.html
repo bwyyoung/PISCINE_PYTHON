@@ -5,11 +5,13 @@
 		<title>Ex02</title>
 	</head>
 	<body>
-		<table>
+		<table style="border-spacing: 0;border-collapse: collapse">
 		{% for item in data %}
 			<tr>
 				{% for var in item %}
-				<td>{{ var }}</td>
+				<td style="border: 1px solid orange;padding: 5px">
+					<p>{{ var }}</p>
+				</td>
 				{% endfor %}
 			</tr>
 		{% endfor %}
