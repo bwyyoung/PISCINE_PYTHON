@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ex02</title>
+	</head>
+	<body>
+		<table>
+		{% for item in data %}
+			<tr>
+				{% for var in item %}
+				<td>{{ var }}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+		</table>
+	</body>
+</html>

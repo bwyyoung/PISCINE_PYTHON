@@ -29,6 +29,7 @@ def init(request):
 	except Exception as e:
 		return HttpResponse(e)
 
+
 def populate(request):
 	try:
 		conn = psycopg2.connect(
@@ -50,16 +51,60 @@ def populate(request):
 			(6, 'Return of the Jedi', 'Richard Marquand', 'Howard G. Kazanjian, Georges Lucas, Rick McCallum', '1983-05-25'),
 			(7, 'The Force Awakens', 'J.J. Abrams', 'Kathleen Kennedy, J.J. Abrams, Bryan Burk', '2015-02-11')
 		]
-		query = 'INSERT INTO {}({}) VALUES {}'
-		p = []
+		query_base = 'INSERT INTO {} ({}) VALUES {}'
+		trace = []
 		for item in items:
-			query = query.format(db, keys, item)
-			p.append(query)
+			query = query_base.format(db, keys, item)
 			try:
-				curr.execute(query, item)
+				curr.execute(query)
 				conn.commit()
+				trace.append('<br />{} => <span style="color:green">OK</span><br />\n'.format(item[1]))
 			except Exception as e:
-				return HttpResponse(e)
+				trace.append('<br />{} => <span style="color:red">ERROR</span><br />{}<br />\n'.format(item[1], e))
 		conn.close()
+		return HttpResponse(trace)
 	except Exception as e:
 		return HttpResponse(e)
+
+def display(request):
+	try:
+		conn = psycopg2.connect(
+				database='formationdjango',
+				host='localhost',
+				user='djangouser',
+				password='secret'
+			)
+		curr = conn.cursor()
+		curr.execute(""" SELECT * FROM ex02_movies """)
+		res = curr.fetchall()
+		conn.commit()
+		conn.close()
+		if (len(res) > 0):
+			return render(request, 'ex02/display.html', {'data': res})
+		else:
+			return HttpResponse('No data available')	
+	except:
+		return HttpResponse('Fail')
+
+
+def remove(request):
+	try:
+		trace = ''
+		conn = psycopg2.connect(
+				database='formationdjango',
+				host='localhost',
+				user='djangouser',
+				password='secret'
+			)
+		curr = conn.cursor()
+		try:
+			curr.execute(""" DROP TABLE ex02_movies """)
+			conn.commit()
+			trace = 'Done<br />'
+		except Exception as e:
+			trace = '{}<br />'.format(e)
+		conn.close()
+		return HttpResponse(trace)
+	except Exception as e:
+		return HttpResponse(e)
+
