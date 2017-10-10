@@ -68,6 +68,7 @@ def populate(request):
 	except Exception as e:
 		return HttpResponse(e)
 
+
 def display(request):
 	try:
 		conn = psycopg2.connect(
@@ -87,25 +88,3 @@ def display(request):
 			return HttpResponse('No data available')
 	except:
 		return HttpResponse('No data available')
-
-
-# def remove(request):
-# 	try:
-# 		trace = ''
-# 		conn = psycopg2.connect(
-# 			database='formationdjango',
-# 			host='localhost',
-# 			user='djangouser',
-# 			password='secret'
-# 		)
-# 		curr = conn.cursor()
-# 		try:
-# 			curr.execute(""" DROP TABLE ex02_movies """)
-# 			conn.commit()
-# 			trace = 'Done<br />'
-# 		except Exception as e:
-# 			trace = '{}<br />'.format(e)
-# 		conn.close()
-# 		return HttpResponse(trace)
-# 	except Exception as e:
-# 		return HttpResponse(e)

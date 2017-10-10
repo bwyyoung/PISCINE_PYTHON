@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ex03</title>
+	</head>
+	<body>
+		<table style="border-spacing: 0;border-collapse: collapse">
+		{% for item in data %}
+		<tr>
+			{% for key, value in item.items %}
+			<td style="border: 1px solid orange;padding: 5px">
+				<p>{{ value }}</p>
+			</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+		</table>
+	</body>
+</html>
