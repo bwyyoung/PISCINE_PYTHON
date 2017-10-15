@@ -1,0 +1,12 @@
+{% extends 'ex05/base.html' %}
+
+{% block body %}
+<ul>
+{% for each in body_data %}
+    
+    {% block each %}
+    {{ each }}<br/>
+    {% endblock %}
+{% endfor %}
+</ul>
+{% endblock %}

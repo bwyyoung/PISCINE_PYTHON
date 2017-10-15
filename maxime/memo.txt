@@ -72,11 +72,14 @@ Class notes
 42
 
 _________________________________________________________________________________
+DJANGO
 django-admin startproject mysite
 python manage.py startapp polls
 python manage.py runserver
 _________________________________________________________________________________
-
+BREW
+export PATH=~/.brew/bin:$PATH
+_________________________________________________________________________________
 POSTGRES
 
 https://www.tutorialspoint.com/postgresql/postgresql_select_database.htm
@@ -98,7 +101,10 @@ psql -d postgres
 CREATE USER "djangouser" WITH PASSWORD 'secret';
 ALTER DATABASE "formationdjango" OWNER TO djangouser;
 -------------
-psql -U djangouser -d formationdjango
+	psql -U djangouser -d formationdjango
+
+	python manage.py makemigrations ex01
+	python manage.py migrate ex01
 -----------------
 Voir les Tables:
 SELECT * FROM <la_table>
@@ -111,3 +117,9 @@ Django Models
 -> https://docs.djangoproject.com/fr/1.11/topics/db/models/#field-types
 Postgres loop psycopg2
 -> http://zetcode.com/db/postgresqlpythontutorial/
+
+--------------------------
+Extract all items form ORM-model table in views.py :
+items = Movies.objects.all().values()
+--------------------------
+python3 ../manage.py runserver 0.0.0.0:8000

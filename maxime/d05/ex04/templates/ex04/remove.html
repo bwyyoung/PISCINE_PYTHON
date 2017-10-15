@@ -1,0 +1,17 @@
+{% extends 'ex04/base.html' %}
+
+{% block body %}
+    {% if queryset %}
+    
+    <form action="{% url 'ex04:remove' %}" method="post">
+        {% csrf_token %}
+        <select name='id' size="1">
+        {% for movie in queryset %}
+            <option value="{{ movie.episode_nb }}">{{ movie.title }}
+        {% endfor %}
+        <input type="submit" value="remove" />
+    </form>
+    {% else %}
+    No data available
+    {% endif %}
+{% endblock %}

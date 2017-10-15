@@ -1,0 +1,28 @@
+{% extends 'ex02/base.html' %}
+
+{% block body %}
+    {% if queryset %}
+    <table>
+    <tr>
+        <th>title</th>
+        <th>episode_nb</th>
+        <th>opening_crawl</th>
+        <th>director</th>
+        <th>producer</th>
+        <th>release_date</th>
+    </tr>
+    {% for movie in queryset %}
+    <tr>
+        <td>{{movie.title}}</td>
+        <td>{{movie.episode_nb}}</td>
+        <td>{% if movie.opening_crawl %}{{movie.opening_crawl}}{% endif %}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.producer}}</td>
+        <td>{{movie.release_date}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    No data available
+    {% endif %}
+{% endblock %}

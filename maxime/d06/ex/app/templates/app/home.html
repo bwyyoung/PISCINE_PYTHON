@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<form action="{% url 'app:create' %}" method="post">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Submit">
+</form>
+{% else %}
+{% endif%}
+<table>
+	<tr>
+		<th>contenu</th>
+		<th>auteur</th>
+		<th>date</th>
+		<th>votes</th>
+		{% if user.is_authenticated %}
+		<th>actions</th>
+		{% endif %}
+	</tr>
+	{% for tip in queryset %}
+	<tr>
+		<td>{{tip.contenu}}</td>
+		<td>{{tip.auteur.username}}</td>
+		<td>{{tip.date}}</td>
+		<td>
+			{{ tip.upvotes.count }}
+			{% if user.is_authenticated %}
+			<a href="/up/{{tip.id}}"><button>Up</button></a>
+			{% endif %}
+			{% if user.is_authenticated %}
+			<a href="/down/{{tip.id}}"><button>Down</button></a>
+			{% endif %}
+			{{ tip.downvotes.count }}
+		</td>
+		{% if user.is_authenticated %}
+		<td><a href="/delete/{{tip.id}}"><button>Delete</button></a></td>
+		{% endif %}
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

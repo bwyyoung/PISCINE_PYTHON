@@ -1,0 +1,18 @@
+{% extends 'ex06/base.html' %}
+
+{% block body %}
+    {% if queryset %}
+    
+    <form action="{% url 'ex06:update' %}" method="post">
+        {% csrf_token %}
+        <select name='id' size="1">
+        {% for movie in queryset %}
+            <option value="{{ movie.episode_nb }}">{{ movie.title }}
+        {% endfor %}
+        <input type="text" name="text"></input>
+        <input type="submit" value="update" />
+    </form>
+    {% else %}
+    No data available
+    {% endif %}
+{% endblock %}
